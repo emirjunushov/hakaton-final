@@ -1,13 +1,14 @@
 import React from "react";
 import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/Footer/Footer";
+import MainRoutes from "./components/routes/MainRoutes";
+import AuthContextProvider from "./context/AuthContextProvider";
 
 const App = () => {
   return (
-    <div>
+    <AuthContextProvider>
       <Navbar />
-      <Footer />
-    </div>
+      <MainRoutes />
+    </AuthContextProvider>
   );
 };
 

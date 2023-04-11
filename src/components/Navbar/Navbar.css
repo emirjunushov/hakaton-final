@@ -1,13 +1,24 @@
 body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+* {
   margin: 0;
   padding: 0;
 }
-.main_nav_container {
-  background-color: black;
-  width: 40vh;
-  height: 100vh;
-  z-index: -1;
+
+.nav {
 }
-.home_icon {
-  color: white !important;
+
+.nav__container {
+}
+
+.nav__tool-bar {
+}
+
+.nav__icon {
+}
+
+.nav__logo {
 }
