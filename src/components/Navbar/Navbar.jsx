@@ -13,9 +13,16 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
 
-const pages = ["Products", "Pricing", "Blog"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const pages = [
+  { name: "Home", link: "/", id: 1 },
+  { name: "Test", link: "/test", id: 2 },
+  { name: "Second test", link: "/second-test", id: 3 },
+  { name: "contacts", link: "/contacts", id: 5 },
+  { name: "Login", link: "/login", id: 4 },
+];
+const settings = ["Home", "Test", "Account", "Second test", "Logout"];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -64,11 +71,11 @@ function Navbar() {
           </Typography>
 
           <Box
-            className="nav__block-link"
+            className="nav__block-adaptiv"
             sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
           >
             <IconButton
-              className=""
+              className="nav__btn-adaptiv"
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
@@ -79,6 +86,7 @@ function Navbar() {
               <MenuIcon />
             </IconButton>
             <Menu
+              className="nav__block_links-adaptiv"
               id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
@@ -96,15 +104,25 @@ function Navbar() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
+              {pages.map((page, index) => (
+                <Link key={index} to={page.link} className="nav__linkMain">
+                  <MenuItem
+                    className="nav__burger-adaptiv"
+                    key={page}
+                    onClick={handleCloseNavMenu}
+                  >
+                    <Typography textAlign="center">{page.name}</Typography>
+                  </MenuItem>
+                </Link>
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          <AdbIcon
+            className="nav__some-icon-adaptiv"
+            sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
+          />
           <Typography
+            className="nav__logo-adaptiv"
             variant="h5"
             noWrap
             component="a"
@@ -122,25 +140,40 @@ function Navbar() {
           >
             LOGO
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page}
-              </Button>
+          <Box
+            className="nav__some-BOX"
+            sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
+          >
+            {pages.map((page, index) => (
+              <Link key={index} to={page.link} className="nav__linkMain">
+                <Button
+                  className="nav__btn-some"
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                >
+                  {page.name}
+                </Button>
+              </Link>
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+          <Box className="nav__settings-menu" sx={{ flexGrow: 0 }}>
+            <Tooltip className="nav__menu_block" title="Open settings">
+              <IconButton
+                className="nav-menu__btn"
+                onClick={handleOpenUserMenu}
+                sx={{ p: 0 }}
+              >
+                <Avatar
+                  className="nav-avatar"
+                  alt="Remy Sharp"
+                  src="/static/images/avatar/2.jpg"
+                />
               </IconButton>
             </Tooltip>
             <Menu
+              className="nav__menu"
               sx={{ mt: "45px" }}
               id="menu-appbar"
               anchorEl={anchorElUser}
@@ -156,10 +189,18 @@ function Navbar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
+              {settings.map((setting, index) => (
+                <Link className="nav__link-oun" key={index} to={setting.link}>
+                  <MenuItem
+                    className="nav-menu_list"
+                    key={setting}
+                    onClick={handleCloseUserMenu}
+                  >
+                    <Typography className="nav-menu_item" textAlign="center">
+                      {setting}
+                    </Typography>
+                  </MenuItem>
+                </Link>
               ))}
             </Menu>
           </Box>
