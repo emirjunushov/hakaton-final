@@ -11,10 +11,10 @@ const AuthContextProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleRegister = async (formData) => {
+  const handleRegister = async (newObj) => {
     setLoading(true);
     try {
-      const res = await axios.post(`${API}/register/`, formData);
+      const res = await axios.post(`${API}/register/`, newObj);
       navigate("/register-success");
       console.log(res);
     } catch (error) {
@@ -24,7 +24,7 @@ const AuthContextProvider = ({ children }) => {
     }
   };
 
-  const values = { handleRegister };
+  const values = { handleRegister, error, loading };
   return <authContext.Provider value={values}>{children}</authContext.Provider>;
 };
 
