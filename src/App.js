@@ -6,7 +6,7 @@ import AuthContextProvider from "./context/AuthContextProvider";
 const App = () => {
   return (
     <AuthContextProvider>
-      {/* <Navbar /> */}
+      <Navbar />
       <MainRoutes />
     </AuthContextProvider>
   );
