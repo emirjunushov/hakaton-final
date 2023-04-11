@@ -19,6 +19,8 @@ const pages = [
   { name: "Home", link: "/", id: 1 },
   { name: "Test", link: "/test", id: 2 },
   { name: "Second test", link: "/second-test", id: 3 },
+  { name: "contacts", link: "/contacts", id: 5 },
+  { name: "Login", link: "/login", id: 4 },
 ];
 const settings = ["Home", "Test", "Account", "Second test", "Logout"];
 

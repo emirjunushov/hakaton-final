@@ -9,9 +9,12 @@ body {
 }
 
 .nav {
+  background-color: rgba(0, 0, 0, 0.822) !important;
 }
 
 .nav__container {
+  background-color: rgba(0, 0, 0, 0.79) !important;
+  color: #e9ff5c !important;
 }
 
 .nav__tool-bar {
@@ -63,6 +66,7 @@ body {
 }
 
 .nav-menu_list {
+  background-color: black !important;
 }
 
 .nav-menu_item {
@@ -70,8 +74,10 @@ body {
 
 .nav__link-oun {
   text-decoration: none !important;
+  color: #e9ff5c !important;
 }
 
 .nav__linkMain {
   text-decoration: none !important;
+  color: #e9ff5c !important;
 }
