@@ -6,6 +6,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import HomeIcon from "@mui/icons-material/Home";
 import PhoneIcon from "@mui/icons-material/Phone";
+import batir from "./img_Footer/logo.png";
 
 const Footer = () => {
   return (
@@ -17,6 +18,8 @@ const Footer = () => {
           <div className="wave" id="wave3"></div>
           <div className="wave" id="wave4"></div>
         </div>
+        <img className="logo_Footer" src={batir} alt="" />
+
         <ul className="social-icon">
           <li className="social-icon__item">
             <a className="social-icon__link" href="https://ru-ru.facebook.com/">
