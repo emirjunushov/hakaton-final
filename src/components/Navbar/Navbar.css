@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.main_nav_container {
+  background-color: black;
+  width: 40vh;
+  height: 100vh;
+  z-index: -1;
+}
+.home_icon {
+  color: white !important;
+}
