@@ -1,5 +1,6 @@
 .footer {
   margin-top: 500px;
+  margin-bottom: 0px;
   position: relative;
   background: black;
   min-height: 100px;
@@ -90,14 +91,14 @@
   z-index: 1000;
   opacity: 0.2;
   bottom: 15px;
-  animation: animateWaves 3s linear infinite;
+  animation: animateWaves 2s linear infinite;
 }
 
 .wave#wave4 {
   z-index: 999;
   opacity: 0.7;
   bottom: 20px;
-  animation: animate 3s linear infinite;
+  animation: animate 2s linear infinite;
 }
 
 @keyframes animateWaves {
