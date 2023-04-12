@@ -16,14 +16,16 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContextProvider";
+import logoPng from "../Footer/img_Footer/logo.png";
 
 const pages = [
-  { name: "Home", link: "/", id: 1 },
+  { name: "Главная", link: "/", id: 1 },
   { name: "Test", link: "/test", id: 2 },
-  { name: "Second test", link: "/second-test", id: 3 },
-  { name: "contacts", link: "/contacts", id: 5 },
-  { name: "Зарегистрироваться", link: "/register", id: 4 },
+  { name: "Test", link: "/second-test", id: 3 },
+  { name: "О нас", link: "/contacts", id: 5 },
 ];
+
+const pages2 = [{ name: "Зарегистрироваться", link: "/register", id: 4 }];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -48,7 +50,9 @@ function Navbar() {
     <AppBar className="nav" position="static">
       <Container className="nav__container" maxWidth="xl">
         <Toolbar className="nav__tool-bar" disableGutters>
-          <AdbIcon
+          <img
+            width={50}
+            src={logoPng}
             className="nav__icon"
             sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
           />
@@ -68,7 +72,7 @@ function Navbar() {
               textDecoration: "none",
             }}
           >
-            LOGO
+            BATIR
           </Typography>
 
           <Box
@@ -106,7 +110,7 @@ function Navbar() {
               }}
             >
               {pages.map((page, index) => (
-                <Link key={index} to={page.link} className="nav__linkMain">
+                <Link key={index} to={page.link} className="nav__linkMain1">
                   <MenuItem
                     className="nav__burger-adaptiv"
                     key={page}
@@ -120,10 +124,7 @@ function Navbar() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon
-            className="nav__some-icon-adaptiv"
-            sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
-          />
+
           <Typography
             className="nav__logo-adaptiv"
             variant="h5"
@@ -141,13 +142,28 @@ function Navbar() {
               textDecoration: "none",
             }}
           >
-            LOGO
+            BATIR
           </Typography>
           <Box
             className="nav__some-BOX"
             sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
           >
             {pages.map((page, index) => (
+              <Link key={index} to={page.link} className="nav__linkMain">
+                <Button
+                  className="nav__btn-some"
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                >
+                  {page.name}
+                </Button>
+              </Link>
+            ))}
+          </Box>
+
+          <Box className="login__nav">
+            {pages2.map((page, index) => (
               <Link key={index} to={page.link} className="nav__linkMain">
                 <Button
                   className="nav__btn-some"
@@ -175,6 +191,7 @@ function Navbar() {
                 />
               </IconButton>
             </Tooltip>
+
             <Menu
               className="nav__menu"
               sx={{ mt: "45px" }}
@@ -192,10 +209,21 @@ function Navbar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
+              {/* ====== */}
+
+              <MenuItem className="login_btn-in-nav-menu">
+                <Button
+                  className="btnOfNavMenu"
+                  onClick={() => navigate("/register")}
+                >
+                  Зарегистрироваться
+                </Button>
+              </MenuItem>
+
               <MenuItem>{user ? { user } : "pleas logIn"}</MenuItem>
               <MenuItem>
                 {user ? (
-                  <Button onClick={handleLogout}>
+                  <Button className="btnOfNavMenu" onClick={handleLogout}>
                     <LogoutIcon />
                     LogOut
                   </Button>
