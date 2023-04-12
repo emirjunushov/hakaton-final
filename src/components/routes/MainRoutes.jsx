@@ -4,6 +4,7 @@ import LoginList from "../Auth/LoginList/LoginList";
 import RegisterList from "../Auth/RegisterList/RegisterList";
 import RegisterSucces from "../Auth/Activate/Activate";
 import HomePage from "../Pages/HomePage/HomePage";
+import Cart from "../Cart/Cart";
 
 const MainRoutes = () => {
   const ROUTES = [
@@ -11,6 +12,7 @@ const MainRoutes = () => {
     { link: "/login", element: <LoginList />, id: 2 },
     { link: "/register", element: <RegisterList />, id: 3 },
     { link: "/activate", element: <RegisterSucces />, id: 4 },
+    { link: "/cart", element: <Cart />, id: 5 },
   ];
   return (
     <>
