@@ -22,7 +22,7 @@ const pages = [
   { name: "Главная", link: "/", id: 1 },
   { name: "Test", link: "/test", id: 2 },
   { name: "Test", link: "/second-test", id: 3 },
-  { name: "О нас", link: "/contacts", id: 5 },
+  { name: "О нас", link: "/about", id: 5 },
 ];
 
 const pages2 = [{ name: "Зарегистрироваться", link: "/register", id: 4 }];
