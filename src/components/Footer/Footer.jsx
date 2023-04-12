@@ -54,7 +54,7 @@ const Footer = () => {
         </ul>
         <ul className="menu">
           <li className="menu__item">
-            <a className="menu__link" href="#">
+            <a className="menu__link" href="/">
               <HomeIcon />
             </a>
           </li>

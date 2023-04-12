@@ -2,7 +2,7 @@
   margin-top: 500px;
   margin-bottom: 0px;
   position: relative;
-  background: black;
+  background: #3586ff;
   min-height: 100px;
   padding: 20px 50px;
   display: flex;
@@ -69,7 +69,7 @@
   left: 0;
   width: 100%;
   height: 100px;
-  background: url("./img_Footer/wave.png");
+  background: url("https://i.ibb.co/wQZVxxk/wave.png");
   background-size: 1000px 100px;
 }
 
