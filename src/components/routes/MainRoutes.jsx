@@ -12,6 +12,7 @@ const MainRoutes = () => {
     { link: "/register", element: <RegisterList />, id: 3 },
     { link: "/activate", element: <RegisterSucces />, id: 4 },
   ];
+
   return (
     <>
       <Routes>

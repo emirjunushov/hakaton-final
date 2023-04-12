@@ -15,6 +15,7 @@ import AdbIcon from "@mui/icons-material/Adb";
 import LogoutIcon from "@mui/icons-material/Logout";
 import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContextProvider";
 import logoPng from "../Footer/img_Footer/logo.png";
 
 const pages = [
@@ -44,7 +45,7 @@ function Navbar() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-
+  const { user, handleLogout } = useAuth();
   return (
     <AppBar className="nav" position="static">
       <Container className="nav__container" maxWidth="xl">
@@ -208,6 +209,8 @@ function Navbar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
+              {/* ====== */}
+
               <MenuItem className="login_btn-in-nav-menu">
                 <Button
                   className="btnOfNavMenu"
@@ -217,11 +220,16 @@ function Navbar() {
                 </Button>
               </MenuItem>
 
+              <MenuItem>{user ? { user } : "pleas logIn"}</MenuItem>
               <MenuItem>
-                <Button className="btnOfNavMenu">
-                  <LogoutIcon />
-                  LogOut
-                </Button>
+                {user ? (
+                  <Button className="btnOfNavMenu" onClick={handleLogout}>
+                    <LogoutIcon />
+                    LogOut
+                  </Button>
+                ) : (
+                  ""
+                )}
               </MenuItem>
             </Menu>
           </Box>
