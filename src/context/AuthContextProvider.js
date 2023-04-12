@@ -10,21 +10,51 @@ const AuthContextProvider = ({ children }) => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-
-  const handleRegister = async (newObj) => {
+  console.log(user);
+  const handleRegister = async (formData) => {
     setLoading(true);
     try {
-      const res = await axios.post(`${API}/register/`, newObj);
-      navigate("/register-success");
-      console.log(res);
+      const res = await axios.post(`${API}/register/`, formData);
+      navigate("/activate");
     } catch (error) {
       setError(Object.values(error.response.data).flat()[0]);
     } finally {
       setLoading(false);
     }
   };
+  const handleActivate = async (formData) => {
+    try {
+      const res = await axios.post(`${API}/activate/`, formData);
 
-  const values = { handleRegister, error, loading };
+      navigate("/login");
+    } catch (error) {
+      setError(Object.values(error.response.data).flat()[0]);
+    }
+  };
+
+  const handleLogin = async (formData, email) => {
+    setLoading(true);
+    try {
+      const res = await axios.post(`${API}/accounts/login/`, formData);
+      localStorage.setItem("tokens", JSON.stringify(res.data));
+      localStorage.setItem("email", email);
+      setUser(email);
+      navigate("/");
+    } catch (error) {
+      setError(error.response.data.detail);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const values = {
+    handleRegister,
+    error,
+    loading,
+    setError,
+    handleActivate,
+    handleLogin,
+  };
   return <authContext.Provider value={values}>{children}</authContext.Provider>;
 };
 

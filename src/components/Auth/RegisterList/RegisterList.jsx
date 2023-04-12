@@ -1,13 +1,5 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
-import Input from "@mui/material/Input";
-import InputLabel from "@mui/material/InputLabel";
-import InputAdornment from "@mui/material/InputAdornment";
-import FormControl from "@mui/material/FormControl";
-import LoginIcon from "@mui/icons-material/Login";
-import AccountCircle from "@mui/icons-material/AccountCircle";
-import KeyIcon from "@mui/icons-material/Key";
-import { Button } from "@mui/material";
+
 import { useAuth } from "../../../context/AuthContextProvider";
 export default function RegisterList() {
   const [email, setEmail] = React.useState("");
@@ -15,83 +7,54 @@ export default function RegisterList() {
   const [passwordConfirm, setPasswordConfirm] = React.useState("");
   const [userName, setUserName] = React.useState("");
 
-  const { handleRegister } = useAuth();
+  const { handleRegister, loading, error, setError } = useAuth();
 
-  const handleSave = () => {
+  const handleSave = (e) => {
+    e.preventDefault();
+
     if (!email.trim() || !password.trim() || !passwordConfirm.trim()) {
       alert("заполните все поля!");
     } else {
-      let newObj = {
-        email,
-        password,
-        passwordConfirm,
-        userName,
-      };
-      handleRegister(newObj);
+      let formData = new FormData();
+      formData.append("email", email);
+      formData.append("password", password);
+      formData.append("password2", passwordConfirm);
+      formData.append("username", userName);
+      handleRegister(formData);
     }
   };
 
+  React.useEffect(() => {
+    setError(false);
+  }, []);
+
   return (
-    <Box
-      sx={{
-        "& > :not(style)": { m: 1 },
-      }}
-    >
+    <div>
       <h1>Register</h1>
-      <FormControl variant="standard">
-        <InputLabel htmlFor="input-with-icon-adornment">User Name</InputLabel>
-        <Input
-          onChange={(e) => setUserName(e.target.value)}
-          id="input-with-icon-adornment"
-          startAdornment={
-            <InputAdornment position="start">
-              <AccountCircle />
-            </InputAdornment>
-          }
-        />
-      </FormControl>
-      <FormControl variant="standard">
-        <InputLabel htmlFor="input-with-icon-adornment">email</InputLabel>
-        <Input
+      {error ? <h2>{error}</h2> : null}
+      <form action="submit" onSubmit={handleSave}>
+        <input
           onChange={(e) => setEmail(e.target.value)}
-          id="input-with-icon-adornment"
-          startAdornment={
-            <InputAdornment position="start">
-              <AccountCircle />
-            </InputAdornment>
-          }
+          type="email"
+          placeholder="email"
         />
-      </FormControl>
-      <FormControl variant="standard">
-        <InputLabel htmlFor="input-with-icon-adornment">pasword</InputLabel>
-        <Input
+        <input
           onChange={(e) => setPassword(e.target.value)}
-          id="input-with-icon-adornment"
-          startAdornment={
-            <InputAdornment position="start">
-              <KeyIcon />
-            </InputAdornment>
-          }
+          type="password"
+          placeholder="password"
         />
-      </FormControl>
-      <FormControl variant="standard">
-        <InputLabel htmlFor="input-with-icon-adornment">
-          Confirm Password
-        </InputLabel>
-        <Input
+        <input
           onChange={(e) => setPasswordConfirm(e.target.value)}
-          id="input-with-icon-adornment"
-          startAdornment={
-            <InputAdornment position="start">
-              <KeyIcon />
-            </InputAdornment>
-          }
+          type="password"
+          placeholder="password confirm"
         />
-      </FormControl>
-      <Button variant="text">
-        <LoginIcon />
-        Register
-      </Button>
-    </Box>
+        <input
+          onChange={(e) => setUserName(e.target.value)}
+          type="name"
+          placeholder="username"
+        />
+        <button>register</button>
+      </form>
+    </div>
   );
 }
