@@ -111,7 +111,9 @@ function Navbar() {
                     key={page}
                     onClick={handleCloseNavMenu}
                   >
-                    <Typography textAlign="center">{page.name}</Typography>
+                    <Typography className="nav__text" textAlign="center">
+                      {page.name}
+                    </Typography>
                   </MenuItem>
                 </Link>
               ))}

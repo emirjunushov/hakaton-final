@@ -36,6 +36,7 @@ body {
 }
 
 .nav__burger-adaptiv {
+  background-color: black !important;
 }
 
 .nav__some-icon-adaptiv {
@@ -48,6 +49,7 @@ body {
 }
 
 .nav__btn-some {
+  color: #e9ff5c !important;
 }
 
 .nav__settings-menu {
@@ -79,5 +81,8 @@ body {
 
 .nav__linkMain {
   text-decoration: none !important;
+}
+
+.nav__text {
   color: #e9ff5c !important;
 }
