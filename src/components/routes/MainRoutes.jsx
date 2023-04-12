@@ -4,6 +4,7 @@ import LoginList from "../Auth/LoginList/LoginList";
 import RegisterList from "../Auth/RegisterList/RegisterList";
 import RegisterSucces from "../Auth/Activate/Activate";
 import HomePage from "../Pages/HomePage/HomePage";
+import ForgotPassword from "../Auth/ForgotPasword/ForgotPasword";
 
 const MainRoutes = () => {
   const ROUTES = [
@@ -11,6 +12,7 @@ const MainRoutes = () => {
     { link: "/login", element: <LoginList />, id: 2 },
     { link: "/register", element: <RegisterList />, id: 3 },
     { link: "/activate", element: <RegisterSucces />, id: 4 },
+    { link: "/forgotPassword", element: <ForgotPassword />, id: 4 },
   ];
 
   return (

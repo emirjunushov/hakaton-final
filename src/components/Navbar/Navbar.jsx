@@ -116,9 +116,10 @@ function Navbar() {
                     key={page}
                     onClick={handleCloseNavMenu}
                   >
-                    <Typography className="nav__text" textAlign="center">
-                      {page.name}
-                    </Typography>
+                    <Typography
+                      className="nav__text"
+                      textAlign="center"
+                    ></Typography>
                   </MenuItem>
                 </Link>
               ))}
@@ -165,14 +166,18 @@ function Navbar() {
           <Box className="login__nav">
             {pages2.map((page, index) => (
               <Link key={index} to={page.link} className="nav__linkMain">
-                <Button
-                  className="nav__btn-some"
-                  key={page}
-                  onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "white", display: "block" }}
-                >
-                  {page.name}
-                </Button>
+                {user ? (
+                  ""
+                ) : (
+                  <Button
+                    className="nav__btn-some"
+                    key={page}
+                    onClick={handleCloseNavMenu}
+                    sx={{ my: 2, color: "white", display: "block" }}
+                  >
+                    {page.name}
+                  </Button>
+                )}
               </Link>
             ))}
           </Box>
@@ -211,16 +216,20 @@ function Navbar() {
             >
               {/* ====== */}
 
-              <MenuItem className="login_btn-in-nav-menu">
-                <Button
-                  className="btnOfNavMenu"
-                  onClick={() => navigate("/register")}
-                >
-                  Зарегистрироваться
-                </Button>
-              </MenuItem>
+              {user ? (
+                ""
+              ) : (
+                <MenuItem className="login_btn-in-nav-menu">
+                  <Button
+                    className="btnOfNavMenu"
+                    onClick={() => navigate("/register")}
+                  >
+                    Зарегистрироваться
+                  </Button>
+                </MenuItem>
+              )}
 
-              <MenuItem>{user ? { user } : "pleas logIn"}</MenuItem>
+              <MenuItem>{user ? `${user}` : "pleas logIn"}</MenuItem>
               <MenuItem>
                 {user ? (
                   <Button className="btnOfNavMenu" onClick={handleLogout}>
