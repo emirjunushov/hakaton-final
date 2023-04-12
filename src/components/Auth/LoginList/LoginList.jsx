@@ -1,47 +1,57 @@
-import * as React from "react";
-import Box from "@mui/material/Box";
-import Input from "@mui/material/Input";
-import InputLabel from "@mui/material/InputLabel";
-import InputAdornment from "@mui/material/InputAdornment";
-import FormControl from "@mui/material/FormControl";
-import LoginIcon from "@mui/icons-material/Login";
-import AccountCircle from "@mui/icons-material/AccountCircle";
-import KeyIcon from "@mui/icons-material/Key";
-import { Button } from "@mui/material";
-export default function LoginList() {
+import React, { useEffect, useState } from "react";
+import { useAuth } from "../../../context/AuthContextProvider";
+import "./LoginList.css";
+import video from "../../../IMAGES/video.mp4";
+const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const { handleLogin, error, setError, loading } = useAuth();
+
+  const handleSave = (e) => {
+    e.preventDefault();
+
+    if (!email.trim() || !password.trim()) {
+      alert("заполните все поля!");
+    } else {
+      let formData = new FormData();
+      formData.append("username", email);
+      formData.append("password", password);
+      handleLogin(formData, email);
+    }
+  };
+
+  useEffect(() => {
+    setError(false);
+  }, []);
+
+  // if (loading) {
+  //   return <Loader />;
+  // }
+
   return (
-    <Box
-      sx={{
-        "& > :not(style)": { m: 1 },
-      }}
-    >
-      <h1>LOGIN</h1>
-      <FormControl variant="standard">
-        <InputLabel htmlFor="input-with-icon-adornment">email</InputLabel>
-        <Input
-          id="input-with-icon-adornment"
-          startAdornment={
-            <InputAdornment position="start">
-              <AccountCircle />
-            </InputAdornment>
-          }
+    <div className="main_login_container">
+      {/* <video controls autoplay muted loop id="myVideo">
+        <source src={video} type="video/mp4" />
+      </video> */}
+      {error ? <h2>{error}</h2> : null}
+      <form className="login_box_form" action="submit" onSubmit={handleSave}>
+        <h1>Login Page</h1>
+        <input
+          onChange={(e) => setEmail(e.target.value)}
+          type="text"
+          placeholder="User Name"
         />
-      </FormControl>
-      <FormControl variant="standard">
-        <InputLabel htmlFor="input-with-icon-adornment">pasword</InputLabel>
-        <Input
-          id="input-with-icon-adornment"
-          startAdornment={
-            <InputAdornment position="start">
-              <KeyIcon />
-            </InputAdornment>
-          }
+        <input
+          onChange={(e) => setPassword(e.target.value)}
+          type="password"
+          placeholder="Password"
         />
-      </FormControl>
-      <Button variant="text">
-        <LoginIcon />
-        Login
-      </Button>
-    </Box>
+
+        <button>Login</button>
+      </form>
+    </div>
   );
-}
+};
+
+export default Login;

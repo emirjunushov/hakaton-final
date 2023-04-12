@@ -12,8 +12,9 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
+import LogoutIcon from "@mui/icons-material/Logout";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const pages = [
   { name: "Home", link: "/", id: 1 },
@@ -22,12 +23,11 @@ const pages = [
   { name: "contacts", link: "/contacts", id: 5 },
   { name: "Login", link: "/login", id: 4 },
 ];
-const settings = ["Home", "Test", "Account", "Second test", "Logout"];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-
+  const navigate = useNavigate();
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -189,19 +189,20 @@ function Navbar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting, index) => (
-                <Link className="nav__link-oun" key={index} to={setting.link}>
-                  <MenuItem
-                    className="nav-menu_list"
-                    key={setting}
-                    onClick={handleCloseUserMenu}
-                  >
-                    <Typography className="nav-menu_item" textAlign="center">
-                      {setting}
-                    </Typography>
-                  </MenuItem>
-                </Link>
-              ))}
+              <MenuItem>
+                <Button onClick={() => navigate("/register")}>
+                  Зарегистрироваться
+                </Button>
+              </MenuItem>
+              <MenuItem>
+                <Button onClick={() => navigate("/login")}>Log in</Button>
+              </MenuItem>
+              <MenuItem>
+                <Button>
+                  <LogoutIcon />
+                  LogOut
+                </Button>
+              </MenuItem>
             </Menu>
           </Box>
         </Toolbar>
