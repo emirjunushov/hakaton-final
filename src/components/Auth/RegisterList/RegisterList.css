@@ -13,11 +13,12 @@
   color: white;
 }
 .inputs_in_form {
+  color: yellow !important;
   width: 70% !important;
   margin-top: 5% !important;
 }
 .button_of_register {
   color: black !important;
   margin-top: 5% !important;
-  margin-left: 23% !important;
+  margin-left: 26%;
 }

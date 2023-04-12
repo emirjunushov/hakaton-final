@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useAuth } from "../../../context/AuthContextProvider";
 import "./LoginList.css";
-import video from "../../../IMAGES/video.mp4";
-const Login = () => {
+
+import { Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+const LoginList = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -25,15 +27,13 @@ const Login = () => {
     setError(false);
   }, []);
 
+  const navigate = useNavigate();
   // if (loading) {
   //   return <Loader />;
   // }
 
   return (
     <div className="main_login_container">
-      {/* <video controls autoplay muted loop id="myVideo">
-        <source src={video} type="video/mp4" />
-      </video> */}
       {error ? <h2>{error}</h2> : null}
       <form className="login_box_form" action="submit" onSubmit={handleSave}>
         <h1>Login Page</h1>
@@ -47,11 +47,13 @@ const Login = () => {
           type="password"
           placeholder="Password"
         />
-
+        <Button onClick={() => navigate("/forgotPassword")}>
+          Forgor Password
+        </Button>
         <button>Login</button>
       </form>
     </div>
   );
 };
 
-export default Login;
+export default LoginList;

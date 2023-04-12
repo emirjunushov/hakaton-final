@@ -112,7 +112,6 @@ export default function RegisterList() {
           <Button onClick={() => navigate("/login")} sx={{ color: "black" }}>
             Log in ?
           </Button>
-          <Button sx={{ color: "black" }}>Forgot Password?</Button>
         </div>
       </div>
     </>
