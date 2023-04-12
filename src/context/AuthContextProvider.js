@@ -46,8 +46,26 @@ const AuthContextProvider = ({ children }) => {
       setLoading(false);
     }
   };
+  const handleLogout = () => {
+    localStorage.removeItem("tokens");
+    localStorage.removeItem("email");
+    setUser(null);
+    navigate("/login");
+  };
+
+  // const handleForgotPassword = async () => {
+  //   try {
+  //     const res = await axios.post(`${API}/activate/`, formData);
+
+  //     navigate("/login");
+  //   } catch (error) {
+  //     setError(Object.values(error.response.data).flat()[0]);
+  //   }
+  // };
 
   const values = {
+    handleLogout,
+    user,
     handleRegister,
     error,
     loading,

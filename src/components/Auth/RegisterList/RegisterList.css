@@ -1,0 +1,24 @@
+.video_bg {
+  object-fit: cover;
+  width: 100%;
+  height: 100vh;
+}
+.main_register_container {
+  position: absolute !important ;
+  top: 20%;
+  left: 35%;
+}
+
+.h1_of_inputs {
+  color: white;
+}
+.inputs_in_form {
+  color: yellow !important;
+  width: 70% !important;
+  margin-top: 5% !important;
+}
+.button_of_register {
+  color: black !important;
+  margin-top: 5% !important;
+  margin-left: 26%;
+}

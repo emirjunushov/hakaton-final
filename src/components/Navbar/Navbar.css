@@ -9,11 +9,26 @@ body {
 }
 
 .nav {
-  background-color: rgba(0, 0, 0, 0.822) !important;
+  background-color: rgba(0, 0, 0, 0.216) !important;
+}
+
+.nav__linkMain {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  transition: 1s;
+}
+
+.nav__linkMain:hover {
+  transform: translateY(-5px);
+}
+
+.nav__linkMain1 {
+  text-decoration: none !important;
 }
 
 .nav__container {
-  background-color: rgba(0, 0, 0, 0.79) !important;
+  background-color: rgba(0, 0, 0, 0.694) !important;
   color: #e9ff5c !important;
 }
 
@@ -21,6 +36,9 @@ body {
 }
 
 .nav__icon {
+  border-radius: 100%;
+  margin-right: 10px;
+  object-fit: cover;
 }
 
 .nav__logo {
@@ -36,7 +54,7 @@ body {
 }
 
 .nav__burger-adaptiv {
-  background-color: black !important;
+  background-color: rgba(0, 0, 0, 0.686) !important;
 }
 
 .nav__some-icon-adaptiv {
@@ -46,10 +64,18 @@ body {
 }
 
 .nav__some-BOX {
+  display: flex;
+  justify-content: center;
 }
 
 .nav__btn-some {
   color: #e9ff5c !important;
+}
+.nav__btn-some:hover {
+  color: white !important;
+}
+.nav__btn-some:focus {
+  color: white !important;
 }
 
 .nav__settings-menu {
@@ -67,8 +93,12 @@ body {
 .nav__menu {
 }
 
+.btnOfNavMenu {
+  color: #030301 !important;
+}
+
 .nav-menu_list {
-  background-color: black !important;
+  background-color: rgba(0, 0, 0, 0.686) !important;
 }
 
 .nav-menu_item {
@@ -85,4 +115,21 @@ body {
 
 .nav__text {
   color: #e9ff5c !important;
+}
+
+.login_btn-in-nav-menu {
+  display: none !important;
+}
+
+@media all and (max-width: 899px) {
+  .login__nav {
+    display: none;
+  }
+
+  .login_btn-in-nav-menu {
+    display: block !important;
+  }
+  .nav__icon {
+    display: none;
+  }
 }

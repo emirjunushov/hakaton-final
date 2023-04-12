@@ -15,14 +15,17 @@ import AdbIcon from "@mui/icons-material/Adb";
 import LogoutIcon from "@mui/icons-material/Logout";
 import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContextProvider";
+import logoPng from "../Footer/img_Footer/logo.png";
 
 const pages = [
-  { name: "Home", link: "/", id: 1 },
+  { name: "Главная", link: "/", id: 1 },
   { name: "Test", link: "/test", id: 2 },
-  { name: "Second test", link: "/second-test", id: 3 },
+  { name: "Test", link: "/second-test", id: 3 },
   { name: "О нас", link: "/about", id: 5 },
-  { name: "Login", link: "/login", id: 4 },
 ];
+
+const pages2 = [{ name: "Зарегистрироваться", link: "/register", id: 4 }];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -42,12 +45,14 @@ function Navbar() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-
+  const { user, handleLogout } = useAuth();
   return (
     <AppBar className="nav" position="static">
       <Container className="nav__container" maxWidth="xl">
         <Toolbar className="nav__tool-bar" disableGutters>
-          <AdbIcon
+          <img
+            width={50}
+            src={logoPng}
             className="nav__icon"
             sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
           />
@@ -67,7 +72,7 @@ function Navbar() {
               textDecoration: "none",
             }}
           >
-            LOGO
+            BATIR
           </Typography>
 
           <Box
@@ -105,24 +110,22 @@ function Navbar() {
               }}
             >
               {pages.map((page, index) => (
-                <Link key={index} to={page.link} className="nav__linkMain">
+                <Link key={index} to={page.link} className="nav__linkMain1">
                   <MenuItem
                     className="nav__burger-adaptiv"
                     key={page}
                     onClick={handleCloseNavMenu}
                   >
-                    <Typography className="nav__text" textAlign="center">
-                      {page.name}
-                    </Typography>
+                    <Typography
+                      className="nav__text"
+                      textAlign="center"
+                    ></Typography>
                   </MenuItem>
                 </Link>
               ))}
             </Menu>
           </Box>
-          <AdbIcon
-            className="nav__some-icon-adaptiv"
-            sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
-          />
+
           <Typography
             className="nav__logo-adaptiv"
             variant="h5"
@@ -140,7 +143,7 @@ function Navbar() {
               textDecoration: "none",
             }}
           >
-            LOGO
+            BATIR
           </Typography>
           <Box
             className="nav__some-BOX"
@@ -160,6 +163,25 @@ function Navbar() {
             ))}
           </Box>
 
+          <Box className="login__nav">
+            {pages2.map((page, index) => (
+              <Link key={index} to={page.link} className="nav__linkMain">
+                {user ? (
+                  ""
+                ) : (
+                  <Button
+                    className="nav__btn-some"
+                    key={page}
+                    onClick={handleCloseNavMenu}
+                    sx={{ my: 2, color: "white", display: "block" }}
+                  >
+                    {page.name}
+                  </Button>
+                )}
+              </Link>
+            ))}
+          </Box>
+
           <Box className="nav__settings-menu" sx={{ flexGrow: 0 }}>
             <Tooltip className="nav__menu_block" title="Open settings">
               <IconButton
@@ -174,6 +196,7 @@ function Navbar() {
                 />
               </IconButton>
             </Tooltip>
+
             <Menu
               className="nav__menu"
               sx={{ mt: "45px" }}
@@ -191,19 +214,31 @@ function Navbar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
+              {/* ====== */}
+
+              {user ? (
+                ""
+              ) : (
+                <MenuItem className="login_btn-in-nav-menu">
+                  <Button
+                    className="btnOfNavMenu"
+                    onClick={() => navigate("/register")}
+                  >
+                    Зарегистрироваться
+                  </Button>
+                </MenuItem>
+              )}
+
+              <MenuItem>{user ? `${user}` : "pleas logIn"}</MenuItem>
               <MenuItem>
-                <Button onClick={() => navigate("/register")}>
-                  Зарегистрироваться
-                </Button>
-              </MenuItem>
-              <MenuItem>
-                <Button onClick={() => navigate("/login")}>Log in</Button>
-              </MenuItem>
-              <MenuItem>
-                <Button>
-                  <LogoutIcon />
-                  LogOut
-                </Button>
+                {user ? (
+                  <Button className="btnOfNavMenu" onClick={handleLogout}>
+                    <LogoutIcon />
+                    LogOut
+                  </Button>
+                ) : (
+                  ""
+                )}
               </MenuItem>
             </Menu>
           </Box>
