@@ -15,13 +15,14 @@ import AdbIcon from "@mui/icons-material/Adb";
 import LogoutIcon from "@mui/icons-material/Logout";
 import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContextProvider";
 
 const pages = [
   { name: "Home", link: "/", id: 1 },
   { name: "Test", link: "/test", id: 2 },
   { name: "Second test", link: "/second-test", id: 3 },
   { name: "contacts", link: "/contacts", id: 5 },
-  { name: "Login", link: "/login", id: 4 },
+  { name: "Зарегистрироваться", link: "/register", id: 4 },
 ];
 
 function Navbar() {
@@ -42,7 +43,7 @@ function Navbar() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-
+  const { user, handleLogout } = useAuth();
   return (
     <AppBar className="nav" position="static">
       <Container className="nav__container" maxWidth="xl">
@@ -191,19 +192,16 @@ function Navbar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
+              <MenuItem>{user ? { user } : "pleas logIn"}</MenuItem>
               <MenuItem>
-                <Button onClick={() => navigate("/register")}>
-                  Зарегистрироваться
-                </Button>
-              </MenuItem>
-              <MenuItem>
-                <Button onClick={() => navigate("/login")}>Log in</Button>
-              </MenuItem>
-              <MenuItem>
-                <Button>
-                  <LogoutIcon />
-                  LogOut
-                </Button>
+                {user ? (
+                  <Button onClick={handleLogout}>
+                    <LogoutIcon />
+                    LogOut
+                  </Button>
+                ) : (
+                  ""
+                )}
               </MenuItem>
             </Menu>
           </Box>
