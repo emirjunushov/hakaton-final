@@ -53,15 +53,15 @@ const AuthContextProvider = ({ children }) => {
     navigate("/login");
   };
 
-  const handleForgotPassword = async () => {
-    try {
-      const res = await axios.post(`${API}/activate/`, formData);
+  // const handleForgotPassword = async () => {
+  //   try {
+  //     const res = await axios.post(`${API}/activate/`, formData);
 
-      navigate("/login");
-    } catch (error) {
-      setError(Object.values(error.response.data).flat()[0]);
-    }
-  };
+  //     navigate("/login");
+  //   } catch (error) {
+  //     setError(Object.values(error.response.data).flat()[0]);
+  //   }
+  // };
 
   const values = {
     handleLogout,
