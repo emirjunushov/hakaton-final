@@ -53,17 +53,25 @@ const AuthContextProvider = ({ children }) => {
     navigate("/login");
   };
 
-  // const handleForgotPassword = async () => {
-  //   try {
-  //     const res = await axios.post(`${API}/activate/`, formData);
+  const handleForgotPasswordEmail = async (formData) => {
+    try {
+      const res = await axios.post(`${API}/password_reset_request/`, formData);
+    } catch (error) {
+      setError(Object.values(error.response.data).flat()[0]);
+    }
+  };
 
-  //     navigate("/login");
-  //   } catch (error) {
-  //     setError(Object.values(error.response.data).flat()[0]);
-  //   }
-  // };
+  const handleForgotPasswordFinish = async (formData) => {
+    try {
+      const res = await axios.post(`${API}/password_reset/`, formData);
+    } catch (error) {
+      setError(Object.values(error.response.data).flat()[0]);
+    }
+  };
 
   const values = {
+    handleForgotPasswordFinish,
+    handleForgotPasswordEmail,
     handleLogout,
     user,
     handleRegister,

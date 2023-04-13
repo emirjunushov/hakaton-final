@@ -4,15 +4,18 @@ import "./RegisterList.css";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import { Button, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import CheckBoxIcon from "@mui/icons-material/CheckBox";
+import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
+import { useState } from "react";
 
 export default function RegisterList() {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [passwordConfirm, setPasswordConfirm] = React.useState("");
   const [userName, setUserName] = React.useState("");
-
+  const [check, setCheck] = useState(null);
   const { handleRegister, loading, error, setError } = useAuth();
-
+  console.log(check);
   const handleSave = () => {
     // e.preventDefault();
 
@@ -84,7 +87,7 @@ export default function RegisterList() {
             ) : null}
           </div>
           <div className="registerBtn">
-            {email && password && passwordConfirm && userName ? (
+            {email && password && passwordConfirm && userName && check ? (
               <Button
                 onClick={handleSave}
                 className="button_of_register"
@@ -106,6 +109,18 @@ export default function RegisterList() {
             >
               Log in
             </Button>
+            {check ? (
+              <Button sx={{ color: "black" }} onClick={() => setCheck(false)}>
+                <CheckBoxIcon />Я принимаю все условия
+              </Button>
+            ) : (
+              <Button
+                sx={{ color: "rgba(0, 0, 0, 0.508)" }}
+                onClick={() => setCheck(true)}
+              >
+                <CheckBoxOutlineBlankIcon />Я принимаю все условия
+              </Button>
+            )}
           </div>
         </div>
       </div>
