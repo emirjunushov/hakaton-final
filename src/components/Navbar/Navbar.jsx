@@ -15,13 +15,14 @@ import AdbIcon from "@mui/icons-material/Adb";
 import LogoutIcon from "@mui/icons-material/Logout";
 import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContextProvider";
 import logoPng from "../Footer/img_Footer/logo.png";
 
 const pages = [
   { name: "Главная", link: "/", id: 1 },
   { name: "Test", link: "/test", id: 2 },
   { name: "Test", link: "/second-test", id: 3 },
-  { name: "О нас", link: "/contacts", id: 5 },
+  { name: "О нас", link: "/about", id: 5 },
 ];
 
 const pages2 = [{ name: "Зарегистрироваться", link: "/register", id: 4 }];
@@ -44,7 +45,7 @@ function Navbar() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-
+  const { user, handleLogout } = useAuth();
   return (
     <AppBar className="nav" position="static">
       <Container className="nav__container" maxWidth="xl">
@@ -115,9 +116,10 @@ function Navbar() {
                     key={page}
                     onClick={handleCloseNavMenu}
                   >
-                    <Typography className="nav__text" textAlign="center">
-                      {page.name}
-                    </Typography>
+                    <Typography
+                      className="nav__text"
+                      textAlign="center"
+                    ></Typography>
                   </MenuItem>
                 </Link>
               ))}
@@ -164,14 +166,18 @@ function Navbar() {
           <Box className="login__nav">
             {pages2.map((page, index) => (
               <Link key={index} to={page.link} className="nav__linkMain">
-                <Button
-                  className="nav__btn-some"
-                  key={page}
-                  onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "white", display: "block" }}
-                >
-                  {page.name}
-                </Button>
+                {user ? (
+                  ""
+                ) : (
+                  <Button
+                    className="nav__btn-some"
+                    key={page}
+                    onClick={handleCloseNavMenu}
+                    sx={{ my: 2, color: "white", display: "block" }}
+                  >
+                    {page.name}
+                  </Button>
+                )}
               </Link>
             ))}
           </Box>
@@ -208,20 +214,31 @@ function Navbar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              <MenuItem className="login_btn-in-nav-menu">
-                <Button
-                  className="btnOfNavMenu"
-                  onClick={() => navigate("/register")}
-                >
-                  Зарегистрироваться
-                </Button>
-              </MenuItem>
+              {/* ====== */}
 
+              {user ? (
+                ""
+              ) : (
+                <MenuItem className="login_btn-in-nav-menu">
+                  <Button
+                    className="btnOfNavMenu"
+                    onClick={() => navigate("/register")}
+                  >
+                    Зарегистрироваться
+                  </Button>
+                </MenuItem>
+              )}
+
+              <MenuItem>{user ? `${user}` : "pleas logIn"}</MenuItem>
               <MenuItem>
-                <Button className="btnOfNavMenu">
-                  <LogoutIcon />
-                  LogOut
-                </Button>
+                {user ? (
+                  <Button className="btnOfNavMenu" onClick={handleLogout}>
+                    <LogoutIcon />
+                    LogOut
+                  </Button>
+                ) : (
+                  ""
+                )}
               </MenuItem>
             </Menu>
           </Box>

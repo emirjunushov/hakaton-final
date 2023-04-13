@@ -7,13 +7,11 @@ import CartContextProvider from "./context/CartContextProvider";
 
 const App = () => {
   return (
-    <CartContextProvider>
-      <AuthContextProvider>
-        <Navbar />
-        <MainRoutes />
-        <Footer />
-      </AuthContextProvider>
-    </CartContextProvider>
+    <AuthContextProvider>
+      <Navbar />
+      <MainRoutes />
+      <Footer />
+    </AuthContextProvider>
   );
 };
 
