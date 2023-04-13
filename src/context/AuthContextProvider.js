@@ -10,7 +10,6 @@ const AuthContextProvider = ({ children }) => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  console.log(user);
   const handleRegister = async (formData) => {
     setLoading(true);
     try {
@@ -69,7 +68,39 @@ const AuthContextProvider = ({ children }) => {
     }
   };
 
+  const checkAuth = async () => {
+    setLoading(true);
+    try {
+      const tokens = JSON.parse(localStorage.getItem("tokens"));
+      const Authorization = `Bearer ${tokens.access}`;
+
+      const config = {
+        headers: {
+          Authorization,
+        },
+      };
+
+      const res = await axios.post(`${API}/account/token/refresh/`, {
+        refresh: tokens.refresh,
+        config,
+      });
+
+      localStorage.setItem(
+        "tokens",
+        JSON.stringify({ access: res.data.access, refresh: tokens.refresh })
+      );
+
+      const email = localStorage.getItem("email");
+      setUser(email);
+    } catch (error) {
+      handleLogout();
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const values = {
+    checkAuth,
     handleForgotPasswordFinish,
     handleForgotPasswordEmail,
     handleLogout,

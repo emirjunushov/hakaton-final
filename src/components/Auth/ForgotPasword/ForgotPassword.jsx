@@ -10,8 +10,8 @@ import Typography from "@mui/material/Typography";
 import { Input, TextField } from "@mui/material";
 import { useAuth } from "../../../context/AuthContextProvider";
 import { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "./ForgotPasword.css";
 
 export default function ForgotPassword() {
   const navigate = useNavigate();
@@ -21,14 +21,16 @@ export default function ForgotPassword() {
     if (activeStep == 0) {
       handleEmailForForgotPassword();
     } else if (activeStep === 1) {
-      await handleSaveForgotPasswordfinish();
+      handleSaveForgotPasswordfinish();
     }
   };
 
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
-
+  const handleReset = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
   // !++++++++++++++++++++++++++++++++++++++++++++forgotpassword
   const {
     handleForgotPasswordEmail,
@@ -43,29 +45,37 @@ export default function ForgotPassword() {
 
   async function handleEmailForForgotPassword() {
     if (!emailForForgotPassword.trim()) {
-      return alert("заполните все поля!");
+      alert("заполните все поля!");
+      return;
     } else {
       let formData = new FormData();
       formData.append("email", emailForForgotPassword);
 
-      await handleForgotPasswordEmail(formData);
-      setActiveStep((prevActiveStep) => prevActiveStep + 1);
+      try {
+        await handleForgotPasswordEmail(formData);
+        setActiveStep((prevActiveStep) => prevActiveStep + 1);
+      } catch (error) {
+        console.log(error);
+      }
     }
   }
 
   async function handleSaveForgotPasswordfinish() {
     if (!token.trim() || !newPassword.trim() || !newPasswordConfirm.trim()) {
-      alert("заполните все полddddя!");
-      return;
+      return alert("заполните все полddddя!");
     } else {
       let formData = new FormData();
       formData.append("token", token);
       formData.append("password", newPassword);
       formData.append("password2", newPasswordConfirm);
 
-      await handleForgotPasswordFinish(formData);
-      navigate("/login");
-      setActiveStep((prevActiveStep) => prevActiveStep + 1);
+      try {
+        await handleForgotPasswordFinish(formData);
+        // navigate("/login");
+        setActiveStep((prevActiveStep) => prevActiveStep + 1);
+      } catch (error) {
+        console.log(error);
+      }
     }
   }
 
@@ -73,21 +83,27 @@ export default function ForgotPassword() {
     setError(false);
   }, []);
   // !++++++++++++++++++++++++++++++++++++++++++++forgotpassword
+  //  activeStep == 0 &&
   const steps = [
     {
-      label: "Select campaign settings",
+      label:
+        activeStep == 0 && error ? (
+          <h4 style={{ color: "red" }}>{error}!!!</h4>
+        ) : (
+          "ведите email"
+        ),
       description: (
         <TextField
           onChange={(e) => setEmailForForgotPassword(e.target.value)}
           id="outlined-basic"
-          label="Outlined"
+          label="Email"
           variant="outlined"
         />
       ),
     },
-
+    // activeStep == 0 &&
     {
-      label: "Create an ad",
+      label: error ? <h4 style={{ color: "red" }}>{error}!!!</h4> : "код",
       description: (
         <>
           <TextField
@@ -112,54 +128,84 @@ export default function ForgotPassword() {
       ),
     },
   ];
+
+  React.useEffect(() => {
+    setError(false);
+  }, []);
   return (
-    <Box sx={{ maxWidth: 400 }}>
-      <Stepper activeStep={activeStep} orientation="vertical">
-        {steps.map((step, index) => (
-          <Step key={step.label}>
-            <StepLabel
-              optional={
-                index === 2 ? (
-                  <Typography variant="caption">Last step</Typography>
-                ) : null
-              }
-            >
-              {step.label}
-            </StepLabel>
-            <StepContent>
-              <Typography>{step.description}</Typography>
-              <Box sx={{ mb: 2 }}>
-                <div>
-                  <Button
-                    variant="contained"
-                    onClick={() => {
-                      handleNext();
-                    }}
-                    sx={{ mt: 1, mr: 1 }}
-                  >
-                    {index === steps.length - 1 ? "Finish" : "Continue"}
-                  </Button>
-                  <Button
-                    disabled={index === 0}
-                    onClick={handleBack}
-                    sx={{ mt: 1, mr: 1 }}
-                  >
-                    Back
-                  </Button>
-                </div>
-              </Box>
-            </StepContent>
-          </Step>
-        ))}
-      </Stepper>
-      {/* {activeStep === steps.length && (
-        <Paper square elevation={0} sx={{ p: 3 }}>
-          <Typography>All steps completed - you&apos;re finished</Typography>
-          <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
-            Reset
-          </Button>
-        </Paper>
-      )} */}
-    </Box>
+    <div className="forgotPassword_main_container">
+      <div className="forgotPassword__container">
+        <div className="account_recorvery">
+          <h2> Восстановление аккаунта</h2>
+          <h3>
+            Чтобы обеспечить безопасность вашей учетной записи, Google хочет
+            убедиться, что вы действительно пытаетесь войти в нее.
+          </h3>
+        </div>
+        <Box sx={{ maxWidth: 400, marginBottom: "8%" }}>
+          <Stepper activeStep={activeStep} orientation="vertical">
+            {steps.map((step, index) => (
+              <Step key={step.label}>
+                <StepLabel
+                  optional={
+                    index === 2 ? (
+                      <Typography variant="caption">Last step</Typography>
+                    ) : null
+                  }
+                >
+                  {step.label}
+                </StepLabel>
+                <StepContent>
+                  <Typography>{step.description}</Typography>
+                  <Box sx={{ mb: 2 }}>
+                    <div>
+                      <Button
+                        variant="contained"
+                        onClick={() => {
+                          handleNext();
+                        }}
+                        sx={{ mt: 1, mr: 1 }}
+                      >
+                        {index === steps.length - 1 ? "Finish" : "Continue"}
+                      </Button>
+                      <Button
+                        disabled={index === 0}
+                        onClick={handleBack}
+                        sx={{ mt: 1, mr: 1 }}
+                      >
+                        Back
+                      </Button>
+                    </div>
+                  </Box>
+                </StepContent>
+              </Step>
+            ))}
+          </Stepper>
+          {activeStep === steps.length && (
+            <Paper sx={{ p: 3, background: "transparent" }}>
+              {error ? (
+                <Typography>Все шаги не завершены - вы не закончили</Typography>
+              ) : (
+                <Typography>Все шаги завершены - вы закончили</Typography>
+              )}
+              <Button onClick={() => navigate("/login")} sx={{ mt: 1, mr: 1 }}>
+                Войти
+              </Button>
+              <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
+                Назад
+              </Button>
+            </Paper>
+          )}
+        </Box>
+        {activeStep == 1 ? (
+          <h2 className="account_recorvery_buttom">
+            BATIR отправил уведомление на ваш iPhone. Откройте почту ,и введите
+            код, чтобы подтвердить, что это вы.
+          </h2>
+        ) : (
+          ""
+        )}
+      </div>
+    </div>
   );
 }

@@ -12,8 +12,9 @@ import emark from "../../../IMAGES/imgAboutUs/logovEmark.png";
 const AboutUs = () => {
   return (
     <div className="aboutUs">
-      <h4 className="aboutUs_h4">Квартира</h4>
-      <p className="aboutUs_p">
+      <h2>Квартира</h2>
+      <p>
+        {" "}
         один из видов жилого помещения, состоящий из одной или нескольких
         смежных комнат, в некоторых случаях с отдельным наружным выходом,
         составляющее отдельную часть дома.
@@ -85,7 +86,7 @@ const AboutUs = () => {
           </p>
         </div>
       </div>
-      <h3 className="partnerAbout">Наши партнеры</h3>
+      <h2 className="partnerAbout">Наши партнеры</h2>
       <div className="partner">
         <div>
           <a href="https://emakom.kg/">
@@ -143,7 +144,6 @@ const AboutUs = () => {
         <video
           width="100%"
           height="600px"
-          controls="loop"
           poster="video/duel.jpg"
           autoPlay
           loop
@@ -157,7 +157,7 @@ const AboutUs = () => {
       </div>
       <hr />
       <div className="map">
-        <h4 className=" aboutUs_h4">Наш адрес</h4>
+        <h2>Наш адрес</h2>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5880.476514297016!2d74.59062015568651!3d42.87054836762043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2skg!4v1681291863710!5m2!1sru!2skg"
           width="100%"

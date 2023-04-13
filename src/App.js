@@ -3,14 +3,18 @@ import Navbar from "./components/Navbar/Navbar";
 import MainRoutes from "./components/routes/MainRoutes";
 import AuthContextProvider from "./context/AuthContextProvider";
 import Footer from "./components/Footer/Footer";
-import CartContextProvider from "./context/CartContextProvider";
+import AddProductProvider from "./context/AddProductProvider";
+import ProductCard from "./components/products/ProductCard";
+import ProductList from "./components/products/ProductList";
 
 const App = () => {
   return (
     <AuthContextProvider>
-      <Navbar />
-      <MainRoutes />
-      {/* <Footer /> */}
+      <AddProductProvider>
+        <Navbar />
+        <MainRoutes />
+        {/* <Footer /> */}
+      </AddProductProvider>
     </AuthContextProvider>
   );
 };
