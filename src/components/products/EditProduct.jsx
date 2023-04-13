@@ -1,10 +1,27 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { useProduct } from "../../context/AddProductProvider";
 
-const AddProduct = () => {
-  const { createProduct } = useProduct();
+const EditProduct = () => {
+  const { getOneProduct, oneProduct, updateProduct } = useProduct();
 
+  const { id } = useParams();
+  useEffect(() => {
+    getOneProduct(id);
+  }, []);
 
+  useEffect(() => {
+    if (oneProduct) {
+      setStreet(oneProduct.street);
+      setCity(oneProduct.city);
+      setRooms(oneProduct.rooms);
+      setNumberOfBeds(oneProduct.number_of_beds);
+      setFloor(oneProduct.floor);
+      setCategory(oneProduct.category);
+      setPrice(oneProduct.price);
+      setImages(oneProduct.images);
+    }
+  }, [oneProduct]);
 
   const [user, setUser] = useState("");
   const [street, setStreet] = useState("");
@@ -15,9 +32,6 @@ const AddProduct = () => {
   const [category, setCategory] = useState("");
   const [price, setPrice] = useState("");
   const [images, setImages] = useState("");
-
-
-
 
   function handleSave() {
     let newProduct = new FormData();
@@ -30,7 +44,7 @@ const AddProduct = () => {
     newProduct.append("price", price);
     newProduct.append("category", category);
     newProduct.append("images", images);
-    createProduct(newProduct);
+    updateProduct(id, newProduct);
   }
 
   return (
@@ -89,9 +103,9 @@ const AddProduct = () => {
         accept="image/*"
         onChange={(e) => setImages(e.target.files[0])}
       />
-      <button onClick={handleSave}> add product</button>
+      <button onClick={handleSave}> SAVE CHANGES</button>
     </div>
   );
 };
 
-export default AddProduct;
+export default EditProduct;
