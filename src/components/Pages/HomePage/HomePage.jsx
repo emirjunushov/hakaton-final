@@ -5,6 +5,14 @@ const HomePage = () => {
   return (
     <div>
       <SliderList />
+
+      <video
+        width="100%"
+        src="http://manas.su/video/k1.mp4"
+        autoPlay
+        loop
+        muted
+      ></video>
     </div>
   );
 };

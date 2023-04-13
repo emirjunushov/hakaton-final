@@ -10,7 +10,6 @@ const AuthContextProvider = ({ children }) => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  console.log(user);
   const handleRegister = async (formData) => {
     setLoading(true);
     try {
