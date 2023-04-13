@@ -16,6 +16,7 @@ const MainRoutes = () => {
     { link: "/about", element: <AboutUs />, id: 5 },
     { link: "/forgotPassword", element: <ForgotPassword />, id: 6 },
   ];
+
   return (
     <>
       <Routes>
