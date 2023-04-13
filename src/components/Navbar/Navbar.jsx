@@ -116,10 +116,9 @@ function Navbar() {
                     key={page}
                     onClick={handleCloseNavMenu}
                   >
-                    <Typography
-                      className="nav__text"
-                      textAlign="center"
-                    ></Typography>
+                    <Typography className="nav__text" textAlign="center">
+                      {page.name}
+                    </Typography>
                   </MenuItem>
                 </Link>
               ))}
@@ -169,14 +168,14 @@ function Navbar() {
                 {user ? (
                   ""
                 ) : (
-                  <Button
+                  <button
                     className="nav__btn-some"
                     key={page}
                     onClick={handleCloseNavMenu}
                     sx={{ my: 2, color: "white", display: "block" }}
                   >
                     {page.name}
-                  </Button>
+                  </button>
                 )}
               </Link>
             ))}
@@ -222,6 +221,7 @@ function Navbar() {
                 <MenuItem className="login_btn-in-nav-menu">
                   <Button
                     className="btnOfNavMenu"
+                    variant="outlined"
                     onClick={() => navigate("/register")}
                   >
                     Зарегистрироваться

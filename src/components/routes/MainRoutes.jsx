@@ -5,7 +5,7 @@ import RegisterList from "../Auth/RegisterList/RegisterList";
 import RegisterSucces from "../Auth/Activate/Activate";
 import HomePage from "../Pages/HomePage/HomePage";
 import AboutUs from "../Pages/AboutUs/AboutUs";
-import ForgotPassword from "../Auth/ForgotPasword/ForgotPasword";
+import ForgotPassword from "../Auth/ForgotPasword/ForgotPassword";
 
 const MainRoutes = () => {
   const ROUTES = [
