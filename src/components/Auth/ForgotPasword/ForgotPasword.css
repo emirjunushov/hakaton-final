@@ -1,0 +1,62 @@
+.forgotPassword__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+
+  border: 1px solid black;
+  width: 40%;
+  flex-direction: column;
+}
+.textfield {
+  background-color: rgba(255, 255, 255, 0.55);
+  border: 3px solid #e9ff5cb8;
+  border-radius: 20px;
+  width: 40%;
+  height: 30px;
+  margin: 1rem;
+
+  transition: 1s;
+}
+.textfield:hover {
+  background-color: white;
+  padding-left: 2rem;
+  font-size: large;
+}
+.textfield:focus {
+  background-color: white;
+  padding-left: 2rem;
+  font-size: large;
+}
+.forgotPassword_main_container {
+  display: flex;
+  justify-content: center;
+  margin-top: 7vh;
+}
+
+.account_recorvery {
+  font-family: "Montserrat", sans-serif;
+  text-align: center !important;
+
+  padding-bottom: 16%;
+  padding-top: 13%;
+}
+.account_recorvery > h3 {
+  color: #202124;
+  font-size: 16px;
+  font-weight: 200;
+  width: 80%;
+  margin-left: 9%;
+  margin-top: 4%;
+}
+.account_recorvery_buttom {
+  padding-bottom: 16%;
+
+  color: #202124;
+  font-size: 16px;
+  font-weight: 200;
+  width: 80%;
+}
