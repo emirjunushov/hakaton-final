@@ -12,6 +12,7 @@ import { useAuth } from "../../../context/AuthContextProvider";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "./ForgotPassword.css";
 
 export default function ForgotPassword() {
   const navigate = useNavigate();
@@ -43,7 +44,8 @@ export default function ForgotPassword() {
 
   async function handleEmailForForgotPassword() {
     if (!emailForForgotPassword.trim()) {
-      return alert("заполните все поля!");
+      alert("заполните все поля!");
+      return;
     } else {
       let formData = new FormData();
       formData.append("email", emailForForgotPassword);
@@ -55,8 +57,7 @@ export default function ForgotPassword() {
 
   async function handleSaveForgotPasswordfinish() {
     if (!token.trim() || !newPassword.trim() || !newPasswordConfirm.trim()) {
-      alert("заполните все полddddя!");
-      return;
+      return alert("заполните все полddddя!");
     } else {
       let formData = new FormData();
       formData.append("token", token);
@@ -75,7 +76,7 @@ export default function ForgotPassword() {
   // !++++++++++++++++++++++++++++++++++++++++++++forgotpassword
   const steps = [
     {
-      label: "Select campaign settings",
+      label: "rehtdjyfughi",
       description: (
         <TextField
           onChange={(e) => setEmailForForgotPassword(e.target.value)}
@@ -112,6 +113,10 @@ export default function ForgotPassword() {
       ),
     },
   ];
+
+  React.useEffect(() => {
+    setError(false);
+  }, []);
   return (
     <Box sx={{ maxWidth: 400 }}>
       <Stepper activeStep={activeStep} orientation="vertical">
