@@ -18,7 +18,9 @@ const Footer = () => {
           <div className="wave" id="wave3"></div>
           <div className="wave" id="wave4"></div>
         </div>
-        <img className="logo_Footer" src={batir} alt="" />
+        <div>
+          <img className="logo_Footer" src={batir} alt="" />
+        </div>
 
         <ul className="social-icon">
           <li className="social-icon__item">
@@ -52,7 +54,7 @@ const Footer = () => {
         </ul>
         <ul className="menu">
           <li className="menu__item">
-            <a className="menu__link" href="#">
+            <a className="menu__link" href="/">
               <HomeIcon />
             </a>
           </li>

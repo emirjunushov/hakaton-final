@@ -7,14 +7,18 @@ import { Button, TextField, Typography } from "@mui/material";
 
 import KeyIcon from "@mui/icons-material/Key";
 import { useNavigate } from "react-router-dom";
+import CheckBoxIcon from "@mui/icons-material/CheckBox";
+import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
+import { useState } from "react";
+
 export default function RegisterList() {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [passwordConfirm, setPasswordConfirm] = React.useState("");
   const [userName, setUserName] = React.useState("");
-
+  const [check, setCheck] = useState(null);
   const { handleRegister, loading, error, setError } = useAuth();
-
+  console.log(check);
   const handleSave = () => {
     // e.preventDefault();
 
@@ -39,6 +43,7 @@ export default function RegisterList() {
     setError(false);
   }, []);
   const navigate = useNavigate();
+
   return (
     <>
       <video className="video_bg" src={video} autoPlay loop muted />
@@ -90,7 +95,7 @@ export default function RegisterList() {
         </div>
         <>
           {" "}
-          {email && password && passwordConfirm && userName ? (
+          {email && password && passwordConfirm && userName && check ? (
             <Button
               onClick={handleSave}
               className="button_of_register"
@@ -112,6 +117,19 @@ export default function RegisterList() {
           <Button onClick={() => navigate("/login")} sx={{ color: "black" }}>
             Log in ?
           </Button>
+
+          {check ? (
+            <Button sx={{ color: "black" }} onClick={() => setCheck(false)}>
+              <CheckBoxIcon />Я принимаю все условия
+            </Button>
+          ) : (
+            <Button
+              sx={{ color: "rgba(0, 0, 0, 0.508)" }}
+              onClick={() => setCheck(true)}
+            >
+              <CheckBoxOutlineBlankIcon />Я принимаю все условия
+            </Button>
+          )}
         </div>
       </div>
     </>
