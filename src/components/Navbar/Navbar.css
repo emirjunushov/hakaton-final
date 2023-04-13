@@ -8,10 +8,6 @@ body {
   padding: 0;
 }
 
-.nav {
-  background-color: rgba(0, 0, 0, 0.216) !important;
-}
-
 .nav__linkMain {
   width: 15%;
   display: flex;
@@ -69,7 +65,11 @@ body {
 }
 
 .nav__btn-some {
+  margin: 0;
+  font-size: 18px;
   color: #e9ff5c !important;
+  border: none;
+  background: transparent !important;
 }
 .nav__btn-some:hover {
   color: white !important;
@@ -131,5 +131,11 @@ body {
   }
   .nav__icon {
     display: none;
+  }
+  .nav__linkMain {
+    display: none;
+  }
+  .nav__linkMain {
+    display: block;
   }
 }
