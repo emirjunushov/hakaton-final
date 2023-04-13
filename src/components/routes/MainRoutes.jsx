@@ -6,6 +6,7 @@ import RegisterSucces from "../Auth/Activate/Activate";
 import HomePage from "../Pages/HomePage/HomePage";
 import AboutUs from "../Pages/AboutUs/AboutUs";
 import ForgotPassword from "../Auth/ForgotPasword/ForgotPassword";
+import ProductCart from "../products/ProductCard";
 
 const MainRoutes = () => {
   const ROUTES = [
@@ -15,6 +16,7 @@ const MainRoutes = () => {
     { link: "/activate", element: <RegisterSucces />, id: 4 },
     { link: "/about", element: <AboutUs />, id: 5 },
     { link: "/forgotPassword", element: <ForgotPassword />, id: 6 },
+    { link: "/card", element: <ProductCart />, id: 7 },
   ];
 
   return (

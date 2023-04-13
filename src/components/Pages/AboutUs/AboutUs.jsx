@@ -20,38 +20,64 @@ const AboutUs = () => {
         <br /> Ваш дом — это место семейного очага.
       </p>
 
-      <div className="aboutus">
-        <div className="aboutBlock">
-          <img className="kv" src={kitchen} alt="" />
-          <p>
-            Кухня — это сердце и душа любого дома и оно предназначено для
-            приготовления еды для семьи и гостей
-          </p>
+      <div className="auCards">
+        <div className="aboutCard">
+          <img
+            style={{ width: "300px", height: "400px" }}
+            src={kitchen}
+            alt=""
+          />
+          <div className="textkv">
+            <p>
+              Кухня — это сердце и душа любого дома и оно предназначено для
+              приготовления еды для семьи и гостей
+            </p>
+          </div>
         </div>
-        <div className="aboutBlock">
-          <img className="kv" src={bedroom} alt="" />
-          <p>
+        <div className="aboutCard">
+          <img
+            style={{ width: "300px", height: "400px" }}
+            className="kv"
+            src={bedroom}
+            alt=""
+          />
+          <p className="textkv">
             Спальня — комната в жилище, место в помещении (доме, квартире и так
             далее) для сна и отдыха.
           </p>
         </div>
-        <div className="aboutBlock">
-          <img className="kv" src={hall} alt="" />
-          <p>
+        <div className="aboutCard">
+          <img
+            style={{ width: "300px", height: "400px" }}
+            className="kv"
+            src={hall}
+            alt=""
+          />
+          <p className="textkv">
             Зал — большое, обычно парадное помещение в доме, предназначенное для
             приёма гостей, развлечений и т. п.
           </p>
         </div>
-        <div className="aboutBlock">
-          <img className="kv" src={hallway} alt="" />
-          <p>
+        <div className="aboutCard">
+          <img
+            style={{ width: "300px", height: "400px" }}
+            className="kv"
+            src={hallway}
+            alt=""
+          />
+          <p className="textkv">
             Прихожая — часть жилого помещения (квартиры, частного дома),
             располагающаяся сразу за входом в него
           </p>
         </div>
-        <div className="aboutBlock">
-          <img className="kv" src={canuzel} alt="" />
-          <p>
+        <div className="aboutCard">
+          <img
+            style={{ width: "300px", height: "400px" }}
+            className="kv"
+            src={canuzel}
+            alt=""
+          />
+          <p className="textkv">
             Санузел — буквально место для санитарных и гигиенических процедур.
             Обычно под санузлом понимается помещение, где человек может справить
             свои естественные физиологические потребности и привести себя в
@@ -119,6 +145,9 @@ const AboutUs = () => {
           height="600px"
           controls="loop"
           poster="video/duel.jpg"
+          autoPlay
+          loop
+          muted
         >
           <source
             src="https://player.vimeo.com/external/501275358.sd.mp4?s=30a52049f69e86b6ef149996b4ee701ef50abe9a&profile_id=164"
