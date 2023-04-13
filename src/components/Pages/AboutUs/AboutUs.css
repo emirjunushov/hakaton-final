@@ -3,42 +3,84 @@
   text-align: center;
 }
 
-.aboutus {
-  margin-top: 15px;
-  text-align: center;
-  color: black;
+.aboutCard {
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+  transition: ease 3s;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 0 5px;
+}
+
+.aboutCard:hover {
+  transform: scale(0.9);
+}
+
+.aboutCard img {
+  transition: ease 5s ease;
+}
+
+.aboutCard:hover img {
+  transform: scale(1.35);
+}
+
+.aboutCard:hover .textkv {
+  position: absolute;
+  bottom: 0;
+  opacity: 1;
+}
+
+.textkv {
+  opacity: 0;
+  transition: ease 3s ease;
+  color: white;
+  font: italic 1.2em "Fira Sans", serif;
+  padding: 1.25rem;
+  z-index: 30;
+}
+
+.aboutCard::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  z-index: 20;
+  display: none;
+}
+
+.aboutCard:hover:after {
+  display: block;
+}
+
+.auCards {
   display: flex;
   justify-content: space-around;
+  max-width: 1100px;
+  margin: 50px auto;
   flex-wrap: wrap;
-}
-.kv {
-  width: 300px;
-  height: 210px;
-}
-
-.aboutBlock {
-  margin: 5px;
-  width: 300px;
-  transition: 1s;
-}
-
-.aboutBlock:hover {
-  background: black;
-  color: white;
 }
 
 .logoAbout {
+  margin-top: 100px;
   cursor: pointer;
   width: 100px;
   transition: 1s;
 }
 
 .logoAbout:hover {
-  transform: translateY(10px);
+  transform: translateY(-20px);
 }
 
 .partnerAbout {
-  margin-top: 100px;
+  margin-top: 10%;
 }
 
 .partner {

@@ -16,7 +16,7 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContextProvider";
-import logoPng from "../Footer/img_Footer/logo.png";
+import logoPng from "../../../src/IMAGES/logoN.png";
 
 const pages = [
   { name: "Главная", link: "/", id: 1 },
