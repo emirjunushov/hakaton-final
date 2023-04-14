@@ -7,8 +7,10 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import HomeIcon from "@mui/icons-material/Home";
 import PhoneIcon from "@mui/icons-material/Phone";
 import batir from "./img_Footer/logo.png";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navgate = useNavigate();
   return (
     <div>
       <footer className="footer">
@@ -70,7 +72,7 @@ const Footer = () => {
             </a>
           </li>
           <li className="menu__item">
-            <a className="menu__link" href="#">
+            <a className="menu__link" onClick={() => navgate("/contacts")}>
               <PhoneIcon />
             </a>
           </li>
