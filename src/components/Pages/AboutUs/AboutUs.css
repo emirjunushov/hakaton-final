@@ -1,3 +1,35 @@
+@-webkit-keyframes shadow-drop-2-center {
+  0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translateZ(50px);
+    transform: translateZ(50px);
+    -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+  }
+}
+@keyframes shadow-drop-2-center {
+  0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translateZ(50px);
+    transform: translateZ(50px);
+    -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+  }
+}
+
+body {
+  background-color: #e3f1fc;
+}
 .aboutUs {
   margin-top: 50px;
   text-align: center;
@@ -11,6 +43,7 @@
   position: relative;
   border-radius: 10px;
   box-shadow: 0 0 5px;
+  margin: 20px;
 }
 
 .aboutCard:hover {
@@ -92,4 +125,18 @@
 
 .map {
   margin-top: 100px;
+}
+
+.aboutUs_h4 {
+  font-size: 40px;
+  color: rgb(24, 52, 90);
+  margin-bottom: 30px;
+}
+.aboutUs_p {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  font-size: 20px;
+  color: rgb(24, 52, 90);
+  font-style: unset;
 }
