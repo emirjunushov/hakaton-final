@@ -19,12 +19,10 @@ const MainRoutes = () => {
     { link: "/activate", element: <RegisterSucces />, id: 4 },
     { link: "/about", element: <AboutUs />, id: 5 },
     { link: "/forgotPassword", element: <ForgotPassword />, id: 6 },
-    { link: "/add/product", element: <AddProduct/>, id: 7 },
+    { link: "/add/product", element: <AddProduct />, id: 7 },
     { link: "/*", element: <h1>not found</h1>, id: 8 },
-    { link: "/products", element: <ProductList/>, id: 9 },
-    { link: "/edit/:id", element: <EditProduct/>, id: 10 },
-
-
+    { link: "/products", element: <ProductList />, id: 9 },
+    { link: "/edit/:id", element: <EditProduct />, id: 10 },
   ];
 
   return (
