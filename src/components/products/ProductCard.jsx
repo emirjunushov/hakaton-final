@@ -5,10 +5,13 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import { IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
+import { useProduct } from "../../context/AddProductProvider";
 // import styled from "@emotion/styled";
 
-export default function ProductCart() {
+export default function ProductCard({item}) {
+  const {deleteProduct} = useProduct()
   const [mouse, setMouse] = React.useState(false);
+  
   return (
     <>
       <div
@@ -19,7 +22,7 @@ export default function ProductCart() {
         {mouse ? (
           <div class="product-left">
             <div class="header">
-              <h1>Toro SLing Chair</h1>
+              <h1></h1>
               <h2>Sit down in modern</h2>
             </div>
             {/* <!--DESCRIPITON / DETAILS--> */}
@@ -29,18 +32,14 @@ export default function ProductCart() {
                 <span>Details</span>
               </div>
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Ratione voluptatem quam vel, delectus expedita ullam asperiores
-                laudantium modi. Voluptatum eum cum quis ea modi. Reiciendis
-                asperiores aut beatae odit minima.
+                {item.rooms}
               </p>
             </div>
             {/* <!--CHOOSE PRODUCT DETAILS--> */}
             <div class="product-details">
               {/* <!--PRODUCT TOTAL--> */}
               <div class="product-total">
-                <h3>Total Price</h3>
-                <p>$1399.00</p>
+                <h3>{}</h3>
               </div>
             </div>
             {/* <!-- ADD TO CART BUTTON --> */}
@@ -80,7 +79,7 @@ export default function ProductCart() {
         <div class="product-right">
           <img
             className="product-right-img"
-            src="https://www.ccnova.ru/images/blog/sovremennye-doma/sovremennyj-dom-4.jpg"
+            src={item.images}
             alt=""
           />
         </div>

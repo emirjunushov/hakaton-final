@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useProduct } from "../../context/AddProductProvider";
-import ProductCard from "./ProductCard";
 import PaginationList from "./PaginationList";
 import { useSearchParams } from "react-router-dom";
+import ProductCard from "./ProductCard";
 
 const ProductList = () => {
   const { getProducts, products, pages } = useProduct();
@@ -24,7 +24,6 @@ const ProductList = () => {
     for (let i = 1; i <= pages; i++) {
       pageCountArr.push(i);
     }
-    console.log(pageCountArr);
     return pageCountArr;
   }
 

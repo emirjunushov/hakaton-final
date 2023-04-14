@@ -18,7 +18,7 @@ function reducer(state = INIT_STATE, action) {
       return {
         ...state,
         products: action.payload.results,
-        pages: Math.ceil(action.payload.count / 10)
+        pages: Math.ceil(action.payload.count / 10),
       };
     case "GET_ONE_PRODUCT":
       return { ...state, oneProduct: action.payload };
@@ -49,7 +49,9 @@ const AddProductProvider = ({ children }) => {
 
   const getProducts = async () => {
     try {
-      const res = await axios.get(`${API}/apartments/`);
+      const res = await axios.get(
+        `${API}/apartments/${window.location.search}`
+      );
       dispatch({ type: "GET_PRODUCTS", payload: res.data });
       console.log(res);
     } catch (error) {
@@ -114,7 +116,6 @@ const AddProductProvider = ({ children }) => {
       console.log(error);
     }
   };
-console.log(state);
   //! =======================================================================================================================================
   const values = {
     products: state.products,
