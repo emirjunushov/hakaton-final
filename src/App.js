@@ -5,7 +5,6 @@ import AuthContextProvider from "./context/AuthContextProvider";
 import Footer from "./components/Footer/Footer";
 import AddProductProvider from "./context/AddProductProvider";
 import ProductCard from "./components/products/ProductCard";
-import ProductList from "./components/products/ProductList";
 
 const App = () => {
   return (
@@ -13,11 +12,11 @@ const App = () => {
       <AddProductProvider>
         <Navbar />
         <MainRoutes />
-        {/* <Footer /> */}
+        <ProductCard />
+        <Footer />
       </AddProductProvider>
     </AuthContextProvider>
   );
 };
 
 export default App;
-
