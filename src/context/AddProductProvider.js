@@ -50,7 +50,7 @@ const AddProductProvider = ({ children }) => {
   const getProducts = async () => {
     try {
       const res = await axios.get(
-        `${API}/apartments/${window.location.search}`
+        `${API}/apartments/${window.location.search}/`
       );
       dispatch({ type: "GET_PRODUCTS", payload: res.data });
       console.log(res);
@@ -117,6 +117,22 @@ const AddProductProvider = ({ children }) => {
     }
   };
   //! =======================================================================================================================================
+
+  const fetchByParams = async (query, value) => {
+    const search = new URLSearchParams(window.location.search);
+
+    if (value == "all") {
+      search.delete(query);
+    } else {
+      search.set(query, value);
+    }
+    const url = `${window.location.pathname}?${search.toString()}`;
+
+    navigate(url);
+  };
+
+  //! =======================================================================================================================================
+
   const values = {
     products: state.products,
     oneProduct: state.oneProduct,
@@ -126,6 +142,7 @@ const AddProductProvider = ({ children }) => {
     deleteProduct,
     getOneProduct,
     updateProduct,
+    fetchByParams,
   };
   return <AddProduct.Provider value={values}>{children}</AddProduct.Provider>;
 };

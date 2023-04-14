@@ -3,6 +3,7 @@ import { useProduct } from "../../context/AddProductProvider";
 import PaginationList from "./PaginationList";
 import { useSearchParams } from "react-router-dom";
 import ProductCard from "./ProductCard";
+import SearchBar from "../searchBar/SearchBar";
 
 const ProductList = () => {
   const { getProducts, products, pages } = useProduct();
@@ -32,6 +33,7 @@ const ProductList = () => {
   }, []);
   return (
     <div>
+      <SearchBar/>
       <div className="d-flex justify-content-center flex-wrap">
         {products.map((item) => (
           <ProductCard key={item.id} item={item} />
