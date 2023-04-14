@@ -9,6 +9,7 @@ import ForgotPassword from "../Auth/ForgotPasword/ForgotPassword";
 import AddProduct from "../products/Addproduct";
 import ProductList from "../products/ProductList";
 import EditProduct from "../products/EditProduct";
+import Contacts from "../Pages/Contacts/Contacts";
 
 const MainRoutes = () => {
   const ROUTES = [
@@ -22,6 +23,7 @@ const MainRoutes = () => {
     { link: "/*", element: <h1>not found</h1>, id: 8 },
     { link: "/products", element: <ProductList />, id: 9 },
     { link: "/edit/:id", element: <EditProduct />, id: 10 },
+    { link: "/contacts", element: <Contacts />, id: 11 },
   ];
 
   return (

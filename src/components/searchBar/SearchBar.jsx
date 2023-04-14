@@ -6,7 +6,7 @@ import { IconButton } from "@mui/material";
 const SearchBar = () => {
   return (
     <div className="searchsarcontainer">
-      <div data-aos="fade-up" className="searchBar">
+      <div className="searchBar">
         <div>
           <IconButton>
             <SearchIcon />
