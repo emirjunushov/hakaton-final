@@ -49,7 +49,6 @@ const AuthContextProvider = ({ children }) => {
     localStorage.removeItem("tokens");
     localStorage.removeItem("email");
     setUser(null);
-    navigate("/login");
   };
 
   const handleForgotPasswordEmail = async (formData) => {
@@ -80,14 +79,14 @@ const AuthContextProvider = ({ children }) => {
         },
       };
 
-      const res = await axios.post(`${API}/account/token/refresh/`, {
+      const res = await axios.post(`${API}/api/token/refresh/`, {
         refresh: tokens.refresh,
         config,
       });
 
       localStorage.setItem(
         "tokens",
-        JSON.stringify({ access: res.data.access, refresh: tokens.refresh })
+        JSON.stringify({ access: res.data.access, refresh: res.data.refresh })
       );
 
       const email = localStorage.getItem("email");
