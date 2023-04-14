@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import LoginList from "../Auth/LoginList/LoginList";
-import RegisterList from "../Auth/RegisterList/RegisterList";
+
 import RegisterSucces from "../Auth/Activate/Activate";
 import HomePage from "../Pages/HomePage/HomePage";
 import AboutUs from "../Pages/AboutUs/AboutUs";
@@ -9,6 +9,8 @@ import ForgotPassword from "../Auth/ForgotPasword/ForgotPassword";
 import AddProduct from "../products/Addproduct";
 import ProductList from "../products/ProductList";
 import EditProduct from "../products/EditProduct";
+import RegisterList from "../Auth/RegisterList/RegisterList";
+import Contacts from "../Pages/Contacts/Contacts";
 
 const MainRoutes = () => {
   const ROUTES = [
@@ -22,6 +24,7 @@ const MainRoutes = () => {
     { link: "/*", element: <h1>not found</h1>, id: 8 },
     { link: "/products", element: <ProductList />, id: 9 },
     { link: "/edit/:id", element: <EditProduct />, id: 10 },
+    { link: "/contacts", element: <Contacts />, id: 11 },
   ];
 
   return (

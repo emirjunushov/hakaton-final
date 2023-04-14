@@ -9,6 +9,7 @@ export const useProduct = () => useContext(AddProduct);
 const INIT_STATE = {
   products: [],
   oneProduct: null,
+  pages: 0,
 };
 
 function reducer(state = INIT_STATE, action) {
@@ -16,7 +17,8 @@ function reducer(state = INIT_STATE, action) {
     case "GET_PRODUCTS":
       return {
         ...state,
-        products: action.payload,
+        products: action.payload.results,
+        pages: Math.ceil(action.payload.count / 10),
       };
     case "GET_ONE_PRODUCT":
       return { ...state, oneProduct: action.payload };
@@ -47,8 +49,10 @@ const AddProductProvider = ({ children }) => {
 
   const getProducts = async () => {
     try {
-      const res = await axios.get(`${API}/apartments/`);
-      dispatch({ type: "GET_PRODUCTS", payload: res.data.results });
+      const res = await axios.get(
+        `${API}/apartments/${window.location.search}/`
+      );
+      dispatch({ type: "GET_PRODUCTS", payload: res.data });
       console.log(res);
     } catch (error) {
       console.log(error);
@@ -86,7 +90,6 @@ const AddProductProvider = ({ children }) => {
       };
 
       const res = await axios.get(`${API}/apartments/${id}/`, config);
-      console.log(res);
       dispatch({ type: "GET_ONE_PRODUCT", payload: res.data });
       console.log(res);
     } catch (error) {
@@ -113,17 +116,33 @@ const AddProductProvider = ({ children }) => {
       console.log(error);
     }
   };
+  //! =======================================================================================================================================
+
+  const fetchByParams = async (query, value) => {
+    const search = new URLSearchParams(window.location.search);
+
+    if (value == "all") {
+      search.delete(query);
+    } else {
+      search.set(query, value);
+    }
+    const url = `${window.location.pathname}?${search.toString()}`;
+
+    navigate(url);
+  };
 
   //! =======================================================================================================================================
 
   const values = {
     products: state.products,
     oneProduct: state.oneProduct,
+    pages: state.pages,
     createProduct,
     getProducts,
     deleteProduct,
     getOneProduct,
     updateProduct,
+    fetchByParams,
   };
   return <AddProduct.Provider value={values}>{children}</AddProduct.Provider>;
 };

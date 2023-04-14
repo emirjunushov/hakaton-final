@@ -1,14 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import { useAuth } from "../../../context/AuthContextProvider";
-
+import "./Activate.css";
 const Activate = () => {
   const { handleActivate, error } = useAuth();
   const [activate, setacivate] = useState();
 
-  const handleSave = (e) => {
-    e.preventDefault();
-
+  const handleSave = () => {
     if (!activate.trim()) {
       alert("заполните все поля!");
     } else {
@@ -19,12 +17,18 @@ const Activate = () => {
     }
   };
   return (
-    <div>
+    <div className="main_activate_container">
       {error ? <h2>{error}</h2> : null}
-      <form action="submit" onSubmit={handleSave}>
-        <input onChange={(e) => setacivate(e.target.value)} type="text" />
-        <button>add</button>
-      </form>
+      <div className="child_container_of_activate">
+        <input
+          className="input_of_activate"
+          onChange={(e) => setacivate(e.target.value)}
+          type="text"
+        />
+        <button className="button_of_activate" onClick={handleSave}>
+          add
+        </button>
+      </div>
     </div>
   );
 };

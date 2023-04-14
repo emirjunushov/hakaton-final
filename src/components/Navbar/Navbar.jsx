@@ -20,12 +20,12 @@ import logoPng from "../../../src/IMAGES/logN.png";
 
 const pages = [
   { name: "Главная", link: "/", id: 1 },
-  { name: "Test", link: "/test", id: 2 },
-  { name: "Test", link: "/second-test", id: 3 },
+  { name: "products", link: "/products", id: 2 },
+  { name: "add products", link: "/add/product", id: 3 },
   { name: "О нас", link: "/about", id: 5 },
 ];
 
-const pages2 = [{ name: "Зарегистрироваться", link: "/register", id: 4 }];
+const pages2 = [{ name: "Аккаунт", link: "/register", id: 4 }];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -45,7 +45,13 @@ function Navbar() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-  const { user, handleLogout } = useAuth();
+  const { user, handleLogout, checkAuth } = useAuth();
+
+  React.useEffect(() => {
+    if (localStorage.getItem("tokens")) {
+      checkAuth();
+    }
+  }, []);
   return (
     <AppBar className="nav" position="static">
       <Container className="nav__container" maxWidth="xl">
@@ -190,7 +196,7 @@ function Navbar() {
               >
                 <Avatar
                   className="nav-avatar"
-                  alt="Remy Sharp"
+                  alt={user}
                   src="/static/images/avatar/2.jpg"
                 />
               </IconButton>
