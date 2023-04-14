@@ -1,12 +1,24 @@
-.SearchBar__container {
+.searchsarcontainer {
   height: 10rem;
   margin: 3rem 0 0 0;
 }
 
 .searchBar {
+  transition-property: line inherit;
+  transition-duration: 3s;
+
   background-color: #031f3d;
   width: 70%;
   margin: auto;
   height: 8rem;
   border-radius: 15px;
+}
+
+@keyframes mymove {
+  from {
+    top: 0px;
+  }
+  to {
+    top: 200px;
+  }
 }
