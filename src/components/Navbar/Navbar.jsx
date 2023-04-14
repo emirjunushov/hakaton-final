@@ -20,8 +20,8 @@ import logoPng from "../../../src/IMAGES/logN.png";
 
 const pages = [
   { name: "Главная", link: "/", id: 1 },
-  { name: "Test", link: "/test", id: 2 },
-  { name: "Test", link: "/second-test", id: 3 },
+  { name: "products", link: "/products", id: 2 },
+  { name: "add products", link: "/add/product", id: 3 },
   { name: "О нас", link: "/about", id: 5 },
 ];
 
