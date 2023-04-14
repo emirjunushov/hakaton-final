@@ -9,6 +9,7 @@ export const useProduct = () => useContext(AddProduct);
 const INIT_STATE = {
   products: [],
   oneProduct: null,
+  pages: 0,
 };
 
 function reducer(state = INIT_STATE, action) {
@@ -16,7 +17,8 @@ function reducer(state = INIT_STATE, action) {
     case "GET_PRODUCTS":
       return {
         ...state,
-        products: action.payload,
+        products: action.payload.results,
+        pages: Math.ceil(action.payload.count / 10)
       };
     case "GET_ONE_PRODUCT":
       return { ...state, oneProduct: action.payload };
@@ -48,7 +50,7 @@ const AddProductProvider = ({ children }) => {
   const getProducts = async () => {
     try {
       const res = await axios.get(`${API}/apartments/`);
-      dispatch({ type: "GET_PRODUCTS", payload: res.data.results });
+      dispatch({ type: "GET_PRODUCTS", payload: res.data });
       console.log(res);
     } catch (error) {
       console.log(error);
@@ -86,7 +88,6 @@ const AddProductProvider = ({ children }) => {
       };
 
       const res = await axios.get(`${API}/apartments/${id}/`, config);
-      console.log(res);
       dispatch({ type: "GET_ONE_PRODUCT", payload: res.data });
       console.log(res);
     } catch (error) {
@@ -113,12 +114,12 @@ const AddProductProvider = ({ children }) => {
       console.log(error);
     }
   };
-
+console.log(state);
   //! =======================================================================================================================================
-
   const values = {
     products: state.products,
     oneProduct: state.oneProduct,
+    pages: state.pages,
     createProduct,
     getProducts,
     deleteProduct,

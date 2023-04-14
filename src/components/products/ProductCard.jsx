@@ -20,6 +20,9 @@ const ProductCard = ({ item }) => {
         <>
           <button onClick={() => navigate(`/edit/${item.id}`)}>edit</button>
           <button onClick={() => deleteProduct(item.id)}>delete</button>
+          <button onClick={() => navigate(`/add/comment/${item.id}`)}>
+            leave comment
+          </button>
         </>
       ) : null}
     </div>
