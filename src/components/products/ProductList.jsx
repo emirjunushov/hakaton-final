@@ -8,7 +8,7 @@ const ProductList = () => {
   useEffect(() => {
     getProducts();
   }, []);
-console.log(products);
+  console.log(products);
   return (
     <div>
       <div className="d-flex justify-content-center flex-wrap">

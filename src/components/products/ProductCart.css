@@ -1,4 +1,4 @@
-.card {
+/* .card {
   width: 45%;
   height: 530px;
   display: flex;
@@ -61,13 +61,13 @@
 
 /* Price */
 
-.header h2 {
+/* .header h2 {
   margin: 0rem 0 1rem 0;
   font-weight: 300;
-}
+} */
 
 /* Product Description */
-
+/* 
 .product-main p {
   opacity: 0.5;
   margin: 1.3rem 0;
@@ -93,23 +93,23 @@
 
 /* Choose color / quantity  */
 
-.btns-group {
+/* .btns-group {
   width: 100%;
   margin: 0 0 2rem 0;
-}
+} */
 
 /* Total Price  */
 
-.product-total {
+/* .product-total {
   margin: 0 0 2rem 0;
-}
+} */
 
-.product-total p {
+/* .product-total p {
   font-weight: 700;
   font-size: 2rem;
   opacity: 0.5;
-}
-
+} */
+/* 
 .product-total h3 {
   margin: 0 0 1rem 0;
 }
@@ -119,4 +119,136 @@
 
   justify-content: space-between;
   align-items: center;
+}  */
+
+.product-total {
+  margin: 0 0 2rem 10px;
+}
+
+.product-total p {
+  font-weight: 700;
+  font-size: 2rem;
+  opacity: 0.5;
+}
+
+.product-total h3 {
+  font-size: 25px;
+  margin: 0 0 1rem 0;
+}
+
+.product-btns {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+}
+.card_container {
+  width: 100%;
+  height: 100%;
+  margin: 50px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card {
+  min-width: 545px;
+  max-width: 600px;
+  width: 35%;
+  height: 50%;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid white;
+  position: relative;
+  font-family: "Roboto", sans-serif;
+}
+
+.card_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.card_body {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: -100%;
+  position: absolute;
+  backdrop-filter: blur(2px);
+  border-radius: 15px;
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: 2s;
+  min-width: 35%;
+}
+
+.card:hover .card_body {
+  right: 0;
+  background: rgba(0, 0, 0, 0.334);
+}
+
+.card_title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.card_sub_title {
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.card_info {
+  text-align: center;
+  font-size: 16px;
+  line-height: 25px;
+  margin: 40px 10px;
+  font-weight: 300;
+}
+
+.product-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rate {
+  float: left;
+  height: 46px;
+  padding: 0 10px;
+}
+.rate:not(:checked) > input {
+  position: absolute;
+  top: -9999px;
+}
+.rate:not(:checked) > label {
+  float: right;
+  width: 1em;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 30px;
+  color: #ccc;
+}
+.rate > input:checked ~ label {
+  color: #ffc700;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label,
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+  color: #f5c51d;
+}
+
+.Rating {
+  margin-right: 15px;
 }

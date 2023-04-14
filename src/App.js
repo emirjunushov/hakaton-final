@@ -14,6 +14,7 @@ const App = () => {
         <Navbar />
         <MainRoutes />
         {/* <Footer /> */}
+        <ProductCard />
       </AddProductProvider>
     </AuthContextProvider>
   );
