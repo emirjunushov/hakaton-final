@@ -196,7 +196,7 @@ function Navbar() {
               >
                 <Avatar
                   className="nav-avatar"
-                  alt="Remy Sharp"
+                  alt={user}
                   src="/static/images/avatar/2.jpg"
                 />
               </IconButton>
