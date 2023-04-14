@@ -33,7 +33,7 @@ const ProductList = () => {
   }, []);
   return (
     <div>
-      <SearchBar/>
+      <SearchBar />
       <div className="d-flex justify-content-center flex-wrap">
         {products.map((item) => (
           <ProductCard key={item.id} item={item} />

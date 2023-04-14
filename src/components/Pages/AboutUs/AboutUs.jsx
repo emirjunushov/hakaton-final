@@ -1,10 +1,5 @@
 import React from "react";
 import "../AboutUs/AboutUs.css";
-import canuzel from "../../../IMAGES/imgAboutUs/bathroom.jpg";
-import bedroom from "../../../IMAGES/imgAboutUs/bedroom.jpg";
-import hall from "../../../IMAGES/imgAboutUs/hall.jpg";
-import hallway from "../../../IMAGES/imgAboutUs/hallway.png";
-import kitchen from "../../../IMAGES/imgAboutUs/kitchen.jpg";
 import avangard from "../../../IMAGES/imgAboutUs/Avangardlogo.png";
 import elitehous from "../../../IMAGES/imgAboutUs/EH_logo_w.png";
 import emark from "../../../IMAGES/imgAboutUs/logovEmark.png";
@@ -24,8 +19,8 @@ const AboutUs = () => {
       <div className="auCards">
         <div className="aboutCard">
           <img
-            style={{ width: "300px", height: "400px" }}
-            src={kitchen}
+            style={{ width: "300px", height: "400px", objectFit: "cover" }}
+            src="http://st-0.akipress.org/127//.storage/limon2/images/june2015/.thumbs/271834fdea0538ac146b659a78faa1ef_500_0_0.jpg"
             alt=""
           />
           <div className="textkv">
@@ -37,9 +32,9 @@ const AboutUs = () => {
         </div>
         <div className="aboutCard">
           <img
-            style={{ width: "300px", height: "400px" }}
+            style={{ width: "300px", height: "400px", objectFit: "cover" }}
             className="kv"
-            src={bedroom}
+            src="http://st-0.akipress.org/127//.storage/limon2/images/june2015/.thumbs/93064ee0bbf5432aabb4dd32ac28cee3_0_500_0.jpg"
             alt=""
           />
           <p className="textkv">
@@ -49,9 +44,9 @@ const AboutUs = () => {
         </div>
         <div className="aboutCard">
           <img
-            style={{ width: "300px", height: "400px" }}
+            style={{ width: "300px", height: "400px", objectFit: "cover" }}
             className="kv"
-            src={hall}
+            src="https://kubaaika.ucoz.com/_ph/7/2/999541061.jpg"
             alt=""
           />
           <p className="textkv">
@@ -61,9 +56,9 @@ const AboutUs = () => {
         </div>
         <div className="aboutCard">
           <img
-            style={{ width: "300px", height: "400px" }}
+            style={{ width: "300px", height: "400px", objectFit: "cover" }}
             className="kv"
-            src={hallway}
+            src="https://sun9-64.userapi.com/impf/EByp7WZAOAM7clthA6xHt_nb9yXqM6TiMZT9yA/BKy7DZv_EdU.jpg?size=604x431&quality=96&sign=161706f86a4de42d27f5589c35a99a0c&type=album"
             alt=""
           />
           <p className="textkv">
@@ -73,9 +68,9 @@ const AboutUs = () => {
         </div>
         <div className="aboutCard">
           <img
-            style={{ width: "300px", height: "400px" }}
+            style={{ width: "300px", height: "400px", objectFit: "cover" }}
             className="kv"
-            src={canuzel}
+            src="https://www.topdom.ru/uploaded/article/red-bathroom-interior/24.jpg"
             alt=""
           />
           <p className="textkv">
