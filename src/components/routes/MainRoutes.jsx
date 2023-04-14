@@ -10,6 +10,7 @@ import AddProduct from "../products/Addproduct";
 import ProductList from "../products/ProductList";
 import EditProduct from "../products/EditProduct";
 import Contacts from "../Pages/Contacts/Contacts";
+import AddComments from "../Pages/Comments/AddComments";
 
 const MainRoutes = () => {
   const ROUTES = [
