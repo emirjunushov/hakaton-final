@@ -5,16 +5,14 @@ import AuthContextProvider from "./context/AuthContextProvider";
 import Footer from "./components/Footer/Footer";
 import AddProductProvider from "./context/AddProductProvider";
 import AddCommentsProvider from "./context/AddCommentsProvider";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 const App = () => {
   return (
     <AuthContextProvider>
       <AddProductProvider>
-        <AddCommentsProvider>
-          <Navbar />
-          <MainRoutes />
-          {/* <Footer /> */}
-        </AddCommentsProvider>
+        <Navbar />
+        <MainRoutes />
+        <Footer />
       </AddProductProvider>
     </AuthContextProvider>
   );
