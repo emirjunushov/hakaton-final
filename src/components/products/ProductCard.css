@@ -1,6 +1,6 @@
 .card_container {
-  width: 100%;
-  height: 100%;
+  width: 100% !important;
+  height: 100% !important;
   margin: 50px;
   display: flex;
   justify-content: space-around;
@@ -22,10 +22,7 @@
 }
 
 .card_img {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
-  border-radius: 15px;
 }
 
 .card_body {
@@ -109,7 +106,8 @@
   width: 100%;
   float: left;
   height: 100%;
-  padding: 0 10px;
+  padding: 22px 10px;
+  margin-left: 20px;
 }
 .rate:not(:checked) > input {
   position: absolute;

@@ -20,8 +20,8 @@ import logoPng from "../../../src/IMAGES/logN.png";
 
 const pages = [
   { name: "Главная", link: "/", id: 1 },
-  { name: "products", link: "/products", id: 2 },
-  { name: "add products", link: "/add/product", id: 3 },
+  { name: "Квартиры", link: "/products", id: 2 },
+  { name: "Добавить квартиру", link: "/add/product", id: 3 },
   { name: "О нас", link: "/about", id: 5 },
 ];
 
@@ -160,7 +160,11 @@ function Navbar() {
                   className="nav__btn-some"
                   key={page}
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "white", display: "block" }}
+                  sx={{
+                    my: 1,
+                    color: "white",
+                    display: "block",
+                  }}
                 >
                   {page.name}
                 </Button>

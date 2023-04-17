@@ -1,76 +1,10 @@
-// import React, { useEffect, useState } from "react";
-// import { useAuth } from "../../../context/AuthContextProvider";
-// import "./LoginList.css";
-// import Box from "@mui/material/Box";
-// import Modal from "@mui/material/Modal";
-// import Button from "@mui/material/Button";
-// import TextField from "@mui/material/TextField";
-// import { useNavigate } from "react-router-dom";
-
-// const LoginList = () => {
-//   const [email, setEmail] = useState("");
-//   const [password, setPassword] = useState("");
-
-//   const { handleLogin, error, setError, loading } = useAuth();
-
-//   const handleSave = async (e) => {
-//     e.preventDefault();
-
-//     if (!email.trim() || !password.trim()) {
-//       alert("заполните все поля!");
-//     } else {
-//       let formData = new FormData();
-//       formData.append("username", email);
-//       formData.append("password", password);
-//       await handleLogin(formData, email);
-//     }
-//   };
-
-//   useEffect(() => {
-//     setError(false);
-//   }, []);
-
-//   const navigate = useNavigate();
-//   // if (loading) {
-//   //   return <Loader />;
-//   // }
-
-//   return (
-//     <>
-//       <div className="main_login_container">
-//         {error ? <h2>{error}</h2> : null}
-//         <form className="login_box_form" action="submit" onSubmit={handleSave}>
-//           <h1>Login Page</h1>
-//           <input
-//             onChange={(e) => setEmail(e.target.value)}
-//             type="text"
-//             placeholder="User Name"
-//           />
-//           <input
-//             onChange={(e) => setPassword(e.target.value)}
-//             type="password"
-//             placeholder="Password"
-//           />
-
-//           <button>Login</button>
-//           <button onClick={() => navigate("/forgotPassword")}>
-//             forgot password
-//           </button>
-//         </form>
-//       </div>
-//     </>
-//   );
-// };
-
-// export default LoginList;
 import React, { useEffect, useState } from "react";
 import { useAuth } from "../../../context/AuthContextProvider";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
+
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
+
 import Link from "@mui/material/Link";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
@@ -136,31 +70,20 @@ export default function LoginList() {
   return (
     <ThemeProvider theme={theme}>
       <Grid container component="main" sx={{ height: "100vh" }}>
-        <CssBaseline />
-
-        <Grid
-          item
-          xs={false}
-          sm={4}
-          md={7}
-          sx={{
-            backgroundColor: (t) =>
-              t.palette.mode === "light"
-                ? t.palette.grey[50]
-                : t.palette.grey[900],
-
-            backgroundPosition: "center",
-          }}
-        >
-          {" "}
+        <Grid sm={8} md={7}>
           <video
-            style={{ backgroundSize: "cover", height: "100vh" }}
+            style={{
+              backgroundSize: "cover",
+
+              width: "100%",
+            }}
             src="https://videos.hyatt.com/regency_bishk_masthead_video_0323.mp4"
             autoPlay
             loop
             muted
-          ></video>
+          />
         </Grid>
+
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <Box
             sx={{

@@ -63,12 +63,12 @@ const Footer = () => {
 
           <li className="menu__item">
             <a className="menu__link" href="#">
-              Services
+              Услуги
             </a>
           </li>
           <li className="menu__item">
-            <a className="menu__link" href="#">
-              Team
+            <a className="menu__link" onClick={() => navgate("/team")}>
+              Команда
             </a>
           </li>
           <li className="menu__item">
