@@ -11,6 +11,7 @@ import ProductList from "../products/ProductList";
 import EditProduct from "../products/EditProduct";
 import RegisterList from "../Auth/RegisterList/RegisterList";
 import Contacts from "../Pages/Contacts/Contacts";
+import Cart from "../Cart/Cart";
 import NotFoundPage from "../Pages/NotFoundPage/NotFoundPage";
 import Team from "../Pages/Team/Team";
 import BankCard from "../Pages/BankCard/BankCard";
@@ -28,8 +29,9 @@ const MainRoutes = () => {
     { link: "/products", element: <ProductList />, id: 9 },
     { link: "/edit/:id", element: <EditProduct />, id: 10 },
     { link: "/contacts", element: <Contacts />, id: 11 },
-    { link: "/team", element: <Team />, id: 12 },
-    { link: "/bank/card", element: <BankCard />, id: 13 },
+    { link: "/cart", element: <Cart />, id: 12 },
+    { link: "/team", element: <Team />, id: 13 },
+    { link: "/bank/card", element: <BankCard />, id: 14 },
   ];
 
   return (
