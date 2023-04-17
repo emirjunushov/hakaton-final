@@ -7,32 +7,56 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import { IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
-// import "../products/ProductCard/ProductCard.css";
+
 import "../products/ProductCart.css";
 
-export default function ProductCart() {
+// =============
+import { motion } from "framer-motion";
+
+const blockAnimation = {
+  hidden: {
+    y: 100,
+    opacity: 0,
+  },
+  visible: (castom) => ({
+    y: 0,
+    opacity: 1,
+    transition: { delay: castom * 0.3 },
+  }),
+};
+// =============
+
+export default function ProductCart({ item }) {
+  console.log(item);
+  const { deleteProduct, updateProduct } = useProduct();
+  const navigate = useNavigate();
   return (
     <>
-      <div className="card_container">
-        <div className="card">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ amount: 0.2 }}
+        style={{ overflow: "hidden" }}
+        className="card_container"
+      >
+        <motion.div variants={blockAnimation} castom={1} className="card">
           <img
             className="card_img"
-            src="https://images1.forrent.com/i2/E3zvIn__tkSSQUFHPjQx8xI-RpJk3wBs-OtriMehrPA/112/image.png"
+            style={{ width: "600px", height: "500px" }}
+            src={item.images}
             alt=""
           />
           <div className="card_body">
-            <h1 className="card_title">Apartment</h1>
-            <p className="card_sub_title">apartment 1</p>
-            <p className="card_info">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
-              quisquam voluptas iste modi, sit nam velit eligendi error quae
-              optio unde harum ducimus rerum ipsam asperiores hic necessitatibus
-              commodi eius?
-            </p>{" "}
+            <h1 className="card_title">{item.category}</h1>
+            <p className="card_sub_title">{item.user}</p>
+            <p className="card_sub_title">
+              {item.city}:{item.street}
+            </p>
+            <p className="card_info">{item.description}</p>{" "}
             <div className="product-div">
               <div className="product-total">
                 <h3>Цена</h3>
-                <p>$500.00</p>
+                <p>${item.price}</p>
               </div>
               <div className="Rating">
                 <head>
@@ -84,21 +108,21 @@ export default function ProductCart() {
               <div className="card__action">
                 <IconButton
                   className="btn__delete"
-                  // onClick={() => deleteProduct(item.id)}
+                  onClick={() => deleteProduct(item.id)}
                 >
                   <DeleteIcon color="secondary" />
                 </IconButton>
                 <IconButton
                   className="btn__edit"
-                  // onClick={() => navigate(/edit/${item.id})}
+                  onClick={() => navigate(`/edit/${item.id}`)}
                 >
                   <EditIcon color="secondary" />
                 </IconButton>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </>
   );
 }
