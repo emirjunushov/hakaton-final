@@ -1,18 +1,12 @@
-import { useProduct } from "../../context/AddProductProvider";
 import { useNavigate } from "react-router-dom";
 import * as React from "react";
 // import "../products/ProductCard/ProductCard.css";
 import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { IconButton } from "@mui/material";
-import DeleteIcon from "@mui/icons-material/Delete";
-import EditIcon from "@mui/icons-material/Edit";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import "../products/ProductCart.css";
-
-// =============
 import { motion } from "framer-motion";
-import { useFavorites } from "../../context/FavoritesContextProvider";
 
 const blockAnimation = {
   hidden: {
@@ -27,9 +21,7 @@ const blockAnimation = {
 };
 // =============
 
-export default function ProductCart({ item }) {
-  console.log(item);
-  const { deleteProduct, updateProduct } = useProduct();
+export default function FavoritePages({ item }) {
   const navigate = useNavigate();
   return (
     <>
@@ -104,21 +96,8 @@ export default function ProductCart({ item }) {
                   {" "}
                   <LocalGroceryStoreIcon className="korzina" />
                 </IconButton>
-                <IconButton>{<BookmarkIcon />}</IconButton>
-              </div>
-              {/* {email === ADMIN ? ( */}
-              <div className="card__action">
-                <IconButton
-                  className="btn__delete"
-                  onClick={() => deleteProduct(item.id)}
-                >
-                  <DeleteIcon color="secondary" />
-                </IconButton>
-                <IconButton
-                  className="btn__edit"
-                  onClick={() => navigate(`/edit/${item.id}`)}
-                >
-                  <EditIcon color="secondary" />
+                <IconButton>
+                  <BookmarkIcon />
                 </IconButton>
               </div>
             </div>
