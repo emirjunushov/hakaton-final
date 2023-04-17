@@ -5,6 +5,22 @@ import { IconButton } from "@mui/material";
 import { useProduct } from "../../context/AddProductProvider";
 import { useSearchParams } from "react-router-dom";
 
+// =============
+import { motion } from "framer-motion";
+
+const blockAnimation = {
+  hidden: {
+    y: 100,
+    opacity: 0,
+  },
+  visible: (castom) => ({
+    y: 0,
+    opacity: 1,
+    transition: { delay: castom * 0.3 },
+  }),
+};
+// =============
+
 const SearchBar = () => {
   const { getProducts, fetchByParams } = useProduct();
   const [searchParams, setSearchParams] = useSearchParams();
@@ -14,20 +30,19 @@ const SearchBar = () => {
     setSearchParams({ q: search });
   }, [search]);
 
-  useEffect(()=> {
+  useEffect(() => {
     getProducts();
-
-  }, [searchParams ])
+  }, [searchParams]);
   return (
-    <div className="searchsarcontainer">
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ amount: 0.2 }}
+      style={{ overflow: "hidden" }}
+      className="searchsarcontainer"
+    >
       <div className="searchBar">
-        <div>
-          <IconButton>
-            <SearchIcon />
-            <input type="text" />
-          </IconButton>
-        </div>
-        <div>
+        <motion.div variants={blockAnimation} castom={3}>
           <select
             defaultValue="all"
             onChange={(e) => fetchByParams("rooms", e.target.value)}
@@ -117,10 +132,16 @@ const SearchBar = () => {
             <option value="">test</option>
             <option value="">test</option>
           </select>
-        </div>
-        <button>Фильтр</button>
+        </motion.div>
+        <motion.div variants={blockAnimation} castom={2}>
+          <IconButton>
+            <SearchIcon />
+            <input type="text" />
+          </IconButton>
+        </motion.div>
+        <motion.button variants={blockAnimation}>Фильтр</motion.button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

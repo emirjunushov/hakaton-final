@@ -10,11 +10,34 @@ import EditIcon from "@mui/icons-material/Edit";
 // import "../products/ProductCard/ProductCard.css";
 import "../products/ProductCart.css";
 
+// =============
+import { motion } from "framer-motion";
+import SearchBar from "../searchBar/SearchBar";
+
+const blockAnimation = {
+  hidden: {
+    y: 100,
+    opacity: 0,
+  },
+  visible: (castom) => ({
+    y: 0,
+    opacity: 1,
+    transition: { delay: castom * 0.3 },
+  }),
+};
+// =============
+
 export default function ProductCart() {
   return (
     <>
-      <div className="card_container">
-        <div className="card">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ amount: 0.2 }}
+        style={{ overflow: "hidden" }}
+        className="card_container"
+      >
+        <motion.div variants={blockAnimation} castom={1} className="card">
           <img
             className="card_img"
             src="https://images1.forrent.com/i2/E3zvIn__tkSSQUFHPjQx8xI-RpJk3wBs-OtriMehrPA/112/image.png"
@@ -97,8 +120,8 @@ export default function ProductCart() {
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </>
   );
 }

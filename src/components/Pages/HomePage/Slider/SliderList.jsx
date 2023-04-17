@@ -15,9 +15,32 @@ import "./SliderList.css";
 // import required modules
 import { Autoplay, Pagination } from "swiper";
 
+// =============
+import { motion } from "framer-motion";
+
+const blockAnimation = {
+  hidden: {
+    y: 100,
+    opacity: 0,
+  },
+  visible: (castom) => ({
+    y: 0,
+    opacity: 1,
+    transition: { delay: castom * 0.3 },
+  }),
+};
+// =============
+
 export default function SliderList() {
   return (
-    <>
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ amount: 0.2 }}
+      style={{ overflow: "hidden" }}
+      variants={blockAnimation}
+      castom={1}
+    >
       <Swiper
         spaceBetween={100}
         centeredSlides={true}
@@ -64,23 +87,7 @@ export default function SliderList() {
             muted
           ></video>
         </SwiperSlide>
-        <SwiperSlide>
-          <video
-            src="https://player.vimeo.com/progressive_redirect/playback/761273577/rendition/720p/file.mp4?loc=external&oauth2_token_id=1027659527&signature=719fcf0eb8e1dd8c7cc39d6cf9771834d97040eea403eef1e2f4f6f4133a6559"
-            width="100%"
-            height="600px"
-            poster="video/duel.jpg"
-            autoPlay
-            loop
-            muted
-          ></video>
-        </SwiperSlide>
-        {/* <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide> */}
       </Swiper>
-    </>
+    </motion.div>
   );
 }
