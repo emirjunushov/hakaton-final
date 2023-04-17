@@ -11,9 +11,11 @@ import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
 import { IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
+import "../products/ProductCard.css";
+import "./ProductAdaptiv.css";
 import AddCommentIcon from "@mui/icons-material/AddComment";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import "../products/ProductCart.css";
+import "../products/ProductCard.css";
 
 // =============
 
@@ -79,28 +81,28 @@ export default function ProductCart({ item }) {
 
                 <div className="rate">
                   <input type="radio" id="star5" name="rate" value="5" />
-                  <label htmlFor="star5" title="text">
-                    <i className="fa fa-star" aria-hidden="true"></i>
+                  <label for="star5" title="text">
+                    <i className="fa fa fa-star" aria-hidden="true"></i>
                   </label>
 
                   <input type="radio" id="star4" name="rate" value="4" />
-                  <label htmlFor="star4" title="text">
-                    <i className="fa fa-star" aria-hidden="true"></i>
+                  <label for="star4" title="text">
+                    <i className="fa fa fa-star" aria-hidden="true"></i>
                   </label>
 
                   <input type="radio" id="star3" name="rate" value="3" />
-                  <label htmlFor="star3" title="text">
-                    <i className="fa fa-star" aria-hidden="true"></i>
+                  <label for="star3" title="text">
+                    <i className="fa fa fa-star" aria-hidden="true"></i>
                   </label>
 
                   <input type="radio" id="star2" name="rate" value="2" />
-                  <label htmlFor="star2" title="text">
-                    <i className="fa fa-star" aria-hidden="true"></i>
+                  <label for="star2" title="text">
+                    <i className="fa fa fa-star" aria-hidden="true"></i>
                   </label>
 
                   <input type="radio" id="star1" name="rate" value="1" />
-                  <label htmlFor="star1" title="text">
-                    <i className="fa fa-star" aria-hidden="true"></i>
+                  <label for="star1" title="text">
+                    <i className="fa fa fa-star" aria-hidden="true"></i>
                   </label>
                 </div>
               </div>

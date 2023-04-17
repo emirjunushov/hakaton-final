@@ -2,6 +2,8 @@ import React from "react";
 import Bekzat from "../../../IMAGES/Bekzat.jpg";
 import Emir from "../../../IMAGES/Emir.jpg";
 import Vremenno from "../../../IMAGES/Vremenno.jpg";
+import Adi from "../../../IMAGES/adi.jpg";
+
 import "./Team.css";
 // =============
 import { motion } from "framer-motion";
@@ -66,9 +68,9 @@ const Team = () => {
           className="team__cards"
         >
           <motion.div className="team_item">
-            <img className="item__img" src={Vremenno} alt="" />
+            <img className="item__img" src={Adi} alt="" />
             <p className="item_paragraph">
-              <a href=""> Адилхан</a>{" "}
+              <a href="https://www.instagram.com/adilkhan/"> Адилхан</a>{" "}
               <span className="paragraph_span">frontend</span>
             </p>
           </motion.div>
