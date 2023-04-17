@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 
 import Button from "@mui/material/Button";
 
-// import "../products/ProductCard/ProductCard.css";
 import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
 import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
 import { IconButton } from "@mui/material";
@@ -15,7 +14,6 @@ import "../products/ProductCard.css";
 import "./ProductAdaptiv.css";
 import AddCommentIcon from "@mui/icons-material/AddComment";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import "../products/ProductCard.css";
 
 // =============
 
