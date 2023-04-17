@@ -15,6 +15,7 @@ import Cart from "../Cart/Cart";
 import NotFoundPage from "../Pages/NotFoundPage/NotFoundPage";
 import Team from "../Pages/Team/Team";
 import BankCard from "../Pages/BankCard/BankCard";
+import ComentsPage from "../products/ComentsPage/ComentsPage";
 import AddedCard from "../Pages/BankCard/AddedCard";
 import FavoritePages from "../Favorite/FavoritePages";
 
@@ -30,6 +31,10 @@ const MainRoutes = () => {
     { link: "/*", element: <NotFoundPage />, id: 8 },
     { link: "/products", element: <ProductList />, id: 9 },
     { link: "/edit/:id", element: <EditProduct />, id: 10 },
+    { link: "/coment/:id", element: <ComentsPage />, id: 11 },
+    { link: "/contacts", element: <Contacts />, id: 12 },
+    { link: "/team", element: <Team />, id: 13 },
+    { link: "/bank/card", element: <BankCard />, id: 14 },
     { link: "/contacts", element: <Contacts />, id: 11 },
     { link: "/team", element: <Team />, id: 12 },
     { link: "/bank/card", element: <BankCard />, id: 13 },

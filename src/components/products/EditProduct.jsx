@@ -35,7 +35,7 @@ const EditProduct = () => {
 
   function handleSave() {
     let newProduct = new FormData();
-    newProduct.append("user", user);
+
     newProduct.append("street", street);
     newProduct.append("city", city);
     newProduct.append("rooms", rooms);

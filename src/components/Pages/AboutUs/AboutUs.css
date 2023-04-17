@@ -127,17 +127,3 @@ body {
 .map {
   margin-top: 100px;
 }
-
-.aboutUs_h4 {
-  font-size: 40px;
-  color: rgb(24, 52, 90);
-  margin-bottom: 30px;
-}
-.aboutUs_p {
-  width: 90%;
-  margin: auto;
-  text-align: center;
-  font-size: 20px;
-  color: rgb(24, 52, 90);
-  font-style: unset;
-}

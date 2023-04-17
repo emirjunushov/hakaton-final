@@ -27,30 +27,30 @@ const Footer = () => {
         <ul className="social-icon">
           <li className="social-icon__item">
             <a className="social-icon__link" href="https://ru-ru.facebook.com/">
-              <ion-icon name="logo-facebook">
+              <icon-icon name="logo-facebook">
                 <FacebookIcon />
-              </ion-icon>
+              </icon-icon>
             </a>
           </li>
           <li className="social-icon__item">
             <a className="social-icon__link" href="https://twitter.com/">
-              <ion-icon name="logo-twitter">
+              <icon-icon name="logo-twitter">
                 <TwitterIcon />
-              </ion-icon>
+              </icon-icon>
             </a>
           </li>
           <li className="social-icon__item">
             <a className="social-icon__link" href="https://ru.linkedin.com/">
-              <ion-icon name="logo-linkedin">
+              <icon-icon name="logo-linkedin">
                 <LinkedInIcon />
-              </ion-icon>
+              </icon-icon>
             </a>
           </li>
           <li className="social-icon__item">
             <a className="social-icon__link" href="https://www.instagram.com/">
-              <ion-icon name="logo-instagram">
+              <icon-icon name="logo-instagram">
                 <InstagramIcon />
-              </ion-icon>
+              </icon-icon>
             </a>
           </li>
         </ul>
