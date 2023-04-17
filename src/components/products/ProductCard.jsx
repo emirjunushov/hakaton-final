@@ -111,14 +111,14 @@ export default function ProductCart({ item }) {
               <div>
                 <div>
                   <IconButton>
-                    <BookmarkAddIcon className="cerdse" />
+                    <BookmarkAddIcon className="qwerty" />
                   </IconButton>
                   <IconButton>
                     {" "}
-                    <LocalGroceryStoreIcon className="korzina" />
+                    <LocalGroceryStoreIcon className="qwerty" />
                   </IconButton>
                   <IconButton onClick={() => navigate(`/coment/${item.id}`)}>
-                    <AddCommentIcon />
+                    <AddCommentIcon className="qwerty" />
                   </IconButton>
                 </div>
 
@@ -135,13 +135,13 @@ export default function ProductCart({ item }) {
                   className="btn__delete"
                   onClick={() => deleteProduct(item.id)}
                 >
-                  <DeleteIcon className="korzina" color="secondary" />
+                  <DeleteIcon className="qwerty" color="secondary" />
                 </IconButton>
                 <IconButton
                   className="btn__edit"
                   onClick={() => navigate(`/edit/${item.id}`)}
                 >
-                  <EditIcon className="korzina" color="secondary" />
+                  <EditIcon className="qwerty" color="secondary" />
                 </IconButton>
               </div>
             </div>
