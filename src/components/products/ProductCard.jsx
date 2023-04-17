@@ -12,6 +12,7 @@ import "../products/ProductCart.css";
 
 // =============
 import { motion } from "framer-motion";
+import { Button } from "react-bootstrap";
 
 const blockAnimation = {
   hidden: {
@@ -96,13 +97,22 @@ export default function ProductCart({ item }) {
             </div>
             <div className="product-btns">
               <div>
-                <IconButton>
-                  <BookmarkAddIcon className="cerdse" />
-                </IconButton>
-                <IconButton>
-                  {" "}
-                  <LocalGroceryStoreIcon className="korzina" />
-                </IconButton>
+                <div>
+                  <IconButton>
+                    <BookmarkAddIcon className="cerdse" />
+                  </IconButton>
+                  <IconButton>
+                    {" "}
+                    <LocalGroceryStoreIcon className="korzina" />
+                  </IconButton>
+                </div>
+
+                <Button
+                  className="btnOfCard_BOOKING"
+                  onClick={() => navigate("/bank/card")}
+                >
+                  Арендовать
+                </Button>
               </div>
               {/* {email === ADMIN ? ( */}
               <div className="card__action">
@@ -110,13 +120,13 @@ export default function ProductCart({ item }) {
                   className="btn__delete"
                   onClick={() => deleteProduct(item.id)}
                 >
-                  <DeleteIcon color="secondary" />
+                  <DeleteIcon className="korzina" color="secondary" />
                 </IconButton>
                 <IconButton
                   className="btn__edit"
                   onClick={() => navigate(`/edit/${item.id}`)}
                 >
-                  <EditIcon color="secondary" />
+                  <EditIcon className="korzina" color="secondary" />
                 </IconButton>
               </div>
             </div>
