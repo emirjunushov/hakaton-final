@@ -1,6 +1,11 @@
-import { useProduct } from "../../context/AddProductProvider";
-import { useNavigate } from "react-router-dom";
 import * as React from "react";
+import { useProduct } from "../../context/AddProductProvider";
+
+import { useNavigate } from "react-router-dom";
+
+import Button from "@mui/material/Button";
+
+// import "../products/ProductCard/ProductCard.css";
 import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
 import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
 import { IconButton } from "@mui/material";
@@ -8,11 +13,13 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import "../products/ProductCard.css";
 import "./ProductAdaptiv.css";
+import AddCommentIcon from "@mui/icons-material/AddComment";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import "../products/ProductCard.css";
 
 // =============
+
 import { motion } from "framer-motion";
-import { useFavorites } from "../../context/FavoritesContextProvider";
-import { Button } from "react-bootstrap";
 
 const blockAnimation = {
   hidden: {
@@ -53,6 +60,11 @@ export default function ProductCart({ item }) {
             <p className="card_sub_title">
               {item.city}:{item.street}
             </p>
+            <p className="card_sub_title">
+              {item.comments.map((item1) => (
+                <p>{item1.text}</p>
+              ))}
+            </p>
             <p className="card_info">{item.description}</p>{" "}
             <div className="product-div">
               <div className="product-total">
@@ -60,14 +72,14 @@ export default function ProductCart({ item }) {
                 <p>${item.price}</p>
               </div>
               <div className="Rating">
-                <head>
+                <div>
                   <link
                     rel="stylesheet"
                     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
                   />
-                </head>
+                </div>
 
-                <div class="rate">
+                <div className="rate">
                   <input type="radio" id="star5" name="rate" value="5" />
                   <label for="star5" title="text">
                     <i className="fa fa fa-star" aria-hidden="true"></i>
@@ -97,7 +109,6 @@ export default function ProductCart({ item }) {
             </div>
             <div className="product-btns">
               <div>
-                {/* <IconButton>{<BookmarkIcon />}</IconButton> */}
                 <div>
                   <IconButton>
                     <BookmarkAddIcon className="cerdse" />
@@ -105,6 +116,9 @@ export default function ProductCart({ item }) {
                   <IconButton>
                     {" "}
                     <LocalGroceryStoreIcon className="korzina" />
+                  </IconButton>
+                  <IconButton onClick={() => navigate(`/coment/${item.id}`)}>
+                    <AddCommentIcon />
                   </IconButton>
                 </div>
 
@@ -115,7 +129,7 @@ export default function ProductCart({ item }) {
                   Арендовать
                 </Button>
               </div>
-              {/* {email === ADMIN ? ( */}
+
               <div className="card__action">
                 <IconButton
                   className="btn__delete"
