@@ -1,5 +1,5 @@
 .footer {
-  margin-top: 500px;
+  margin-top: 300px;
   margin-bottom: 0px;
   position: relative;
   background: #3586ff;
@@ -50,6 +50,7 @@
   text-decoration: none;
   opacity: 0.75;
   font-weight: 300;
+  cursor: pointer;
 }
 
 .menu__link:hover {
