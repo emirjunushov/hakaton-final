@@ -14,6 +14,7 @@ import Contacts from "../Pages/Contacts/Contacts";
 import NotFoundPage from "../Pages/NotFoundPage/NotFoundPage";
 import Team from "../Pages/Team/Team";
 import BankCard from "../Pages/BankCard/BankCard";
+import AddedCard from "../Pages/BankCard/AddedCard";
 
 const MainRoutes = () => {
   const ROUTES = [
@@ -30,6 +31,7 @@ const MainRoutes = () => {
     { link: "/contacts", element: <Contacts />, id: 11 },
     { link: "/team", element: <Team />, id: 12 },
     { link: "/bank/card", element: <BankCard />, id: 13 },
+    { link: "/added/card", element: <AddedCard />, id: 14 },
   ];
 
   return (

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import * as React from "react";
 // import "../products/ProductCard/ProductCard.css";
 import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
-import FavoriteIcon from "@mui/icons-material/Favorite";
+import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
 import { IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
@@ -97,7 +97,7 @@ export default function ProductCart({ item }) {
             <div className="product-btns">
               <div>
                 <IconButton>
-                  <FavoriteIcon className="cerdse" />
+                  <BookmarkAddIcon className="cerdse" />
                 </IconButton>
                 <IconButton>
                   {" "}
