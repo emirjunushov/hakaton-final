@@ -3,17 +3,16 @@ import { useProduct } from "../../context/AddProductProvider";
 
 import { useNavigate } from "react-router-dom";
 
-import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import Modal from "@mui/material/Modal";
+
 // import "../products/ProductCard/ProductCard.css";
 import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
-import FavoriteIcon from "@mui/icons-material/Favorite";
+import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
 import { IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import AddCommentIcon from "@mui/icons-material/AddComment";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import "../products/ProductCart.css";
 
 // =============
@@ -108,16 +107,25 @@ export default function ProductCart({ item }) {
             </div>
             <div className="product-btns">
               <div>
-                <IconButton>
-                  <FavoriteIcon className="cerdse" />
-                </IconButton>
-                <IconButton>
-                  {" "}
-                  <LocalGroceryStoreIcon className="korzina" />
-                </IconButton>
-                <IconButton onClick={() => navigate(`/coment/${item.id}`)}>
-                  <AddCommentIcon />
-                </IconButton>
+                <div>
+                  <IconButton>
+                    <BookmarkAddIcon className="cerdse" />
+                  </IconButton>
+                  <IconButton>
+                    {" "}
+                    <LocalGroceryStoreIcon className="korzina" />
+                  </IconButton>
+                  <IconButton onClick={() => navigate(`/coment/${item.id}`)}>
+                    <AddCommentIcon />
+                  </IconButton>
+                </div>
+
+                <Button
+                  className="btnOfCard_BOOKING"
+                  onClick={() => navigate("/bank/card")}
+                >
+                  Арендовать
+                </Button>
               </div>
 
               <div className="card__action">
@@ -125,13 +133,13 @@ export default function ProductCart({ item }) {
                   className="btn__delete"
                   onClick={() => deleteProduct(item.id)}
                 >
-                  <DeleteIcon color="secondary" />
+                  <DeleteIcon className="korzina" color="secondary" />
                 </IconButton>
                 <IconButton
                   className="btn__edit"
                   onClick={() => navigate(`/edit/${item.id}`)}
                 >
-                  <EditIcon color="secondary" />
+                  <EditIcon className="korzina" color="secondary" />
                 </IconButton>
               </div>
             </div>

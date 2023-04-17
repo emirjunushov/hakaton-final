@@ -49,52 +49,60 @@ const EditProduct = () => {
 
   return (
     <div className="d-flex flex-column w-50 m-auto">
-      <h1>Add product</h1>
+      <h1 className="add_h1">изменение продукта</h1>
       <input
+        className="add_input"
         type="text"
-        placeholder="user"
+        placeholder="пользователь"
         value={user}
         onChange={(e) => setUser(e.target.value)}
       />
       <input
+        className="add_input"
         type="text"
-        placeholder="street"
+        placeholder="улица"
         value={street}
         onChange={(e) => setStreet(e.target.value)}
       />
       <input
+        className="add_input"
         type="text"
-        placeholder="city"
+        placeholder="город"
         value={city}
         onChange={(e) => setCity(e.target.value)}
       />{" "}
       <input
+        className="add_input"
         type="text"
-        placeholder="rooms"
+        placeholder="номера"
         value={rooms}
         onChange={(e) => setRooms(e.target.value)}
       />{" "}
       <input
+        className="add_input"
         type="text"
-        placeholder="number of bed"
+        placeholder=" количество кроватей"
         value={numberOfBeds}
         onChange={(e) => setNumberOfBeds(e.target.value)}
       />{" "}
       <input
+        className="add_input"
         type="text"
         placeholder="floor"
         value={floor}
         onChange={(e) => setFloor(e.target.value)}
       />{" "}
       <input
+        className="add_input"
         type="text"
-        placeholder="category"
+        placeholder="категория"
         value={category}
         onChange={(e) => setCategory(e.target.value)}
       />{" "}
       <input
+        className="add_input"
         type="text"
-        placeholder="price"
+        placeholder="цена"
         value={price}
         onChange={(e) => setPrice(e.target.value)}
       />
@@ -103,7 +111,10 @@ const EditProduct = () => {
         accept="image/*"
         onChange={(e) => setImages(e.target.files[0])}
       />
-      <button onClick={handleSave}> SAVE CHANGES</button>
+      <button className="add_button btn-16 " onClick={handleSave}>
+        {" "}
+        СОХРАНИТЬ
+      </button>
     </div>
   );
 };

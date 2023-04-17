@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useAddComments } from "../../../context/AddCommentsProvider";
 import { useProduct } from "../../../context/AddProductProvider";
-import "./ComentsPage.css";
+import "./ComentPage.css";
 const ComentsPage = () => {
   const { getOneProduct, oneProduct } = useProduct();
   const { PostOneComment } = useAddComments();

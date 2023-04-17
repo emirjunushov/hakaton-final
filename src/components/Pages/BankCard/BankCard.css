@@ -1,55 +1,119 @@
-.bankMainContainer {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  flex-direction: column;
-  margin-top: 5rem !important;
+.bankCard__container {
+  width: 100%;
+  height: 35rem;
 }
 
-.bankCard__container {
-  width: 80% !important;
-  margin-top: 3rem !important;
+.bankCard {
+  margin: auto;
+  border: 2px solid rgba(0, 0, 0, 0.531);
+  border-radius: 20px;
+  width: 500px;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+.bank-card__title {
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.bank-card__inps {
+  margin: auto;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
 }
 
 .cardBankInp {
-  margin-left: 0rem !important;
-  width: 250% !important;
+  margin-top: 1rem;
+  transition: 1s;
+}
+.cardBankInp:hover {
+  font-size: 18px;
+  padding-left: 5px;
 }
 
 .bankCardBtn {
-  height: 40px !important;
-  color: white !important;
-  background-color: #46a358 !important;
-  margin-right: 3rem !important;
-  margin-top: 3rem !important;
-  margin-bottom: 10rem !important;
+  margin-top: 2rem !important;
+  color: #e9ff5c !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  background-color: rgba(0, 0, 0, 0.272) !important;
+  transition: 1s !important ;
 }
 
-@media all and (max-width: 1084px) {
-  .bankMainContainer {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    flex-direction: column;
-    margin-top: 5rem !important;
+.bankCardBtn:hover {
+  font-size: 18px !important;
+  padding-left: 5px !important;
+}
+
+#cardBankInp::-webkit-outer-spin-button,
+#cardBankInp::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+}
+
+@media all and (max-width: 602px) {
+  .bankCard {
+    width: 80%;
   }
 
-  .bankCard__container {
-    width: 80% !important;
-    margin-top: 3rem !important;
+  .bank-card__title {
+    font-size: 28px;
   }
 
-  .cardBankInp {
-    margin-left: 5rem !important;
-    width: 250% !important;
+  .bank-card__inps {
+    width: 100%;
+  }
+}
+@media all and (max-width: 484px) {
+  .bankCard {
+    width: 80%;
   }
 
-  .bankCardBtn {
-    height: 40px !important;
-    color: white !important;
-    background-color: #46a358 !important;
-    margin-right: 3rem !important;
-    margin-top: 3rem !important;
-    margin-bottom: 10rem !important;
+  .bank-card__title {
+    margin: 1rem 0 1rem 0;
+    font-size: 28px;
+  }
+
+  .bank-card__inps {
+    width: 100%;
+  }
+}
+@media all and (max-width: 434px) {
+  .bankCard {
+    width: 80%;
+    border: none;
+  }
+
+  .bank-card__title {
+    margin: 1rem 0 1rem 0;
+    font-size: 28px;
+  }
+
+  .bank-card__inps {
+    width: 100%;
+  }
+}
+@media all and (max-width: 399px) {
+  .bankCard {
+    width: 80%;
+    border: none;
+  }
+
+  #bank-card {
+    margin-right: 5rem !important;
+  }
+
+  .bank-card__title {
+    margin: 1rem 0 1rem 0;
+    font-size: 28px;
+  }
+
+  .bank-card__inps {
+    width: 100%;
   }
 }

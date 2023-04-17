@@ -7,12 +7,13 @@ const AddedCard = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: "30rem",
+        height: "25rem",
       }}
     >
-      <h1>
-        Here, according to the idea, your map should have been, but it is not
-        yet available!
+      <h1 style={{ textAlign: "center", padding: "5rem" }}>
+        Здесь будет отображаться то что вы успешно или не успешно добавили
+        карту, а пока что эта часть не доступно. Ваш банк ещё не было добавлено
+        в наш сайт.
       </h1>
     </div>
   );
