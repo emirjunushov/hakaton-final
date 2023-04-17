@@ -50,7 +50,7 @@ const AddProductProvider = ({ children }) => {
   const getProducts = async () => {
     try {
       const res = await axios.get(
-        `${API}/apartments/${window.location.search}/`
+        `${API}/apartments/${window.location.search}`
       );
       dispatch({ type: "GET_PRODUCTS", payload: res.data });
       console.log(res);
