@@ -11,6 +11,7 @@ import ProductList from "../products/ProductList";
 import EditProduct from "../products/EditProduct";
 import RegisterList from "../Auth/RegisterList/RegisterList";
 import Contacts from "../Pages/Contacts/Contacts";
+import Cart from "../Cart/Cart";
 
 const MainRoutes = () => {
   const ROUTES = [
@@ -25,6 +26,7 @@ const MainRoutes = () => {
     { link: "/products", element: <ProductList />, id: 9 },
     { link: "/edit/:id", element: <EditProduct />, id: 10 },
     { link: "/contacts", element: <Contacts />, id: 11 },
+    { link: "/cart", element: <Cart />, id: 12 },
   ];
 
   return (
