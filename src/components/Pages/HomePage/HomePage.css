@@ -1,0 +1,701 @@
+.roditelKochevnuks {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: min-content;
+}
+
+.kochevnik {
+}
+
+.kochevnikiPargrph {
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+  position: absolute;
+  top: 0;
+  width: 60%;
+  text-align: center;
+  line-height: 2;
+  margin-top: 15rem;
+  border-radius: 15px;
+}
+
+.some-span {
+  color: #e9ff5c;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 1s;
+}
+.some-span:hover {
+  color: #ffffffc9;
+  cursor: pointer;
+}
+
+@media all and (max-width: 1148px) {
+  .roditelKochevnuks {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: min-content;
+  }
+
+  .kochevnik {
+  }
+
+  .kochevnikiPargrph {
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    top: 0;
+    width: 60%;
+    text-align: center;
+    line-height: 2;
+    margin-top: 13rem;
+    border-radius: 15px;
+  }
+
+  .some-span {
+    color: #e9ff5c;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .some-span:hover {
+    color: #e9ff5cc3;
+    cursor: pointer;
+  }
+}
+@media all and (max-width: 1048px) {
+  .roditelKochevnuks {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: min-content;
+  }
+
+  .kochevnik {
+  }
+
+  .kochevnikiPargrph {
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    top: 0;
+    width: 60%;
+    text-align: center;
+    line-height: 2;
+    margin-top: 9rem;
+    border-radius: 15px;
+  }
+
+  .some-span {
+    color: #e9ff5c;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .some-span:hover {
+    color: #e9ff5cc3;
+    cursor: pointer;
+  }
+}
+@media all and (max-width: 922px) {
+  .roditelKochevnuks {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: min-content;
+  }
+
+  .kochevnik {
+  }
+
+  .kochevnikiPargrph {
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    top: 0;
+    width: 60%;
+    text-align: center;
+    line-height: 2;
+    margin-top: 7rem;
+    border-radius: 15px;
+  }
+
+  .some-span {
+    color: #e9ff5c;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .some-span:hover {
+    color: #e9ff5cc3;
+    cursor: pointer;
+  }
+}
+@media all and (max-width: 859px) {
+  .roditelKochevnuks {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: min-content;
+  }
+
+  .kochevnik {
+  }
+
+  .kochevnikiPargrph {
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    top: 0;
+    width: 60%;
+    text-align: center;
+    line-height: 2;
+    margin-top: 5rem;
+    border-radius: 15px;
+  }
+
+  .some-span {
+    color: #e9ff5c;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .some-span:hover {
+    color: #e9ff5cc3;
+    cursor: pointer;
+  }
+}
+@media all and (max-width: 792px) {
+  .roditelKochevnuks {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: min-content;
+  }
+
+  .kochevnik {
+  }
+
+  .kochevnikiPargrph {
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    top: 0;
+    width: 60%;
+    text-align: center;
+    line-height: 2;
+    margin-top: 3rem;
+    border-radius: 15px;
+  }
+
+  .some-span {
+    color: #e9ff5c;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .some-span:hover {
+    color: #e9ff5cc3;
+    cursor: pointer;
+  }
+}
+@media all and (max-width: 798px) {
+  .roditelKochevnuks {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: min-content;
+  }
+
+  .kochevnik {
+  }
+
+  .kochevnikiPargrph {
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    top: 0;
+    width: 60%;
+    text-align: center;
+    line-height: 2;
+    margin-top: 2rem;
+    border-radius: 15px;
+  }
+
+  .some-span {
+    color: #e9ff5c;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .some-span:hover {
+    color: #e9ff5cc3;
+    cursor: pointer;
+  }
+}
+@media all and (max-width: 791px) {
+  .roditelKochevnuks {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: min-content;
+  }
+
+  .kochevnik {
+  }
+
+  .kochevnikiPargrph {
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    top: 0;
+    width: 60%;
+    text-align: center;
+    line-height: 1.8;
+    margin-top: 1rem;
+    border-radius: 15px;
+  }
+
+  .some-span {
+    color: #e9ff5c;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .some-span:hover {
+    color: #e9ff5cc3;
+    cursor: pointer;
+  }
+}
+@media all and (max-width: 762px) {
+  .roditelKochevnuks {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: min-content;
+  }
+
+  .kochevnik {
+  }
+
+  .kochevnikiPargrph {
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    top: 0;
+    width: 80%;
+    text-align: center;
+    line-height: 1.8;
+    margin-top: 4rem;
+    border-radius: 15px;
+  }
+
+  .some-span {
+    color: #e9ff5c;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .some-span:hover {
+    color: #e9ff5cc3;
+    cursor: pointer;
+  }
+}
+@media all and (max-width: 640px) {
+  .roditelKochevnuks {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: min-content;
+  }
+
+  .kochevnik {
+  }
+
+  .kochevnikiPargrph {
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    top: 0;
+    width: 80%;
+    text-align: center;
+    line-height: 1.8;
+    margin-top: 2rem;
+    border-radius: 15px;
+  }
+
+  .some-span {
+    color: #e9ff5c;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .some-span:hover {
+    color: #e9ff5cc3;
+    cursor: pointer;
+  }
+}
+@media all and (max-width: 609px) {
+  .roditelKochevnuks {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: min-content;
+  }
+
+  .kochevnik {
+  }
+
+  .kochevnikiPargrph {
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    top: 0;
+    width: 80%;
+    text-align: center;
+    line-height: 1.8;
+    margin-top: 1rem;
+    border-radius: 15px;
+  }
+
+  .some-span {
+    color: #e9ff5c;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .some-span:hover {
+    color: #e9ff5cc3;
+    cursor: pointer;
+  }
+}
+@media all and (max-width: 593px) {
+  .roditelKochevnuks {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: min-content;
+  }
+
+  .kochevnik {
+  }
+
+  .kochevnikiPargrph {
+    font-size: 27px;
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    top: 0;
+    width: 80%;
+    text-align: center;
+    line-height: 1.8;
+    margin-top: 2rem;
+    border-radius: 15px;
+  }
+
+  .some-span {
+    color: #e9ff5c;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .some-span:hover {
+    color: #e9ff5cc3;
+    cursor: pointer;
+  }
+}
+@media all and (max-width: 554px) {
+  .roditelKochevnuks {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: min-content;
+  }
+
+  .kochevnik {
+  }
+
+  .kochevnikiPargrph {
+    font-size: 27px;
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    top: 0;
+    width: 80%;
+    text-align: center;
+    line-height: 1.8;
+    margin-top: 1rem;
+    border-radius: 15px;
+  }
+
+  .some-span {
+    color: #e9ff5c;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .some-span:hover {
+    color: #e9ff5cc3;
+    cursor: pointer;
+  }
+}
+@media all and (max-width: 534px) {
+  .roditelKochevnuks {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: min-content;
+  }
+
+  .kochevnik {
+  }
+
+  .kochevnikiPargrph {
+    font-size: 25px;
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    top: 0;
+    width: 80%;
+    text-align: center;
+    line-height: 1.8;
+    margin-top: 1rem;
+    border-radius: 15px;
+  }
+
+  .some-span {
+    color: #e9ff5c;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .some-span:hover {
+    color: #e9ff5cc3;
+    cursor: pointer;
+  }
+}
+@media all and (max-width: 494px) {
+  .roditelKochevnuks {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: min-content;
+  }
+
+  .kochevnik {
+  }
+
+  .kochevnikiPargrph {
+    font-size: 23px;
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    top: 0;
+    width: 80%;
+    text-align: center;
+    line-height: 1.8;
+    margin-top: 1rem;
+    border-radius: 15px;
+  }
+
+  .some-span {
+    color: #e9ff5c;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .some-span:hover {
+    color: #e9ff5cc3;
+    cursor: pointer;
+  }
+}
+@media all and (max-width: 455px) {
+  .roditelKochevnuks {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: min-content;
+  }
+
+  .kochevnik {
+  }
+
+  .kochevnikiPargrph {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    top: 0;
+    width: 80%;
+    text-align: center;
+    line-height: 1.8;
+    margin-top: 1rem;
+    border-radius: 15px;
+  }
+
+  .some-span {
+    color: #e9ff5c;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .some-span:hover {
+    color: #e9ff5cc3;
+    cursor: pointer;
+  }
+}
+@media all and (max-width: 401px) {
+  .roditelKochevnuks {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: min-content;
+  }
+
+  .kochevnik {
+  }
+
+  .kochevnikiPargrph {
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    top: 0;
+    width: 80%;
+    text-align: center;
+    line-height: 1.8;
+    margin-top: 1rem;
+    border-radius: 15px;
+  }
+
+  .some-span {
+    color: #e9ff5c;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .some-span:hover {
+    color: #e9ff5cc3;
+    cursor: pointer;
+  }
+}
+@media all and (max-width: 367px) {
+  .roditelKochevnuks {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: min-content;
+  }
+
+  .kochevnik {
+  }
+
+  .kochevnikiPargrph {
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    top: 0;
+    width: 80%;
+    text-align: center;
+    line-height: 1.8;
+    margin-top: 1rem;
+    border-radius: 15px;
+  }
+
+  .some-span {
+    color: #e9ff5c;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .some-span:hover {
+    color: #e9ff5cc3;
+    cursor: pointer;
+  }
+}
+@media all and (max-width: 331px) {
+  .roditelKochevnuks {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: min-content;
+  }
+
+  .kochevnik {
+  }
+
+  .kochevnikiPargrph {
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    top: 0;
+    width: 80%;
+    text-align: center;
+    line-height: 1.8;
+    margin-top: 1rem;
+    border-radius: 15px;
+  }
+
+  .some-span {
+    color: #e9ff5c;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .some-span:hover {
+    color: #e9ff5cc3;
+    cursor: pointer;
+  }
+}
+@media all and (max-width: 295px) {
+  .roditelKochevnuks {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: min-content;
+    margin: 1rem 0 1rem 0;
+  }
+
+  .kochevnik {
+  }
+
+  .kochevnikiPargrph {
+    font-size: 13px;
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    top: 0;
+    width: 80%;
+    text-align: center;
+    line-height: 1.8;
+    margin-top: 1rem;
+    border-radius: 15px;
+  }
+
+  .some-span {
+    color: #e9ff5c;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .some-span:hover {
+    color: #e9ff5cc3;
+    cursor: pointer;
+  }
+}

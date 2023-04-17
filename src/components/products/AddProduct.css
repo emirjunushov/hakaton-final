@@ -1,0 +1,36 @@
+.add_input {
+  /* height: 37px;
+  margin-top: 10px;
+  border-radius: 10px;
+  padding: 0 5px;
+  color: rgb(26, 3, 3);
+  border: 0.2px black solid; */
+
+  margin: 15px 0;
+  padding: 15px 10px;
+  width: 100%;
+  outline: none;
+  border: 1px solid #bbb;
+  border-radius: 20px;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -ms-transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+}
+
+.add_input:focus {
+  border-color: cornflowerblue;
+}
+.add_h1 {
+  text-align: center;
+}
+
+.file {
+  color: rgb(40, 36, 32);
+  width: 17%;
+}

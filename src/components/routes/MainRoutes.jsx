@@ -12,6 +12,9 @@ import EditProduct from "../products/EditProduct";
 import RegisterList from "../Auth/RegisterList/RegisterList";
 import Contacts from "../Pages/Contacts/Contacts";
 import Cart from "../Cart/Cart";
+import NotFoundPage from "../Pages/NotFoundPage/NotFoundPage";
+import Team from "../Pages/Team/Team";
+import BankCard from "../Pages/BankCard/BankCard";
 
 const MainRoutes = () => {
   const ROUTES = [
@@ -22,11 +25,13 @@ const MainRoutes = () => {
     { link: "/about", element: <AboutUs />, id: 5 },
     { link: "/forgotPassword", element: <ForgotPassword />, id: 6 },
     { link: "/add/product", element: <AddProduct />, id: 7 },
-    { link: "/*", element: <h1>not found</h1>, id: 8 },
+    { link: "/*", element: <NotFoundPage />, id: 8 },
     { link: "/products", element: <ProductList />, id: 9 },
     { link: "/edit/:id", element: <EditProduct />, id: 10 },
     { link: "/contacts", element: <Contacts />, id: 11 },
     { link: "/cart", element: <Cart />, id: 12 },
+    { link: "/team", element: <Team />, id: 13 },
+    { link: "/bank/card", element: <BankCard />, id: 14 },
   ];
 
   return (

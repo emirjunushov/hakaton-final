@@ -1,0 +1,383 @@
+.NotFoundPage__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30rem;
+}
+
+.NotFoundPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+}
+
+.NotFoundPage__icon {
+  font-size: 100px !important;
+}
+
+.NotFoundPage__paragraph {
+  margin-top: 1rem;
+  text-align: center;
+  line-height: 2;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.NotFoundPage__span {
+  color: red;
+  font-size: 40px;
+}
+
+@media all and (max-width: 791px) {
+  .NotFoundPage__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30rem;
+  }
+
+  .NotFoundPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
+  }
+
+  .NotFoundPage__icon {
+    font-size: 100px !important;
+  }
+
+  .NotFoundPage__paragraph {
+    margin-top: 1rem;
+    text-align: center;
+    line-height: 2;
+    font-size: 28px;
+    font-weight: 600;
+  }
+
+  .NotFoundPage__span {
+    color: red;
+    font-size: 40px;
+  }
+}
+@media all and (max-width: 739px) {
+  .NotFoundPage__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30rem;
+  }
+
+  .NotFoundPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+  }
+
+  .NotFoundPage__icon {
+    font-size: 100px !important;
+  }
+
+  .NotFoundPage__paragraph {
+    margin-top: 1rem;
+    text-align: center;
+    line-height: 2;
+    font-size: 28px;
+    font-weight: 600;
+  }
+
+  .NotFoundPage__span {
+    color: red;
+    font-size: 40px;
+  }
+}
+@media all and (max-width: 692px) {
+  .NotFoundPage__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30rem;
+  }
+
+  .NotFoundPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+  }
+
+  .NotFoundPage__icon {
+    font-size: 100px !important;
+  }
+
+  .NotFoundPage__paragraph {
+    margin-top: 1rem;
+    text-align: center;
+    line-height: 2;
+    font-size: 25px;
+    font-weight: 600;
+  }
+
+  .NotFoundPage__span {
+    color: red;
+    font-size: 40px;
+  }
+}
+@media all and (max-width: 617px) {
+  .NotFoundPage__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30rem;
+  }
+
+  .NotFoundPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+  }
+
+  .NotFoundPage__icon {
+    font-size: 100px !important;
+  }
+
+  .NotFoundPage__paragraph {
+    margin-top: 1rem;
+    text-align: center;
+    line-height: 2;
+    font-size: 23px;
+    font-weight: 600;
+  }
+
+  .NotFoundPage__span {
+    color: red;
+    font-size: 40px;
+  }
+}
+@media all and (max-width: 568px) {
+  .NotFoundPage__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 26rem;
+  }
+
+  .NotFoundPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+  }
+
+  .NotFoundPage__icon {
+    font-size: 100px !important;
+  }
+
+  .NotFoundPage__paragraph {
+    margin-top: 1rem;
+    text-align: center;
+    line-height: 2;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .NotFoundPage__span {
+    color: red;
+    font-size: 40px;
+  }
+}
+@media all and (max-width: 497px) {
+  .NotFoundPage__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 26rem;
+  }
+
+  .NotFoundPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+  }
+
+  .NotFoundPage__icon {
+    font-size: 100px !important;
+  }
+
+  .NotFoundPage__paragraph {
+    margin-top: 1rem;
+    text-align: center;
+    line-height: 2;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .NotFoundPage__span {
+    color: red;
+    font-size: 40px;
+  }
+}
+@media all and (max-width: 453px) {
+  .NotFoundPage__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 26rem;
+  }
+
+  .NotFoundPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+  }
+
+  .NotFoundPage__icon {
+    font-size: 100px !important;
+  }
+
+  .NotFoundPage__paragraph {
+    margin-top: 1rem;
+    text-align: center;
+    line-height: 2;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .NotFoundPage__span {
+    color: red;
+    font-size: 40px;
+  }
+}
+@media all and (max-width: 407px) {
+  .NotFoundPage__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 26rem;
+  }
+
+  .NotFoundPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 85%;
+  }
+
+  .NotFoundPage__icon {
+    font-size: 100px !important;
+  }
+
+  .NotFoundPage__paragraph {
+    margin-top: 1rem;
+    text-align: center;
+    line-height: 2;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .NotFoundPage__span {
+    color: red;
+    font-size: 40px;
+  }
+}
+@media all and (max-width: 383px) {
+  .NotFoundPage__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 24rem;
+  }
+
+  .NotFoundPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 85%;
+  }
+
+  .NotFoundPage__icon {
+    font-size: 100px !important;
+  }
+
+  .NotFoundPage__paragraph {
+    margin-top: 1rem;
+    text-align: center;
+    line-height: 1;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .NotFoundPage__span {
+    color: red;
+    font-size: 40px;
+  }
+}
+@media all and (max-width: 340px) {
+  .NotFoundPage__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 24rem;
+  }
+
+  .NotFoundPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 87%;
+  }
+
+  .NotFoundPage__icon {
+    font-size: 100px !important;
+  }
+
+  .NotFoundPage__paragraph {
+    margin-top: 1rem;
+    text-align: center;
+    line-height: 1;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .NotFoundPage__span {
+    color: red;
+    font-size: 40px;
+  }
+}
+@media all and (max-width: 289px) {
+  .NotFoundPage__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 24rem;
+  }
+
+  .NotFoundPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+  }
+
+  .NotFoundPage__icon {
+    font-size: 100px !important;
+  }
+
+  .NotFoundPage__paragraph {
+    margin-top: 1rem;
+    text-align: center;
+    line-height: 1;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .NotFoundPage__span {
+    color: red;
+    font-size: 40px;
+  }
+}

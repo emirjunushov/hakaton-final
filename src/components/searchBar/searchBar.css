@@ -6,19 +6,12 @@
 .searchBar {
   transition-property: line inherit;
   transition-duration: 3s;
-
   background-color: #031f3d;
-  width: 70%;
+  width: 80%;
   margin: auto;
   height: 8rem;
   border-radius: 15px;
-}
-
-@keyframes mymove {
-  from {
-    top: 0px;
-  }
-  to {
-    top: 200px;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

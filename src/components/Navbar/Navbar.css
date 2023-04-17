@@ -37,7 +37,8 @@ body {
   object-fit: cover;
 }
 
-.nav__logo {
+.nav__logo:hover {
+  color: #e9ff5c  ;
 }
 
 .nav__block-adaptiv {
@@ -78,21 +79,6 @@ body {
   color: white !important;
 }
 
-.nav__settings-menu {
-}
-
-.nav__menu_block {
-}
-
-.nav-menu__btn {
-}
-
-.nav-avatar {
-}
-
-.nav__menu {
-}
-
 .btnOfNavMenu {
   color: #030301 !important;
 }
@@ -111,6 +97,7 @@ body {
 
 .nav__linkMain {
   text-decoration: none !important;
+  width: 20%;
 }
 
 .nav__text {
@@ -119,6 +106,74 @@ body {
 
 .login_btn-in-nav-menu {
   display: none !important;
+}
+
+@media all and (max-width: 1201px) {
+  .nav__linkMain {
+    text-decoration: none !important;
+    width: 22%;
+    font-size: 15px;
+  }
+}
+@media all and (max-width: 1120px) {
+  .nav__linkMain {
+    text-decoration: none !important;
+    width: 23%;
+    font-size: 15px;
+  }
+}
+@media all and (max-width: 1085px) {
+  .nav__linkMain {
+    text-decoration: none !important;
+    width: 25%;
+    font-size: 14px;
+  }
+}
+@media all and (max-width: 1053px) {
+  .nav__linkMain {
+    text-decoration: none !important;
+    width: 25%;
+    font-size: 15px;
+  }
+}
+@media all and (max-width: 1023px) {
+  .nav__linkMain {
+    text-decoration: none !important;
+    font-size: 15px;
+  }
+  .nav__btn-some {
+    font-size: 15px;
+  }
+}
+@media all and (max-width: 1013px) {
+  .nav__btn-some {
+    font-size: 14px;
+  }
+}
+@media all and (max-width: 1009px) {
+  .nav__btn-some {
+    font-size: 13px;
+  }
+}
+@media all and (max-width: 1006px) {
+  .nav__btn-some {
+    font-size: 12px;
+  }
+}
+@media all and (max-width: 1002px) {
+  .nav__btn-some {
+    font-size: 11px;
+  }
+}
+@media all and (max-width: 999px) {
+  .nav__btn-some {
+    font-size: 10px;
+  }
+}
+@media all and (max-width: 995px) {
+  .nav__btn-some {
+    font-size: 9px;
+  }
 }
 
 @media all and (max-width: 899px) {
