@@ -16,98 +16,66 @@ export default function BankCard() {
 
   const navigate = useNavigate();
   return (
-    <div className="bankMainContainer">
-      <Cards
-        cvc={state.cvc}
-        expiry={state.expiry}
-        focused={state.focus}
-        name={state.name}
-        number={state.number}
-      />
-      <h1
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          fontFamily: "Rubik",
-          fontSize: "40px",
-          padding: "20px",
-        }}
-      >
-        Add credit card
-      </h1>
-      <div className="bankCard__container">
-        <div
-          id="PaymentForm"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            flexDirection: "row-reverse",
-            width: "80%",
-            paddingBottom: "70px",
-          }}
-        >
-          <form
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              width: "19%",
-              flexDirection: "column",
-              gap: "15px",
-              alignSelf: "center",
-              paddingTop: "20px",
-              marginLeft: "35%",
-            }}
-          >
+    <div className="bankCard__container">
+      <div className="bankCard">
+        <p className="bank-card__title">Привяжете карту для оплаты</p>
+        <div className="PaymentForm">
+          <div id="bank-card">
+            <Cards
+              cvc={state.cvc}
+              expiry={state.expiry}
+              focused={state.focus}
+              name={state.name}
+              number={state.number}
+            />
+          </div>
+          <form className="bank-card__inps">
             <Input
               className="cardBankInp"
+              id="cardBankInp"
               onChange={(e) => {
                 setState({ ...state, [e.target.name]: e.target.value });
               }}
-              type="tel"
+              type="number"
               name="number"
-              placeholder="Card Number"
-              style={{
-                height: "30px",
-                borderRadius: "5px",
-                marginTop: "-17px",
-              }}
+              placeholder="Номер карты"
             />
             <Input
               className="cardBankInp"
+              id="cardBankInp"
               onChange={(e) => {
                 setState({ ...state, [e.target.name]: e.target.value });
               }}
-              type="tel"
+              type="text"
               name="name"
-              placeholder="Card Name"
-              style={{ height: "30px", borderRadius: "5px" }}
+              placeholder="Имя карты"
             />
             <Input
               className="cardBankInp"
+              id="cardBankInp"
               onChange={(e) => {
                 setState({ ...state, [e.target.name]: e.target.value });
               }}
-              type="tel"
+              type="number"
               name="cvc"
               placeholder="cvc"
-              style={{ height: "30px", borderRadius: "5px" }}
             />
             <Input
               className="cardBankInp"
+              id="cardBankInp"
               onChange={(e) => {
                 setState({ ...state, [e.target.name]: e.target.value });
               }}
-              type="tel"
+              type="number"
               name="expiry"
-              placeholder="expiry"
-              style={{ height: "30px", borderRadius: "5px" }}
+              placeholder="Дата"
             />
 
             <Button
               className="bankCardBtn"
-              onClick={() => navigate("/youreCard")}
+              onClick={() => navigate("/added/card")}
             >
-              Add
+              Привязать карту
             </Button>
           </form>
         </div>
