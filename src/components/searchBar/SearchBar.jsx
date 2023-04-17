@@ -3,7 +3,8 @@ import "./searchBar.css";
 import SearchIcon from "@mui/icons-material/Search";
 import { IconButton } from "@mui/material";
 import { useProduct } from "../../context/AddProductProvider";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import BookmarkIcon from "@mui/icons-material/Bookmark";
 
 // =============
 import { motion } from "framer-motion";
@@ -25,6 +26,8 @@ const SearchBar = () => {
   const { getProducts, fetchByParams } = useProduct();
   const [searchParams, setSearchParams] = useSearchParams();
   const [search, setSearch] = useState(searchParams.get("q") || "");
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     setSearchParams({ q: search });
@@ -140,6 +143,9 @@ const SearchBar = () => {
           </IconButton>
         </motion.div>
         <motion.button variants={blockAnimation}>Фильтр</motion.button>
+        <IconButton onClick={() => navigate("/favorite")}>
+          <BookmarkIcon sx={{ color: "white" }} />
+        </IconButton>
       </div>
     </motion.div>
   );

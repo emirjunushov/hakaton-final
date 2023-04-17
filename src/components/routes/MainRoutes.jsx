@@ -16,6 +16,7 @@ import NotFoundPage from "../Pages/NotFoundPage/NotFoundPage";
 import Team from "../Pages/Team/Team";
 import BankCard from "../Pages/BankCard/BankCard";
 import AddedCard from "../Pages/BankCard/AddedCard";
+import FavoritePages from "../Favorite/FavoritePages";
 
 const MainRoutes = () => {
   const ROUTES = [
@@ -36,6 +37,7 @@ const MainRoutes = () => {
     { link: "/cart", element: <Cart />, id: 15 },
     { link: "/team", element: <Team />, id: 16 },
     { link: "/bank/card", element: <BankCard />, id: 17 },
+    { link: "/favorite", element: <FavoritePages />, id: 18 },
   ];
 
   return (

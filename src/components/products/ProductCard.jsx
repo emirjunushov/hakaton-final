@@ -98,7 +98,6 @@ export default function ProductCart({ item }) {
             </div>
             <div className="product-btns">
               <div>
-                {/* <IconButton>{<BookmarkIcon />}</IconButton> */}
                 <div>
                   <IconButton>
                     <BookmarkAddIcon className="cerdse" />
