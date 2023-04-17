@@ -1,19 +1,12 @@
-import { useProduct } from "../../context/AddProductProvider";
 import { useNavigate } from "react-router-dom";
 import * as React from "react";
 // import "../products/ProductCard/ProductCard.css";
 import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
-import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import { IconButton } from "@mui/material";
-import DeleteIcon from "@mui/icons-material/Delete";
-import EditIcon from "@mui/icons-material/Edit";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import "../products/ProductCart.css";
-
-// =============
 import { motion } from "framer-motion";
-import { useFavorites } from "../../context/FavoritesContextProvider";
-import { Button } from "react-bootstrap";
 
 const blockAnimation = {
   hidden: {
@@ -28,9 +21,7 @@ const blockAnimation = {
 };
 // =============
 
-export default function ProductCart({ item }) {
-  console.log(item);
-  const { deleteProduct, updateProduct } = useProduct();
+export default function FavoritePages({ item }) {
   const navigate = useNavigate();
   return (
     <>
@@ -98,37 +89,15 @@ export default function ProductCart({ item }) {
             </div>
             <div className="product-btns">
               <div>
-                {/* <IconButton>{<BookmarkIcon />}</IconButton> */}
-                <div>
-                  <IconButton>
-                    <BookmarkAddIcon className="cerdse" />
-                  </IconButton>
-                  <IconButton>
-                    {" "}
-                    <LocalGroceryStoreIcon className="korzina" />
-                  </IconButton>
-                </div>
-
-                <Button
-                  className="btnOfCard_BOOKING"
-                  onClick={() => navigate("/bank/card")}
-                >
-                  Арендовать
-                </Button>
-              </div>
-              {/* {email === ADMIN ? ( */}
-              <div className="card__action">
-                <IconButton
-                  className="btn__delete"
-                  onClick={() => deleteProduct(item.id)}
-                >
-                  <DeleteIcon className="korzina" color="secondary" />
+                <IconButton>
+                  <FavoriteIcon className="cerdse" />
                 </IconButton>
-                <IconButton
-                  className="btn__edit"
-                  onClick={() => navigate(`/edit/${item.id}`)}
-                >
-                  <EditIcon className="korzina" color="secondary" />
+                <IconButton>
+                  {" "}
+                  <LocalGroceryStoreIcon className="korzina" />
+                </IconButton>
+                <IconButton>
+                  <BookmarkIcon />
                 </IconButton>
               </div>
             </div>
