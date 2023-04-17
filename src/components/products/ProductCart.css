@@ -2,6 +2,16 @@
   margin: 0 0 2rem 10px;
 }
 
+.cerdse {
+  background-color: rgba(255, 255, 255, 0.47);
+  border-radius: 100%;
+}
+
+.korzina {
+  background-color: rgba(255, 255, 255, 0.47);
+  border-radius: 100%;
+}
+
 .product-total p {
   font-weight: 700;
   font-size: 2rem;
@@ -41,8 +51,8 @@
 }
 
 .card_img {
-  width: 100%;
-  height: 100%;
+  width: 600px;
+  height: 500px;
   object-fit: cover;
   border-radius: 15px;
 }
@@ -128,4 +138,11 @@
 
 .Rating {
   margin-right: 15px;
+}
+
+.btnOfCard_BOOKING {
+  color: #e9ff5c !important;
+  background-color: #031f3dce !important;
+  border: none !important;
+  margin: 0.7rem 0 0 0.5rem;
 }

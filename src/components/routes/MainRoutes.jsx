@@ -15,6 +15,7 @@ import Cart from "../Cart/Cart";
 import NotFoundPage from "../Pages/NotFoundPage/NotFoundPage";
 import Team from "../Pages/Team/Team";
 import BankCard from "../Pages/BankCard/BankCard";
+import AddedCard from "../Pages/BankCard/AddedCard";
 
 const MainRoutes = () => {
   const ROUTES = [
@@ -29,9 +30,12 @@ const MainRoutes = () => {
     { link: "/products", element: <ProductList />, id: 9 },
     { link: "/edit/:id", element: <EditProduct />, id: 10 },
     { link: "/contacts", element: <Contacts />, id: 11 },
-    { link: "/cart", element: <Cart />, id: 12 },
-    { link: "/team", element: <Team />, id: 13 },
-    { link: "/bank/card", element: <BankCard />, id: 14 },
+    { link: "/team", element: <Team />, id: 12 },
+    { link: "/bank/card", element: <BankCard />, id: 13 },
+    { link: "/added/card", element: <AddedCard />, id: 14 },
+    { link: "/cart", element: <Cart />, id: 15 },
+    { link: "/team", element: <Team />, id: 16 },
+    { link: "/bank/card", element: <BankCard />, id: 17 },
   ];
 
   return (

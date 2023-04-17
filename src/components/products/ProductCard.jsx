@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import * as React from "react";
 // import "../products/ProductCard/ProductCard.css";
 import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
-import FavoriteIcon from "@mui/icons-material/Favorite";
+import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
 import { IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
@@ -13,6 +13,7 @@ import "../products/ProductCart.css";
 // =============
 import { motion } from "framer-motion";
 import { useFavorites } from "../../context/FavoritesContextProvider";
+import { Button } from "react-bootstrap";
 
 const blockAnimation = {
   hidden: {
@@ -97,14 +98,23 @@ export default function ProductCart({ item }) {
             </div>
             <div className="product-btns">
               <div>
-                <IconButton>
-                  <FavoriteIcon className="cerdse" />
-                </IconButton>
-                <IconButton>
-                  {" "}
-                  <LocalGroceryStoreIcon className="korzina" />
-                </IconButton>
-                <IconButton>{<BookmarkIcon />}</IconButton>
+                {/* <IconButton>{<BookmarkIcon />}</IconButton> */}
+                <div>
+                  <IconButton>
+                    <BookmarkAddIcon className="cerdse" />
+                  </IconButton>
+                  <IconButton>
+                    {" "}
+                    <LocalGroceryStoreIcon className="korzina" />
+                  </IconButton>
+                </div>
+
+                <Button
+                  className="btnOfCard_BOOKING"
+                  onClick={() => navigate("/bank/card")}
+                >
+                  Арендовать
+                </Button>
               </div>
               {/* {email === ADMIN ? ( */}
               <div className="card__action">
@@ -112,13 +122,13 @@ export default function ProductCart({ item }) {
                   className="btn__delete"
                   onClick={() => deleteProduct(item.id)}
                 >
-                  <DeleteIcon color="secondary" />
+                  <DeleteIcon className="korzina" color="secondary" />
                 </IconButton>
                 <IconButton
                   className="btn__edit"
                   onClick={() => navigate(`/edit/${item.id}`)}
                 >
-                  <EditIcon color="secondary" />
+                  <EditIcon className="korzina" color="secondary" />
                 </IconButton>
               </div>
             </div>
