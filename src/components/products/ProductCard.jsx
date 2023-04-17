@@ -1,14 +1,13 @@
 import { useProduct } from "../../context/AddProductProvider";
 import { useNavigate } from "react-router-dom";
 import * as React from "react";
-// import "../products/ProductCard/ProductCard.css";
 import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
-// import "../products/ProductCard/ProductCard.css";
-import "../products/ProductCart.css";
+import "../products/ProductCard.css";
+import "./ProductAdaptiv.css";
 
 export default function ProductCart() {
   return (
@@ -24,10 +23,8 @@ export default function ProductCart() {
             <h1 className="card_title">Apartment</h1>
             <p className="card_sub_title">apartment 1</p>
             <p className="card_info">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
-              quisquam voluptas iste modi, sit nam velit eligendi error quae
-              optio unde harum ducimus rerum ipsam asperiores hic necessitatibus
-              commodi eius?
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto,
+              odio.safasfsfasasdsdcdsdsqADSVFFSFVSDVDSVSqwerfggfdvxvvsv
             </p>{" "}
             <div className="product-div">
               <div className="product-total">
@@ -45,27 +42,27 @@ export default function ProductCart() {
                 <div class="rate">
                   <input type="radio" id="star5" name="rate" value="5" />
                   <label for="star5" title="text">
-                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i className="fa fa fa-star" aria-hidden="true"></i>
                   </label>
 
                   <input type="radio" id="star4" name="rate" value="4" />
                   <label for="star4" title="text">
-                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i className="fa fa fa-star" aria-hidden="true"></i>
                   </label>
 
                   <input type="radio" id="star3" name="rate" value="3" />
                   <label for="star3" title="text">
-                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i className="fa fa fa-star" aria-hidden="true"></i>
                   </label>
 
                   <input type="radio" id="star2" name="rate" value="2" />
                   <label for="star2" title="text">
-                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i className="fa fa fa-star" aria-hidden="true"></i>
                   </label>
 
                   <input type="radio" id="star1" name="rate" value="1" />
                   <label for="star1" title="text">
-                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i className="fa fa fa-star" aria-hidden="true"></i>
                   </label>
                 </div>
               </div>
