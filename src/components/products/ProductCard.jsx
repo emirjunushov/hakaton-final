@@ -5,17 +5,15 @@ import { useNavigate } from "react-router-dom";
 
 import Button from "@mui/material/Button";
 
-// import "../products/ProductCard/ProductCard.css";
 import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
 import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
 import { IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import "../products/ProductCard.css";
-import "./ProductAdaptiv.css";
+// import "./ProductAdaptiv.css";
 import AddCommentIcon from "@mui/icons-material/AddComment";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import "../products/ProductCard.css";
 
 // =============
 
@@ -51,7 +49,9 @@ export default function ProductCart({ item }) {
         initial="hidden"
         whileInView="visible"
         viewport={{ amount: 0.2 }}
-        style={{ overflow: "hidden" }}
+        style={{
+          overflow: "hidden",
+        }}
         className="card_container"
       >
         <motion.div variants={blockAnimation} castom={1} className="card">
@@ -76,7 +76,7 @@ export default function ProductCart({ item }) {
             <div className="product-div">
               <div className="product-total">
                 <h3>Цена</h3>
-                <p>${item.price}</p>
+                <p>{item.price}сом</p>
               </div>
               <div className="Rating">
                 <div>
