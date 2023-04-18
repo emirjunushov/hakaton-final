@@ -1,25 +1,15 @@
 import * as React from "react";
 import { useProduct } from "../../context/AddProductProvider";
-
 import { useNavigate } from "react-router-dom";
-
 import Button from "@mui/material/Button";
-
 import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
-import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
 import { IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import "../products/ProductCard.css";
-// import "./ProductAdaptiv.css";
 import AddCommentIcon from "@mui/icons-material/AddComment";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
-
-// =============
-
 import { motion } from "framer-motion";
-import { useFavorite } from "../../context/FavoritesContextProvider";
-import { useAuth } from "../../context/AuthContextProvider";
 
 const blockAnimation = {
   hidden: {
@@ -32,17 +22,10 @@ const blockAnimation = {
     transition: { delay: castom * 0.3 },
   }),
 };
-// =============
-
 export default function ProductCart({ item }) {
-  const { deleteProduct, updateProduct } = useProduct();
+  const { deleteProduct } = useProduct();
   const navigate = useNavigate();
-  // ==============================================
-  const { addApartmensToFavorite, checkApartmensInCard } = useFavorite();
-  // const {
-  //   user: { email },
-  // } = useAuth();
-  // ==============================================
+
   return (
     <div className="qwerty">
       <motion.div
@@ -67,11 +50,6 @@ export default function ProductCart({ item }) {
             <p className="card_sub_title">
               {item.city}:{item.street}
             </p>
-            {/* <p className="card_sub_title">
-              {item.comments.map((item1) => (
-                <p>{item1.text}</p>
-              ))}
-            </p> */}
             <p className="card_info">{item.description}</p>{" "}
             <div className="product-div">
               <div className="product-total">
@@ -118,14 +96,7 @@ export default function ProductCart({ item }) {
             <div className="product-btns">
               <div>
                 <div>
-                  <IconButton onClick={() => addApartmensToFavorite(item)}>
-                    <BookmarkAddIcon
-                      color={checkApartmensInCard(item.id) ? "primery" : ""}
-                      className="qwerty"
-                    />
-                  </IconButton>
                   <IconButton>
-                    {" "}
                     <LocalGroceryStoreIcon className="qwerty" />
                   </IconButton>
                   <IconButton onClick={() => navigate(`/coment/${item.id}`)}>
