@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useProduct } from "../../context/AddProductProvider";
 import "../products/AddProduct.css";
 
 const AddProduct = () => {
   const { createProduct } = useProduct();
-
   const [user, setUser] = useState("");
   const [street, setStreet] = useState("");
   const [city, setCity] = useState("");

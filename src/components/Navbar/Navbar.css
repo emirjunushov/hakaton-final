@@ -28,9 +28,6 @@ body {
   color: #e9ff5c !important;
 }
 
-.nav__tool-bar {
-}
-
 .nav__icon {
   border-radius: 100%;
   margin-right: 10px;
@@ -38,26 +35,11 @@ body {
 }
 
 .nav__logo:hover {
-  color: #e9ff5c  ;
-}
-
-.nav__block-adaptiv {
-}
-
-.nav__btn-adaptiv {
-}
-
-.nav__block_links-adaptiv {
+  color: #e9ff5c;
 }
 
 .nav__burger-adaptiv {
   background-color: rgba(0, 0, 0, 0.686) !important;
-}
-
-.nav__some-icon-adaptiv {
-}
-
-.nav__logo-adaptiv {
 }
 
 .nav__some-BOX {
@@ -72,9 +54,11 @@ body {
   border: none;
   background: transparent !important;
 }
+
 .nav__btn-some:hover {
   color: white !important;
 }
+
 .nav__btn-some:focus {
   color: white !important;
 }
@@ -85,9 +69,6 @@ body {
 
 .nav-menu_list {
   background-color: rgba(0, 0, 0, 0.686) !important;
-}
-
-.nav-menu_item {
 }
 
 .nav__link-oun {
@@ -115,6 +96,7 @@ body {
     font-size: 15px;
   }
 }
+
 @media all and (max-width: 1120px) {
   .nav__linkMain {
     text-decoration: none !important;
@@ -122,6 +104,7 @@ body {
     font-size: 15px;
   }
 }
+
 @media all and (max-width: 1085px) {
   .nav__linkMain {
     text-decoration: none !important;
@@ -129,6 +112,7 @@ body {
     font-size: 14px;
   }
 }
+
 @media all and (max-width: 1053px) {
   .nav__linkMain {
     text-decoration: none !important;
@@ -136,6 +120,7 @@ body {
     font-size: 15px;
   }
 }
+
 @media all and (max-width: 1023px) {
   .nav__linkMain {
     text-decoration: none !important;
@@ -145,31 +130,37 @@ body {
     font-size: 15px;
   }
 }
+
 @media all and (max-width: 1013px) {
   .nav__btn-some {
     font-size: 14px;
   }
 }
+
 @media all and (max-width: 1009px) {
   .nav__btn-some {
     font-size: 13px;
   }
 }
+
 @media all and (max-width: 1006px) {
   .nav__btn-some {
     font-size: 12px;
   }
 }
+
 @media all and (max-width: 1002px) {
   .nav__btn-some {
     font-size: 11px;
   }
 }
+
 @media all and (max-width: 999px) {
   .nav__btn-some {
     font-size: 10px;
   }
 }
+
 @media all and (max-width: 995px) {
   .nav__btn-some {
     font-size: 9px;
@@ -184,12 +175,15 @@ body {
   .login_btn-in-nav-menu {
     display: block !important;
   }
+
   .nav__icon {
     display: none;
   }
+
   .nav__linkMain {
     display: none;
   }
+
   .nav__linkMain {
     display: block;
   }

@@ -1,8 +1,6 @@
 .coment_images {
   width: 590px;
-  /* height: 400px; */
   object-fit: cover;
-  /* margin-top: 6%; */
 }
 .container_of_left_side {
   display: flex;

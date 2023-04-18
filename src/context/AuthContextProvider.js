@@ -30,7 +30,6 @@ const AuthContextProvider = ({ children }) => {
       setError(Object.values(error.response.data).flat()[0]);
     }
   };
-
   const handleLogin = async (formData, email) => {
     setLoading(true);
     try {

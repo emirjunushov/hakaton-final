@@ -15,7 +15,6 @@ const ProductList = () => {
       page: currentPage,
     });
   }, [currentPage]);
-
   useEffect(() => {
     getProducts();
   }, [searchParams]);

@@ -23,7 +23,6 @@ const HomePage = () => {
   return (
     <div>
       <SliderList />
-
       <motion.div
         initial="hidden"
         whileInView="visible"
