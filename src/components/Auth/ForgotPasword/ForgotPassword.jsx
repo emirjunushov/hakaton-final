@@ -7,7 +7,7 @@ import StepContent from "@mui/material/StepContent";
 import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
-import { Input, TextField } from "@mui/material";
+import { Alert, Input, TextField } from "@mui/material";
 import { useAuth } from "../../../context/AuthContextProvider";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -46,6 +46,7 @@ export default function ForgotPassword() {
   async function handleEmailForForgotPassword() {
     if (!emailForForgotPassword.trim()) {
       alert("заполните все поля!");
+
       return;
     } else {
       let formData = new FormData();
