@@ -4,7 +4,7 @@ import { useAddComments } from "../../../context/AddCommentsProvider";
 import { useProduct } from "../../../context/AddProductProvider";
 import Skeleton from "@mui/material/Skeleton";
 import Stack from "@mui/material/Stack";
-
+import DeleteIcon from "@mui/icons-material/Delete";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
@@ -13,21 +13,25 @@ import ListSubheader from "@mui/material/ListSubheader";
 import Avatar from "@mui/material/Avatar";
 
 import "./ComentPage.css";
+import { IconButton } from "@mui/material";
 const ComentsPage = () => {
   const { getOneProduct, oneProduct } = useProduct();
-  console.log(oneProduct);
-  const { PostOneComment } = useAddComments();
+  const { PostOneComment, deleteComments, getComents, allComments } =
+    useAddComments();
+  console.log(allComments);
   const { id } = useParams();
+  useEffect(() => {
+    getComents();
+  }, []);
   useEffect(() => {
     getOneProduct(id);
   }, []);
   // !============================================
   const [comments, setComments] = React.useState("");
-  const [apartment, setApartment] = React.useState(id);
+  const [apartment, setApartment] = React.useState("");
   useEffect(() => {
     setApartment(id);
   }, []);
-
   function handleSave() {
     let newProduct = new FormData();
 
@@ -47,9 +51,9 @@ const ComentsPage = () => {
             width="250"
             height="200"
             style={{ border: "0" }}
-            allowfullscreen=""
+            allowFullScreen=""
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
+            referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
           <h3> {oneProduct?.user}</h3>
           <h4>
@@ -68,13 +72,16 @@ const ComentsPage = () => {
       <div>
         <div>
           <List sx={{ mb: 2 }}>
-            {oneProduct?.comments.map((item) => (
-              <React.Fragment key={id}>
+            {allComments?.map((item) => (
+              <React.Fragment key={allComments.id}>
                 <ListItem button>
                   <ListItemAvatar>
                     <Avatar alt="Profile Picture" src="emir" />
                   </ListItemAvatar>
                   <ListItemText primary={item.user} secondary={item.text} />
+                  <IconButton onClick={() => deleteComments(item.id)}>
+                    <DeleteIcon />
+                  </IconButton>
                 </ListItem>
               </React.Fragment>
             ))}

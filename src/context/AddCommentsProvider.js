@@ -20,7 +20,20 @@ function reducer(state = INIT_STATE, action) {
 
 const AddCommentsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
+  // !=========================================================================
 
+  const getComents = async () => {
+    try {
+      const res = await axios.get(`${API}/comments/`);
+      console.log(res);
+      dispatch({ type: "GET_COMMENTS", payload: res.data.results });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  // !=========================================================================
+
+  // !=========================================================================
   const PostOneComment = async (formData) => {
     try {
       const tokens = JSON.parse(localStorage.getItem("tokens"));
@@ -36,8 +49,32 @@ const AddCommentsProvider = ({ children }) => {
       console.log(error);
     }
   };
+  // !=========================================================================
 
-  const values = { PostOneComment };
+  const deleteComments = async (id) => {
+    try {
+      const tokens = JSON.parse(localStorage.getItem("tokens"));
+      const Authorization = `Bearer ${tokens.access}`;
+      const config = {
+        headers: {
+          Authorization,
+        },
+      };
+
+      const res = await axios.delete(`${API}/comments/${id}/`, config);
+      getComents();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  // !=========================================================================
+
+  const values = {
+    PostOneComment,
+    deleteComments,
+    getComents,
+    allComments: state.comments,
+  };
   return <AddComments.Provider value={values}>{children}</AddComments.Provider>;
 };
 
