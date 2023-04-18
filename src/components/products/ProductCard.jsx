@@ -20,6 +20,8 @@ import "../products/ProductCard.css";
 // =============
 
 import { motion } from "framer-motion";
+import { useFavorite } from "../../context/FavoritesContextProvider";
+import { useAuth } from "../../context/AuthContextProvider";
 
 const blockAnimation = {
   hidden: {
@@ -35,9 +37,14 @@ const blockAnimation = {
 // =============
 
 export default function ProductCart({ item }) {
-  console.log(item);
   const { deleteProduct, updateProduct } = useProduct();
   const navigate = useNavigate();
+  // ==============================================
+  const { addApartmensToFavorite, checkApartmensInCard } = useFavorite();
+  // const {
+  //   user: { email },
+  // } = useAuth();
+  // ==============================================
   return (
     <>
       <motion.div
@@ -110,8 +117,11 @@ export default function ProductCart({ item }) {
             <div className="product-btns">
               <div>
                 <div>
-                  <IconButton>
-                    <BookmarkAddIcon className="qwerty" />
+                  <IconButton onClick={() => addApartmensToFavorite(item)}>
+                    <BookmarkAddIcon
+                      color={checkApartmensInCard(item.id) ? "primery" : ""}
+                      className="qwerty"
+                    />
                   </IconButton>
                   <IconButton>
                     {" "}
