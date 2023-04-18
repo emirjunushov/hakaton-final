@@ -26,7 +26,7 @@ const AddCommentsProvider = ({ children }) => {
     try {
       const res = await axios.get(`${API}/comments/`);
       console.log(res);
-      dispatch({ type: "GET_COMMENTS", payload: res.data.results });
+      dispatch({ type: "GET_COMMENTS", payload: res.data });
     } catch (error) {
       console.log(error);
     }
@@ -45,6 +45,7 @@ const AddCommentsProvider = ({ children }) => {
       };
 
       const res = await axios.post(`${API}/comments/`, formData, config);
+      getComents();
     } catch (error) {
       console.log(error);
     }

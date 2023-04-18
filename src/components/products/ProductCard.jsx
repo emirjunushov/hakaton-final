@@ -36,13 +36,12 @@ const blockAnimation = {
 
 export default function ProductCart({ item }) {
   const { deleteProduct, updateProduct } = useProduct();
+
   const navigate = useNavigate();
   // ==============================================
   const { addApartmensToFavorite, checkApartmensInCard } = useFavorite();
-  // const {
-  //   user: { email },
-  // } = useAuth();
-  // ==============================================
+  const { user } = useAuth();
+
   return (
     <>
       <motion.div
@@ -67,11 +66,6 @@ export default function ProductCart({ item }) {
             <p className="card_sub_title">
               {item.city}:{item.street}
             </p>
-            {/* <p className="card_sub_title">
-              {item.comments.map((item1) => (
-                <p>{item1.text}</p>
-              ))}
-            </p> */}
             <p className="card_info">{item.description}</p>{" "}
             <div className="product-div">
               <div className="product-total">
@@ -143,21 +137,24 @@ export default function ProductCart({ item }) {
                   Арендовать
                 </Button>
               </div>
-
-              <div className="card__action">
-                <IconButton
-                  className="btn__delete"
-                  onClick={() => deleteProduct(item.id)}
-                >
-                  <DeleteIcon className="qwerty" color="secondary" />
-                </IconButton>
-                <IconButton
-                  className="btn__edit"
-                  onClick={() => navigate(`/edit/${item.id}`)}
-                >
-                  <EditIcon className="qwerty" color="secondary" />
-                </IconButton>
-              </div>
+              {item.user === user ? (
+                <div className="card__action">
+                  <IconButton
+                    className="btn__delete"
+                    onClick={() => deleteProduct(item.id)}
+                  >
+                    <DeleteIcon className="qwerty" color="secondary" />
+                  </IconButton>
+                  <IconButton
+                    className="btn__edit"
+                    onClick={() => navigate(`/edit/${item.id}`)}
+                  >
+                    <EditIcon className="qwerty" color="secondary" />
+                  </IconButton>
+                </div>
+              ) : (
+                ""
+              )}
             </div>
           </div>
         </motion.div>
