@@ -1,6 +1,5 @@
 import React from "react";
 import { useFavorite } from "../../context/FavoritesContextProvider";
-import { TableCell } from "@mui/material";
 import { Button } from "react-bootstrap";
 
 function createData(user, apartment, is_favorite, favorites) {
@@ -8,12 +7,7 @@ function createData(user, apartment, is_favorite, favorites) {
 }
 
 const FavoritePages = () => {
-  const {
-    getFavorite,
-    favorites,
-    changeApartmensCount,
-    deleteFavoriteApartmens,
-  } = useFavorite();
+  const { getFavorite, favorites, deleteFavoriteApartmens } = useFavorite();
 
   React.useEffect(() => {
     getFavorite();
