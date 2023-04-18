@@ -15,10 +15,11 @@ import Cart from "../Cart/Cart";
 import NotFoundPage from "../Pages/NotFoundPage/NotFoundPage";
 import Team from "../Pages/Team/Team";
 import BankCard from "../Pages/BankCard/BankCard";
-import ComentsPage from "../products/ComentsPage/ComentsPage";
+
 import AddedCard from "../Pages/BankCard/AddedCard";
 import FavoritePages from "../Favorite/FavoritePages";
 import { Services } from "../Pages/Services/Services";
+import ComentsPage from "../Pages/ComentsPage/ComentsPage";
 
 const MainRoutes = () => {
   const ROUTES = [
