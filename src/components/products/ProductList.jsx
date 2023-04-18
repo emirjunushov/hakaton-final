@@ -39,11 +39,13 @@ const ProductList = () => {
           <ProductCard key={item.id} item={item} />
         ))}
       </div>
-      <PaginationList
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-        getPagesCount={getPagesCount}
-      />
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <PaginationList
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          getPagesCount={getPagesCount}
+        />
+      </div>
     </div>
   );
 };
