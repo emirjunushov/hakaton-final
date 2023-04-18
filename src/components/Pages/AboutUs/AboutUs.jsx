@@ -15,7 +15,7 @@ const blockAnimation = {
   visible: {
     y: 0,
     opacity: 1,
-    transition: 0.5,
+    transition: 0.2,
   },
 };
 

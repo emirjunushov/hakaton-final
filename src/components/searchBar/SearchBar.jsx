@@ -146,6 +146,8 @@ const SearchBar = () => {
         <IconButton onClick={() => navigate("/favorite")}>
           <BookmarkIcon sx={{ color: "white" }} />
         </IconButton>
+        <input type="date" />
+        <input type="date" />
       </div>
     </motion.div>
   );
