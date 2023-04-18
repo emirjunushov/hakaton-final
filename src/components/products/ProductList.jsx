@@ -34,7 +34,7 @@ const ProductList = () => {
   return (
     <div>
       <SearchBar />
-      <div className="d-flex justify-content-center flex-wrap">
+      <div className="d-flex justify-content-space-between flex-wrap">
         {products.map((item) => (
           <ProductCard key={item.id} item={item} />
         ))}

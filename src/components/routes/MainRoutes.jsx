@@ -18,6 +18,7 @@ import BankCard from "../Pages/BankCard/BankCard";
 import ComentsPage from "../products/ComentsPage/ComentsPage";
 import AddedCard from "../Pages/BankCard/AddedCard";
 import FavoritePages from "../Favorite/FavoritePages";
+import { Services } from "../Pages/Services/Services";
 
 const MainRoutes = () => {
   const ROUTES = [
@@ -43,6 +44,7 @@ const MainRoutes = () => {
     { link: "/team", element: <Team />, id: 16 },
     { link: "/bank/card", element: <BankCard />, id: 17 },
     { link: "/favorite", element: <FavoritePages />, id: 18 },
+    { link: "/services", element: <Services />, id: 19 },
   ];
 
   return (

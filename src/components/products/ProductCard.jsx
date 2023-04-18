@@ -13,7 +13,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import "../products/ProductCard.css";
 // import "./ProductAdaptiv.css";
 import AddCommentIcon from "@mui/icons-material/AddComment";
-import FavoriteIcon from "@mui/icons-material/Favorite";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 
 // =============
 
@@ -104,6 +104,7 @@ export default function ProductCart({ item }) {
                   <label for="star1" title="text">
                     <i className="fa fa fa-star" aria-hidden="true"></i>
                   </label>
+                  <div></div>
                 </div>
               </div>
             </div>
@@ -119,6 +120,9 @@ export default function ProductCart({ item }) {
                   </IconButton>
                   <IconButton onClick={() => navigate(`/coment/${item.id}`)}>
                     <AddCommentIcon className="qwerty" />
+                  </IconButton>
+                  <IconButton>
+                    <CalendarMonthIcon className="qwerty" input type="date" />
                   </IconButton>
                 </div>
 

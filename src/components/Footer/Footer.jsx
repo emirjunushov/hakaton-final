@@ -62,7 +62,7 @@ const Footer = () => {
           </li>
 
           <li className="menu__item">
-            <a className="menu__link" href="#">
+            <a className="menu__link" onClick={() => navgate("/services")}>
               Услуги
             </a>
           </li>
