@@ -4,7 +4,12 @@
   margin: 50px;
   display: flex;
   justify-content: center;
+}
+
+.qwerty {
+  display: flex;
   flex-wrap: wrap;
+  margin: auto !important;
 }
 
 .card {

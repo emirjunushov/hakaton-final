@@ -44,7 +44,7 @@ export default function ProductCart({ item }) {
   // } = useAuth();
   // ==============================================
   return (
-    <>
+    <div className="qwerty">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -162,6 +162,6 @@ export default function ProductCart({ item }) {
           </div>
         </motion.div>
       </motion.div>
-    </>
+    </div>
   );
 }
