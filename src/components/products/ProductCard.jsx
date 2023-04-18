@@ -5,15 +5,15 @@ import { useNavigate } from "react-router-dom";
 
 import Button from "@mui/material/Button";
 
-// import "../products/ProductCard/ProductCard.css";
 import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
 import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
 import { IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
+import "../products/ProductCard.css";
+// import "./ProductAdaptiv.css";
 import AddCommentIcon from "@mui/icons-material/AddComment";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import "../products/ProductCart.css";
 
 // =============
 
@@ -42,7 +42,9 @@ export default function ProductCart({ item }) {
         initial="hidden"
         whileInView="visible"
         viewport={{ amount: 0.2 }}
-        style={{ overflow: "hidden" }}
+        style={{
+          overflow: "hidden",
+        }}
         className="card_container"
       >
         <motion.div variants={blockAnimation} castom={1} className="card">
@@ -67,7 +69,7 @@ export default function ProductCart({ item }) {
             <div className="product-div">
               <div className="product-total">
                 <h3>Цена</h3>
-                <p>${item.price}</p>
+                <p>{item.price}сом</p>
               </div>
               <div className="Rating">
                 <div>
@@ -79,28 +81,28 @@ export default function ProductCart({ item }) {
 
                 <div className="rate">
                   <input type="radio" id="star5" name="rate" value="5" />
-                  <label htmlFor="star5" title="text">
-                    <i className="fa fa-star" aria-hidden="true"></i>
+                  <label for="star5" title="text">
+                    <i className="fa fa fa-star" aria-hidden="true"></i>
                   </label>
 
                   <input type="radio" id="star4" name="rate" value="4" />
-                  <label htmlFor="star4" title="text">
-                    <i className="fa fa-star" aria-hidden="true"></i>
+                  <label for="star4" title="text">
+                    <i className="fa fa fa-star" aria-hidden="true"></i>
                   </label>
 
                   <input type="radio" id="star3" name="rate" value="3" />
-                  <label htmlFor="star3" title="text">
-                    <i className="fa fa-star" aria-hidden="true"></i>
+                  <label for="star3" title="text">
+                    <i className="fa fa fa-star" aria-hidden="true"></i>
                   </label>
 
                   <input type="radio" id="star2" name="rate" value="2" />
-                  <label htmlFor="star2" title="text">
-                    <i className="fa fa-star" aria-hidden="true"></i>
+                  <label for="star2" title="text">
+                    <i className="fa fa fa-star" aria-hidden="true"></i>
                   </label>
 
                   <input type="radio" id="star1" name="rate" value="1" />
-                  <label htmlFor="star1" title="text">
-                    <i className="fa fa-star" aria-hidden="true"></i>
+                  <label for="star1" title="text">
+                    <i className="fa fa fa-star" aria-hidden="true"></i>
                   </label>
                 </div>
               </div>
@@ -109,14 +111,14 @@ export default function ProductCart({ item }) {
               <div>
                 <div>
                   <IconButton>
-                    <BookmarkAddIcon className="cerdse" />
+                    <BookmarkAddIcon className="qwerty" />
                   </IconButton>
                   <IconButton>
                     {" "}
-                    <LocalGroceryStoreIcon className="korzina" />
+                    <LocalGroceryStoreIcon className="qwerty" />
                   </IconButton>
                   <IconButton onClick={() => navigate(`/coment/${item.id}`)}>
-                    <AddCommentIcon />
+                    <AddCommentIcon className="qwerty" />
                   </IconButton>
                 </div>
 
@@ -133,13 +135,13 @@ export default function ProductCart({ item }) {
                   className="btn__delete"
                   onClick={() => deleteProduct(item.id)}
                 >
-                  <DeleteIcon className="korzina" color="secondary" />
+                  <DeleteIcon className="qwerty" color="secondary" />
                 </IconButton>
                 <IconButton
                   className="btn__edit"
                   onClick={() => navigate(`/edit/${item.id}`)}
                 >
-                  <EditIcon className="korzina" color="secondary" />
+                  <EditIcon className="qwerty" color="secondary" />
                 </IconButton>
               </div>
             </div>
