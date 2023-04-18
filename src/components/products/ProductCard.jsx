@@ -60,11 +60,11 @@ export default function ProductCart({ item }) {
             <p className="card_sub_title">
               {item.city}:{item.street}
             </p>
-            <p className="card_sub_title">
+            {/* <p className="card_sub_title">
               {item.comments.map((item1) => (
                 <p>{item1.text}</p>
               ))}
-            </p>
+            </p> */}
             <p className="card_info">{item.description}</p>{" "}
             <div className="product-div">
               <div className="product-total">
