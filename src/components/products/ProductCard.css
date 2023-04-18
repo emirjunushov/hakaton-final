@@ -1,38 +1,15 @@
-.product-total {
-  margin: 0 0 2rem 10px;
-}
-
-.product-total p {
-  font-weight: 700;
-  font-size: 2rem;
-  opacity: 0.5;
-}
-
-.product-total h3 {
-  font-size: 25px;
-  margin: 0 0 1rem 0;
-}
-
-.product-btns {
-  display: flex;
-
-  justify-content: space-between;
-  align-items: center;
-}
 .card_container {
   width: 100%;
   height: 100%;
   margin: 50px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
 .card {
   min-width: 600px;
   max-width: 500px;
-
-  height: 50%;
   border-radius: 20px;
   overflow: hidden;
   border: 1px solid white;
@@ -51,7 +28,7 @@
   width: 100%;
   height: 100%;
   top: 0;
-  right: -100%;
+  right: 100%;
   position: absolute;
   backdrop-filter: blur(2px);
   border-radius: 15px;
@@ -59,7 +36,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transition: 2s;
+  transition: 3s;
   min-width: 35%;
 }
 
@@ -69,37 +46,61 @@
 }
 
 .card_title {
+  width: 100%;
+  height: 100%;
   text-align: center;
   text-transform: uppercase;
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 500;
 }
 
 .card_sub_title {
+  width: 100%;
+  height: 100%;
   text-align: center;
   text-transform: capitalize;
-  font-size: 18px;
+  font-size: 13px;
   font-weight: 300;
 }
 
 .card_info {
   text-align: center;
-  font-size: 16px;
-  line-height: 25px;
-  margin: 40px 10px;
+  font-size: 10px;
   font-weight: 300;
+}
+
+.product-total p {
+  opacity: 0.5;
+}
+
+.product-total h3 {
+  font-size: 18px;
+}
+
+.product-total {
+  width: 60%;
+  height: 60%;
+}
+.product-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .product-div {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .rate {
+  width: 100%;
+  height: 100%;
   float: left;
-  height: 46px;
-  padding: 0 10px;
 }
 .rate:not(:checked) > input {
   position: absolute;
@@ -110,7 +111,7 @@
   width: 1em;
   white-space: nowrap;
   cursor: pointer;
-  font-size: 30px;
+  font-size: 23px;
   color: #ccc;
 }
 .rate > input:checked ~ label {
@@ -127,7 +128,9 @@
 }
 
 .Rating {
-  margin-right: 15px;
+  margin-right: 8px;
+  width: 100%;
+  height: 100%;
 }
 
 .qwerty {
@@ -138,5 +141,5 @@
 
 .btnOfCard_BOOKING {
   color: white !important;
-  padding: 0.7 0 0 0.5 !important;
+  padding: 2 2 2 2 !important;
 }
