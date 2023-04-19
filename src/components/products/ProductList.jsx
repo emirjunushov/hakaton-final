@@ -11,7 +11,6 @@ const ProductList = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
   const [searchParams, setSearchParams] = useSearchParams();
-  console.log(products);
 
   useEffect(() => {
     setSearchParams({
