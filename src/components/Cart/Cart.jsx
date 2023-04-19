@@ -122,7 +122,7 @@ export default function Cart() {
           </TableBody>
         </Table>
 
-        <Button onClick={() => navigate("/order")}>
+        <Button onClick={() => navigate("/bank/card")}>
           BUY NOW FOR: {cart?.totalPrice}
         </Button>
       </TableContainer>

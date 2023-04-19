@@ -165,13 +165,7 @@ const SearchBar = () => {
             <AddShoppingCartIcon color="primary" />
           </IconButton>
         </Badge>
-        <IconButton>
-            <input
-              type="text"
-              placeholder="Поиск"
-              style={{ width: "100%", height: "100%" }}
-            />
-          </IconButton>
+       
         <motion.button variants={blockAnimation}>Фильтр</motion.button>
        
         <input type="date" />
