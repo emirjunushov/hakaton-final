@@ -108,7 +108,6 @@ export default function Cart() {
             </TableRow>
           </TableBody>
         </Table>
-
         <Button onClick={() => navigate("/order")}>BUY NOW FOR</Button>
       </TableContainer>
       <div className="imge">

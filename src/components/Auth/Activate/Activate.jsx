@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useAuth } from "../../../context/AuthContextProvider";
 import "./Activate.css";
 const Activate = () => {
-  const { handleActivate, error } = useAuth();
+  const { handleActivate, error, loading } = useAuth();
   const [activate, setacivate] = useState();
 
   const handleSave = () => {

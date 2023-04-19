@@ -1,22 +1,16 @@
 import * as React from "react";
 import { useProduct } from "../../context/AddProductProvider";
-
 import { useNavigate } from "react-router-dom";
-
 import Button from "@mui/material/Button";
-
 import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
-import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
 import { IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import "../products/ProductCard.css";
 import AddCommentIcon from "@mui/icons-material/AddComment";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
-
-// =============
-
 import { motion } from "framer-motion";
+import { useAuth } from "../../context/AuthContextProvider";
 
 const blockAnimation = {
   hidden: {
@@ -29,14 +23,15 @@ const blockAnimation = {
     transition: { delay: castom * 0.3 },
   }),
 };
-// =============
-
 export default function ProductCart({ item }) {
-  console.log(item);
-  const { deleteProduct, updateProduct } = useProduct();
+  // ==============================================
+
+  const { user } = useAuth();
+  const { deleteProduct } = useProduct();
   const navigate = useNavigate();
+
   return (
-    <>
+    <div className="qwerty">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -59,11 +54,6 @@ export default function ProductCart({ item }) {
             <p className="card_sub_title">
               {item.city}:{item.street}
             </p>
-            {/* <p className="card_sub_title">
-              {item.comments.map((item1) => (
-                <p>{item1.text}</p>
-              ))}
-            </p> */}
             <p className="card_info">{item.description}</p>{" "}
             <div className="product-div">
               <div className="product-total">
@@ -80,27 +70,27 @@ export default function ProductCart({ item }) {
 
                 <div className="rate">
                   <input type="radio" id="star5" name="rate" value="5" />
-                  <label for="star5" title="text">
+                  <label htmlFor="star5" title="text">
                     <i className="fa fa fa-star" aria-hidden="true"></i>
                   </label>
 
                   <input type="radio" id="star4" name="rate" value="4" />
-                  <label for="star4" title="text">
+                  <label htmlFor="star4" title="text">
                     <i className="fa fa fa-star" aria-hidden="true"></i>
                   </label>
 
                   <input type="radio" id="star3" name="rate" value="3" />
-                  <label for="star3" title="text">
+                  <label htmlFor="star3" title="text">
                     <i className="fa fa fa-star" aria-hidden="true"></i>
                   </label>
 
                   <input type="radio" id="star2" name="rate" value="2" />
-                  <label for="star2" title="text">
+                  <label htmlFor="star2" title="text">
                     <i className="fa fa fa-star" aria-hidden="true"></i>
                   </label>
 
                   <input type="radio" id="star1" name="rate" value="1" />
-                  <label for="star1" title="text">
+                  <label htmlFor="star1" title="text">
                     <i className="fa fa fa-star" aria-hidden="true"></i>
                   </label>
                   <div></div>
@@ -111,15 +101,20 @@ export default function ProductCart({ item }) {
               <div>
                 <div>
                   <IconButton>
-                    <BookmarkAddIcon className="qwerty" />
-                  </IconButton>
-                  <IconButton>
-                    {" "}
                     <LocalGroceryStoreIcon className="qwerty" />
                   </IconButton>
-                  <IconButton onClick={() => navigate(`/coment/${item.id}`)}>
-                    <AddCommentIcon className="qwerty" />
-                  </IconButton>
+                  {user ? (
+                    <IconButton onClick={() => navigate(`/coment/${item.id}`)}>
+                      <AddCommentIcon className="qwerty" />
+                    </IconButton>
+                  ) : (
+                    <IconButton
+                      onClick={() => alert("Войдите или зарегистрируйтесь")}
+                    >
+                      <AddCommentIcon className="qwerty" />
+                    </IconButton>
+                  )}
+
                   <IconButton>
                     <CalendarMonthIcon className="qwerty" input type="date" />
                   </IconButton>
@@ -132,25 +127,28 @@ export default function ProductCart({ item }) {
                   Арендовать
                 </Button>
               </div>
-
-              <div className="card__action">
-                <IconButton
-                  className="btn__delete"
-                  onClick={() => deleteProduct(item.id)}
-                >
-                  <DeleteIcon className="qwerty" color="secondary" />
-                </IconButton>
-                <IconButton
-                  className="btn__edit"
-                  onClick={() => navigate(`/edit/${item.id}`)}
-                >
-                  <EditIcon className="qwerty" color="secondary" />
-                </IconButton>
-              </div>
+              {item.user === user ? (
+                <div className="card__action">
+                  <IconButton
+                    className="btn__delete"
+                    onClick={() => deleteProduct(item.id)}
+                  >
+                    <DeleteIcon className="qwerty" color="secondary" />
+                  </IconButton>
+                  <IconButton
+                    className="btn__edit"
+                    onClick={() => navigate(`/edit/${item.id}`)}
+                  >
+                    <EditIcon className="qwerty" color="secondary" />
+                  </IconButton>
+                </div>
+              ) : (
+                ""
+              )}
             </div>
           </div>
         </motion.div>
       </motion.div>
-    </>
+    </div>
   );
 }

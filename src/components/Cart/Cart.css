@@ -5,18 +5,15 @@
   flex-wrap: nowrap;
   background-repeat: repeat;
 }
-
 .Cart {
   width: 100%;
 }
 .imgs {
   width: 10%;
 }
-
 .Table {
   background-color: #ffd00014 !important;
 }
-
 .count {
   background-color: #ffd00008 !important;
 }

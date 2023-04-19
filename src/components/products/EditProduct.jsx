@@ -4,7 +4,6 @@ import { useProduct } from "../../context/AddProductProvider";
 
 const EditProduct = () => {
   const { getOneProduct, oneProduct, updateProduct } = useProduct();
-
   const { id } = useParams();
   useEffect(() => {
     getOneProduct(id);

@@ -18,7 +18,6 @@ const blockAnimation = {
     transition: 0.2,
   },
 };
-
 // =============
 
 const AboutUs = () => {

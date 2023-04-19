@@ -7,16 +7,16 @@ import StepContent from "@mui/material/StepContent";
 import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
-import { Alert, Input, TextField } from "@mui/material";
+import { TextField } from "@mui/material";
 import { useAuth } from "../../../context/AuthContextProvider";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import CircularProgress from "@mui/material/CircularProgress";
 import "./ForgotPasword.css";
 
 export default function ForgotPassword() {
   const navigate = useNavigate();
   const [activeStep, setActiveStep] = React.useState(0);
-
   const handleNext = async () => {
     if (activeStep == 0) {
       handleEmailForForgotPassword();
@@ -24,7 +24,6 @@ export default function ForgotPassword() {
       handleSaveForgotPasswordfinish();
     }
   };
-
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
@@ -37,21 +36,19 @@ export default function ForgotPassword() {
     error,
     setError,
     handleForgotPasswordFinish,
+    loading,
   } = useAuth();
   const [emailForForgotPassword, setEmailForForgotPassword] = useState("");
   const [token, setToken] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [newPasswordConfirm, setNewPasswordConfirm] = useState();
-
   async function handleEmailForForgotPassword() {
     if (!emailForForgotPassword.trim()) {
       alert("заполните все поля!");
-
       return;
     } else {
       let formData = new FormData();
       formData.append("email", emailForForgotPassword);
-
       try {
         await handleForgotPasswordEmail(formData);
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -84,7 +81,7 @@ export default function ForgotPassword() {
     setError(false);
   }, []);
   // !++++++++++++++++++++++++++++++++++++++++++++forgotpassword
-  //  activeStep == 0 &&
+  //!  activeStep == 0 &&
   const steps = [
     {
       label:
@@ -102,7 +99,7 @@ export default function ForgotPassword() {
         />
       ),
     },
-    // activeStep == 0 &&
+    //! activeStep == 0 &&
     {
       label: error ? <h4 style={{ color: "red" }}>{error}!!!</h4> : "код",
       description: (
@@ -160,15 +157,20 @@ export default function ForgotPassword() {
                   <Typography>{step.description}</Typography>
                   <Box sx={{ mb: 2 }}>
                     <div>
-                      <Button
-                        variant="contained"
-                        onClick={() => {
-                          handleNext();
-                        }}
-                        sx={{ mt: 1, mr: 1 }}
-                      >
-                        {index === steps.length - 1 ? "Finish" : "Continue"}
-                      </Button>
+                      {loading ? (
+                        <CircularProgress />
+                      ) : (
+                        <Button
+                          variant="contained"
+                          onClick={() => {
+                            handleNext();
+                          }}
+                          sx={{ mt: 1, mr: 1 }}
+                        >
+                          {index === steps.length - 1 ? "Finish" : "Continue"}
+                        </Button>
+                      )}
+
                       <Button
                         disabled={index === 0}
                         onClick={handleBack}

@@ -131,14 +131,12 @@
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
 import { useNavigate } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useAuth } from "../../../context/AuthContextProvider";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
 import Link from "@mui/material/Link";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
@@ -164,9 +162,7 @@ function Copyright(props) {
     </Typography>
   );
 }
-
 const theme = createTheme();
-
 export default function RegisterList() {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -201,7 +197,6 @@ export default function RegisterList() {
       handleRegister(formData);
     }
   };
-
   React.useEffect(() => {
     setError(false);
   }, []);
@@ -282,7 +277,6 @@ export default function RegisterList() {
                 id="password"
                 autoComplete="current-password"
               />
-
               <TextField
                 onChange={(e) => setPasswordConfirm(e.target.value)}
                 margin="normal"
@@ -299,7 +293,6 @@ export default function RegisterList() {
               ) : (
                 ""
               )}
-
               {check ? (
                 <Button sx={{ color: "black" }} onClick={() => setCheck(false)}>
                   <CheckBoxIcon />Я хочу получать вдохновение, маркетинговые
@@ -336,7 +329,6 @@ export default function RegisterList() {
                   Зарегистрироваться
                 </Button>
               )}
-
               <Grid container>
                 <Grid item>
                   <Button

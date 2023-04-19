@@ -1,0 +1,32 @@
+.coment_images {
+  width: 590px;
+  object-fit: cover;
+}
+.container_of_left_side {
+  color: white;
+  display: flex;
+  width: 60%;
+  background-color: #606c38;
+  height: 500px;
+}
+.main_container {
+  display: flex;
+}
+.conteiner_of_right_side {
+  margin-left: 1.5%;
+  margin-top: 6%;
+  text-align: center;
+}
+.conteiner_of_right_side > h4 {
+  margin-top: 5%;
+  font-size: 15px;
+}
+.conteiner_of_right_side > h3 {
+  margin-top: 20%;
+}
+.coments_conteiner {
+  background-color: #606c38;
+}
+.text_comment :secondary {
+  color: white !important;
+}

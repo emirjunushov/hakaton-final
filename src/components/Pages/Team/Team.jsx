@@ -2,6 +2,7 @@ import React from "react";
 import Bekzat from "../../../IMAGES/Bekzat.jpg";
 import Emir from "../../../IMAGES/Emir.jpg";
 import Vremenno from "../../../IMAGES/Vremenno.jpg";
+import Maksat from "../../../IMAGES/Maksat.jpg";
 import Adi from "../../../IMAGES/adi.jpg";
 
 import "./Team.css";
@@ -70,7 +71,13 @@ const Team = () => {
           <motion.div className="team_item">
             <img className="item__img" src={Adi} alt="" />
             <p className="item_paragraph">
-              <a href="https://www.instagram.com/adilkhan/"> Адилхан</a>{" "}
+              <a
+                href="https://www.instagram.com/adilkhan.kuljanov/"
+                target="_blanck"
+              >
+                {" "}
+                Адилхан
+              </a>{" "}
               <span className="paragraph_span">frontend</span>
             </p>
           </motion.div>
@@ -95,9 +102,12 @@ const Team = () => {
             </p>
           </motion.div>
           <motion.div className="team_item">
-            <img className="item__img" src={Vremenno} alt="" />
+            <img className="item__img" src={Maksat} alt="" />
             <p className="item_paragraph">
-              <a href=""> Максат </a>
+              <a href="https://www.instagram.com/max_nurlan/" target="_blanck">
+                {" "}
+                Максат{" "}
+              </a>
               <span className="paragraph_span">frontend</span>
             </p>
           </motion.div>
@@ -112,6 +122,13 @@ const Team = () => {
             <img className="item__img" src={Vremenno} alt="" />
             <p className="item_paragraph">
               <a href=""> Валентин</a>{" "}
+              <span className="paragraph_span">backend</span>
+            </p>
+          </motion.div>
+          <motion.div className="team_item">
+            <img className="item__img" src={Vremenno} alt="" />
+            <p className="item_paragraph">
+              <a href=""> ???</a>{" "}
               <span className="paragraph_span">backend</span>
             </p>
           </motion.div>

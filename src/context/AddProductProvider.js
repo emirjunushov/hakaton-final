@@ -18,7 +18,7 @@ function reducer(state = INIT_STATE, action) {
       return {
         ...state,
         products: action.payload.results,
-        pages: Math.ceil(action.payload.count / 20),
+        pages: Math.ceil(action.payload.count / 8),
       };
     case "GET_ONE_PRODUCT":
       return { ...state, oneProduct: action.payload };
@@ -39,14 +39,12 @@ const AddProductProvider = ({ children }) => {
           Authorization,
         },
       };
-
       await axios.post(`${API}/apartments/`, formData, config);
     } catch (error) {
       console.log(error);
     }
   };
   //! ==================================================GET PRODUCTS=====================================================================================
-
   const getProducts = async () => {
     try {
       const res = await axios.get(
@@ -59,7 +57,6 @@ const AddProductProvider = ({ children }) => {
     }
   };
   // ! ================================================DELETE=======================================================================================
-
   const deleteProduct = async (id) => {
     try {
       const tokens = JSON.parse(localStorage.getItem("tokens"));
@@ -76,9 +73,7 @@ const AddProductProvider = ({ children }) => {
       console.log(error);
     }
   };
-
   //! ======================================================GET ONE PRODUCT=================================================================================
-
   const getOneProduct = async (id) => {
     try {
       const tokens = JSON.parse(localStorage.getItem("tokens"));
@@ -96,9 +91,7 @@ const AddProductProvider = ({ children }) => {
       console.log(error);
     }
   };
-
   //! =======================================================UPDATE PRODUCT================================================================================
-
   const updateProduct = async (id, editedProduct) => {
     try {
       const tokens = JSON.parse(localStorage.getItem("tokens"));
@@ -117,7 +110,6 @@ const AddProductProvider = ({ children }) => {
     }
   };
   //! =======================================================================================================================================
-
   const fetchByParams = async (query, value) => {
     const search = new URLSearchParams(window.location.search);
 
@@ -130,9 +122,7 @@ const AddProductProvider = ({ children }) => {
 
     navigate(url);
   };
-
   //! =======================================================================================================================================
-
   const values = {
     products: state.products,
     oneProduct: state.oneProduct,
