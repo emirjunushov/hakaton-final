@@ -120,9 +120,6 @@ export default function ProductCart({ item }) {
             <div className="product-btns">
               <div>
                 <div>
-                  <IconButton>
-                    <BookmarkAddIcon className="qwerty" />
-                  </IconButton>
                   <IconButton onClick={() => addProductToCart(item)}>
                     <AddShoppingCartIcon
                       color={checkProductInCart(item.id) ? "primary" : ""}
