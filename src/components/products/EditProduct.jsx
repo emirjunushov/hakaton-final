@@ -49,7 +49,7 @@ const EditProduct = () => {
 
   return (
     <div className="d-flex flex-column w-50 m-auto">
-      <h1 className="add_h1">изменение продукта</h1>
+      <h1 className="add_h1">Изменение продукта</h1>
       <input
         className="add_input"
         type="text"

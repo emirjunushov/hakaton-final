@@ -41,10 +41,10 @@ const SearchBar = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ amount: 0.2 }}
-      style={{ overflow: "hidden" }}
+      style={{ overflow: "hidden", width: "100%", height: "100%" }}
       className="searchsarcontainer"
     >
-      <div className="searchBar">
+      <div className="searchBar" style={{ width: "100%", height: "100%" }}>
         <motion.div variants={blockAnimation} castom={3}>
           <select
             defaultValue="all"
@@ -139,15 +139,17 @@ const SearchBar = () => {
         <motion.div variants={blockAnimation} castom={2}>
           <IconButton>
             <SearchIcon />
-            <input type="text" />
+            <input
+              type="text"
+              placeholder="Поиск"
+              style={{ width: "100%", height: "100%" }}
+            />
           </IconButton>
         </motion.div>
         <motion.button variants={blockAnimation}>Фильтр</motion.button>
         <IconButton onClick={() => navigate("/favorite")}>
           <BookmarkIcon sx={{ color: "white" }} />
         </IconButton>
-        <input type="date" />
-        <input type="date" />
       </div>
     </motion.div>
   );

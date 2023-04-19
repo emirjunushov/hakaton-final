@@ -1,13 +1,14 @@
 .searchsarcontainer {
-  height: 10rem;
+  width: 100%;
+  height: 100%;
   margin: 3rem 0 0 0;
 }
 
 .searchBar {
+  width: 100%;
   transition-property: line inherit;
   transition-duration: 3s;
   background-color: #031f3d;
-  width: 80%;
   margin: auto;
   height: 8rem;
   border-radius: 15px;

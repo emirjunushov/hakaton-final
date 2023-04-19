@@ -11,7 +11,6 @@ import { IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import "../products/ProductCard.css";
-// import "./ProductAdaptiv.css";
 import AddCommentIcon from "@mui/icons-material/AddComment";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 
