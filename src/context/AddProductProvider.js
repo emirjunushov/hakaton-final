@@ -30,6 +30,7 @@ function reducer(state = INIT_STATE, action) {
 const AddProductProvider = ({ children }) => {
   const navigate = useNavigate();
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
+  const [error, setError] = useState(null);
   const createProduct = async (formData) => {
     try {
       const tokens = JSON.parse(localStorage.getItem("tokens"));
@@ -39,9 +40,11 @@ const AddProductProvider = ({ children }) => {
           Authorization,
         },
       };
-      await axios.post(`${API}/apartments/`, formData, config);
+      const res = await axios.post(`${API}/apartments/`, formData, config);
+      console.log(res);
+      navigate("/");
     } catch (error) {
-      console.log(error);
+      setError(Object.values(error.response.data).flat()[0]);
     }
   };
   //! ==================================================GET PRODUCTS=====================================================================================
@@ -123,7 +126,10 @@ const AddProductProvider = ({ children }) => {
     navigate(url);
   };
   //! =======================================================================================================================================
+
   const values = {
+    setError,
+    error,
     products: state.products,
     oneProduct: state.oneProduct,
     pages: state.pages,

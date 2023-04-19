@@ -1,5 +1,5 @@
 .coment_images {
-  width: 590px;
+  width: 60%;
   object-fit: cover;
 }
 .container_of_left_side {
@@ -26,7 +26,57 @@
 }
 .coments_conteiner {
   background-color: #606c38;
+  height: max-content;
 }
 .text_comment :secondary {
   color: white !important;
+}
+.conteiner_of_right_side_for_adaptive {
+  display: none;
+}
+@media all and (max-width: 653px) {
+  .conteiner_of_right_side {
+    display: none;
+  }
+  .coment_images {
+    width: 100%;
+    object-fit: cover;
+  }
+  .conteiner_of_right_side_for_adaptive {
+    display: block;
+    margin-left: 1.5%;
+    margin-top: 6%;
+    text-align: center;
+  }
+  .conteiner_of_right_side_for_adaptive > h3 {
+    margin-top: 20%;
+  }
+  .conteiner_of_right_side_for_adaptive > h4 {
+    margin-top: 5%;
+    font-size: 15px;
+  }
+  .container_of_left_side {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    background-color: #606c38;
+    height: 100%;
+  }
+}
+@media all and (max-width: 871px) {
+  .main_container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container_of_left_side {
+    margin-left: 20%;
+    margin-bottom: 4%;
+  }
+  .main_comments_conteiner {
+    margin-left: 20% !important;
+    width: 60%;
+    text-align: center;
+  }
 }
