@@ -70,7 +70,6 @@ export default function BankCard() {
               name="expiry"
               placeholder="Дата"
             />
-
             <Button
               className="bankCardBtn"
               onClick={() => navigate("/added/card")}

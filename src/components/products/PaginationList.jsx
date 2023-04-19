@@ -1,9 +1,7 @@
 import React from "react";
 import { Pagination } from "react-bootstrap";
-
 // =============
 import { motion } from "framer-motion";
-
 const blockAnimation = {
   hidden: {
     y: 100,
@@ -45,7 +43,6 @@ const PaginationList = ({ getPagesCount, currentPage, setCurrentPage }) => {
             </Pagination.Item>
           )
         )}
-
         <Pagination.Next onClick={() => setCurrentPage(currentPage + 1)} />
       </Pagination>
     </motion.div>

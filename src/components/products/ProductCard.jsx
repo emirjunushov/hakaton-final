@@ -1,24 +1,15 @@
 import * as React from "react";
 import { useProduct } from "../../context/AddProductProvider";
-
 import { useNavigate } from "react-router-dom";
-
 import Button from "@mui/material/Button";
-
 import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
-import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
 import { IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import "../products/ProductCard.css";
-// import "./ProductAdaptiv.css";
 import AddCommentIcon from "@mui/icons-material/AddComment";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
-
-// =============
-
 import { motion } from "framer-motion";
-import { useFavorite } from "../../context/FavoritesContextProvider";
 import { useAuth } from "../../context/AuthContextProvider";
 
 const blockAnimation = {
@@ -32,18 +23,15 @@ const blockAnimation = {
     transition: { delay: castom * 0.3 },
   }),
 };
-// =============
-
 export default function ProductCart({ item }) {
-  const { deleteProduct, updateProduct } = useProduct();
-
-  const navigate = useNavigate();
   // ==============================================
-  const { addApartmensToFavorite, checkApartmensInCard } = useFavorite();
+
   const { user } = useAuth();
+  const { deleteProduct } = useProduct();
+  const navigate = useNavigate();
 
   return (
-    <>
+    <div className="qwerty">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -112,14 +100,7 @@ export default function ProductCart({ item }) {
             <div className="product-btns">
               <div>
                 <div>
-                  <IconButton onClick={() => addApartmensToFavorite(item)}>
-                    <BookmarkAddIcon
-                      color={checkApartmensInCard(item.id) ? "primery" : ""}
-                      className="qwerty"
-                    />
-                  </IconButton>
                   <IconButton>
-                    {" "}
                     <LocalGroceryStoreIcon className="qwerty" />
                   </IconButton>
                   {user ? (
@@ -168,6 +149,6 @@ export default function ProductCart({ item }) {
           </div>
         </motion.div>
       </motion.div>
-    </>
+    </div>
   );
 }

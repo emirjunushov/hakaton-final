@@ -11,7 +11,6 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import LogoutIcon from "@mui/icons-material/Logout";
 import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
@@ -37,16 +36,13 @@ function Navbar() {
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
-
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
   const { user, handleLogout, checkAuth } = useAuth();
-
   React.useEffect(() => {
     if (localStorage.getItem("tokens")) {
       checkAuth();
@@ -80,7 +76,6 @@ function Navbar() {
           >
             BATIR
           </Typography>
-
           <Box
             className="nav__block-adaptiv"
             sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
@@ -130,7 +125,6 @@ function Navbar() {
               ))}
             </Menu>
           </Box>
-
           <Typography
             className="nav__logo-adaptiv"
             variant="h5"
@@ -171,7 +165,6 @@ function Navbar() {
               </Link>
             ))}
           </Box>
-
           <Box className="login__nav">
             {pages2.map((page, index) => (
               <Link key={index} to={page.link} className="nav__linkMain">
@@ -190,7 +183,6 @@ function Navbar() {
               </Link>
             ))}
           </Box>
-
           <Box className="nav__settings-menu" sx={{ flexGrow: 0 }}>
             <Tooltip className="nav__menu_block" title="Open settings">
               <IconButton
@@ -205,7 +197,6 @@ function Navbar() {
                 />
               </IconButton>
             </Tooltip>
-
             <Menu
               className="nav__menu"
               sx={{ mt: "45px" }}
@@ -223,8 +214,6 @@ function Navbar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {/* ====== */}
-
               {user ? (
                 ""
               ) : (
@@ -238,7 +227,6 @@ function Navbar() {
                   </Button>
                 </MenuItem>
               )}
-
               <MenuItem>{user ? `${user}` : "pleas logIn"}</MenuItem>
               <MenuItem>
                 {user ? (

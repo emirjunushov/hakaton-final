@@ -44,7 +44,6 @@ const ComentsPage = () => {
     <div className="main_container">
       <div className="container_of_left_side">
         <img className="coment_images" src={oneProduct?.images} alt="" />
-
         <div className="conteiner_of_right_side">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11697.164363479633!2d74.58146585!3d42.8666998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389ec81d3f4fffff%3A0x4e1b43a32667c19b!2sDe&#39;mar%20Hotel!5e0!3m2!1sru!2skg!4v1681731121571!5m2!1sru!2skg"
@@ -60,7 +59,6 @@ const ComentsPage = () => {
             <span>Цена: $</span>
             {oneProduct?.price}
           </h4>
-
           <h4>
             <span>Город:</span> {oneProduct?.city}
           </h4>
@@ -103,8 +101,10 @@ const ComentsPage = () => {
               </Button>
             </div>
           </List>
-
-          <h1></h1>
+        </div>
+        <div>
+          <input onChange={(e) => setComments(e.target.value)} type="text" />
+          <button onClick={handleSave}>add</button>
         </div>
       </div>
     </div>

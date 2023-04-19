@@ -23,7 +23,6 @@ const Footer = () => {
         <div>
           <img className="logo_Footer" src={batir} alt="" />
         </div>
-
         <ul className="social-icon">
           <li className="social-icon__item">
             <a className="social-icon__link" href="https://ru-ru.facebook.com/">
@@ -60,7 +59,6 @@ const Footer = () => {
               <HomeIcon />
             </a>
           </li>
-
           <li className="menu__item">
             <a className="menu__link" onClick={() => navgate("/services")}>
               Услуги

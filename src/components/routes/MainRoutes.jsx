@@ -1,7 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import LoginList from "../Auth/LoginList/LoginList";
-
 import RegisterSucces from "../Auth/Activate/Activate";
 import HomePage from "../Pages/HomePage/HomePage";
 import AboutUs from "../Pages/AboutUs/AboutUs";
@@ -15,9 +14,7 @@ import Cart from "../Cart/Cart";
 import NotFoundPage from "../Pages/NotFoundPage/NotFoundPage";
 import Team from "../Pages/Team/Team";
 import BankCard from "../Pages/BankCard/BankCard";
-
 import AddedCard from "../Pages/BankCard/AddedCard";
-import FavoritePages from "../Favorite/FavoritePages";
 import { Services } from "../Pages/Services/Services";
 import ComentsPage from "../Pages/ComentsPage/ComentsPage";
 
@@ -44,8 +41,7 @@ const MainRoutes = () => {
     { link: "/cart", element: <Cart />, id: 15 },
     { link: "/team", element: <Team />, id: 16 },
     { link: "/bank/card", element: <BankCard />, id: 17 },
-    { link: "/favorite", element: <FavoritePages />, id: 18 },
-    { link: "/services", element: <Services />, id: 19 },
+    { link: "/services", element: <Services />, id: 18 },
   ];
 
   return (
