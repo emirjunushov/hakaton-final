@@ -15,6 +15,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
 import "./LoginList.css";
 import { CssBaseline } from "@mui/material";
+import CircularProgress from "@mui/material/CircularProgress";
 function Copyright(props) {
   return (
     <Typography
@@ -139,15 +140,27 @@ export default function LoginList() {
                 ""
               )}
 
-              <Button
-                onClick={handleSave}
-                type="submit"
-                fullWidth
-                variant="contained"
-                sx={{ mt: 3, mb: 2 }}
-              >
-                Войти
-              </Button>
+              {loading ? (
+                <Button
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  sx={{ mt: 3, mb: 2 }}
+                >
+                  <CircularProgress />
+                </Button>
+              ) : (
+                <Button
+                  onClick={handleSave}
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  sx={{ mt: 3, mb: 2 }}
+                >
+                  Войти
+                </Button>
+              )}
+
               <Grid container>
                 <Grid item xs>
                   <Button

@@ -29,7 +29,6 @@ const PaginationList = ({ getPagesCount, currentPage, setCurrentPage }) => {
     >
       <Pagination>
         <Pagination.Prev onClick={() => setCurrentPage(currentPage - 1)} />
-
         {getPagesCount().map((item) =>
           item == currentPage ? (
             <Pagination.Item
@@ -41,6 +40,7 @@ const PaginationList = ({ getPagesCount, currentPage, setCurrentPage }) => {
             </Pagination.Item>
           ) : (
             <Pagination.Item onClick={() => setCurrentPage(item)} key={item}>
+              {" "}
               {item}
             </Pagination.Item>
           )

@@ -122,9 +122,18 @@ export default function ProductCart({ item }) {
                     {" "}
                     <LocalGroceryStoreIcon className="qwerty" />
                   </IconButton>
-                  <IconButton onClick={() => navigate(`/coment/${item.id}`)}>
-                    <AddCommentIcon className="qwerty" />
-                  </IconButton>
+                  {user ? (
+                    <IconButton onClick={() => navigate(`/coment/${item.id}`)}>
+                      <AddCommentIcon className="qwerty" />
+                    </IconButton>
+                  ) : (
+                    <IconButton
+                      onClick={() => alert("Войдите или зарегистрируйтесь")}
+                    >
+                      <AddCommentIcon className="qwerty" />
+                    </IconButton>
+                  )}
+
                   <IconButton>
                     <CalendarMonthIcon className="qwerty" input type="date" />
                   </IconButton>

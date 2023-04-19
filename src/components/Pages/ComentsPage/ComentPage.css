@@ -5,9 +5,10 @@
   /* margin-top: 6%; */
 }
 .container_of_left_side {
+  color: white;
   display: flex;
   width: 60%;
-  background-color: hwb(15 93% 5%);
+  background-color: #606c38;
   height: 500px;
 }
 .main_container {
@@ -24,4 +25,10 @@
 }
 .conteiner_of_right_side > h3 {
   margin-top: 20%;
+}
+.coments_conteiner {
+  background-color: #606c38;
+}
+.text_comment :secondary {
+  color: white !important;
 }
