@@ -28,6 +28,7 @@
   width: 600px;
   height: 500px;
   border-radius: 15px;
+  object-fit: cover;
 }
 
 .card_body {
@@ -178,7 +179,7 @@
   }
 }
 
-@media all and (max-width: 310px) {
+@media all and (max-width: 320px) {
   .card_container {
     width: 100%;
   }
