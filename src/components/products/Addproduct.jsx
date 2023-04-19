@@ -35,15 +35,7 @@ const AddProduct = () => {
 
   return (
     <div className="d-flex flex-column w-50 m-auto">
-      <h1 className="add_h1">Добавление квартиру</h1>
-      {/* <input
-        className="add_input"
-        type="text"
-        placeholder="
-        пользователь"
-        value={user2}
-        onChange={(e) => setUser(e.target.value)}
-      /> */}
+      <h1 className="add_h1">Добавление квартир</h1>
       <input
         className="add_input"
         type="text"
