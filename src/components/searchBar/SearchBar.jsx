@@ -168,7 +168,7 @@ const SearchBar = () => {
        
         <motion.button variants={blockAnimation}>Фильтр</motion.button>
        
-        <input type="date" />
+        <input type="date" onChange={(e)=>console.log(e.target.value )}/>
         <input type="date" />
       </div>
     </motion.div>
