@@ -1,8 +1,8 @@
 import * as React from "react";
 import { useProduct } from "../../context/AddProductProvider";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
-import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
+import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
 import { IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
@@ -10,9 +10,8 @@ import "../products/ProductCard.css";
 import AddCommentIcon from "@mui/icons-material/AddComment";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import { motion } from "framer-motion";
-import { useCart } from "../../context/CartContextProvider";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import { useAddComments } from "../../context/AddCommentsProvider";
+import { useAuth } from "../../context/AuthContextProvider";
+import { ADMIN } from "../../helpers";
 
 const blockAnimation = {
   hidden: {
@@ -25,21 +24,12 @@ const blockAnimation = {
     transition: { delay: castom * 0.3 },
   }),
 };
-
 export default function ProductCart({ item }) {
-  const { deleteProduct, updateProduct } = useProduct();
-  const { createRating } = useAddComments();
+  // ==============================================
+
+  const { user } = useAuth();
+  const { deleteProduct } = useProduct();
   const navigate = useNavigate();
-  const { addProductToCart, checkProductInCart } = useCart();
-
-  const [rating, setRating] = React.useState(0);
-
-  function saveRating() {
-    const newLike = new FormData();
-    newLike.append("rating", rating);
-    newLike.append("apartment_id", item.id);
-    createRating(newLike);
-  }
 
   return (
     <div className="qwerty">
@@ -112,23 +102,19 @@ export default function ProductCart({ item }) {
               <div>
                 <div>
                   <IconButton>
-                    <BookmarkAddIcon className="qwerty" />
+                    <LocalGroceryStoreIcon className="qwerty" />
                   </IconButton>
-                  <IconButton onClick={() => addProductToCart(item)}>
-                    <AddShoppingCartIcon
-                      color={checkProductInCart(item.id) ? "primary" : ""}
-                    />
-                  </IconButton>
+                  {user ? (
                     <IconButton onClick={() => navigate(`/coment/${item.id}`)}>
                       <AddCommentIcon className="qwerty" />
                     </IconButton>
-                
-
+                  ) : (
                     <IconButton
                       onClick={() => alert("Войдите или зарегистрируйтесь")}
                     >
                       <AddCommentIcon className="qwerty" />
                     </IconButton>
+                  )}
 
                   <IconButton>
                     <CalendarMonthIcon className="qwerty" input type="date" />
@@ -142,20 +128,24 @@ export default function ProductCart({ item }) {
                   Арендовать
                 </Button>
               </div>
-              <div className="card__action">
-                <IconButton
-                  className="btn__delete"
-                  onClick={() => deleteProduct(item.id)}
-                >
-                  <DeleteIcon className="qwerty" color="secondary" />
-                </IconButton>
-                <IconButton
-                  className="btn__edit"
-                  onClick={() => navigate(`/edit/${item.id}`)}
-                >
-                  <EditIcon className="qwerty" color="secondary" />
-                </IconButton>
-              </div>
+              {item.user === user || ADMIN === user ? (
+                <div className="card__action">
+                  <IconButton
+                    className="btn__delete"
+                    onClick={() => deleteProduct(item.id)}
+                  >
+                    <DeleteIcon className="qwerty" color="secondary" />
+                  </IconButton>
+                  <IconButton
+                    className="btn__edit"
+                    onClick={() => navigate(`/edit/${item.id}`)}
+                  >
+                    <EditIcon className="qwerty" color="secondary" />
+                  </IconButton>
+                </div>
+              ) : (
+                ""
+              )}
             </div>
           </div>
         </motion.div>
