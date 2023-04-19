@@ -13,6 +13,8 @@ import { motion } from "framer-motion";
 import { useCart } from "../../context/CartContextProvider";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { useAddComments } from "../../context/AddCommentsProvider";
+import { useAuth } from "../../context/AuthContextProvider";
+import { ADMIN } from "../../helpers";
 
 const blockAnimation = {
   hidden: {
@@ -29,11 +31,10 @@ const blockAnimation = {
 export default function ProductCart({ item }) {
   const { deleteProduct, updateProduct } = useProduct();
   const { addProductToCart, checkProductInCart } = useCart();
-
-  const { createRating } = useAddComments();
-  const [rating, setRating] = React.useState();
-
-  const navigate = useNavigate();
+  const navigate = useNavigate()
+  const { user } = useAuth();
+  const [rating, setRating] = React.useState(0);
+  const {createRating} = useAddComments()
 
   function saveRating() {
     const newLike = new FormData();
@@ -52,13 +53,20 @@ export default function ProductCart({ item }) {
         viewport={{ amount: 0.2 }}
         style={{
           overflow: "hidden",
+          width: "100%",
+          height: "100%",
         }}
         className="card_container"
       >
-        <motion.div variants={blockAnimation} castom={1} className="card">
+        <motion.div
+          variants={blockAnimation}
+          castom={1}
+          className="card"
+          style={{ width: "100%", height: "100%" }}
+        >
           <img
             className="card_img"
-            style={{ width: "600px", height: "500px" }}
+            // style={{ width: "600px", height: "500px" }}
             src={item.images}
             alt=""
           />
@@ -129,22 +137,22 @@ export default function ProductCart({ item }) {
             <div className="product-btns">
               <div>
                 <div>
-                  <IconButton>
-                    <BookmarkAddIcon className="qwerty" />
-                  </IconButton>
                   <IconButton onClick={() => addProductToCart(item)}>
                     <AddShoppingCartIcon
                       color={checkProductInCart(item.id) ? "primary" : ""}
                     />
                   </IconButton>
-                  <IconButton onClick={() => navigate(`/coment/${item.id}`)}>
-                    <AddCommentIcon className="qwerty" />
-                  </IconButton>
-                  <IconButton
-                    onClick={() => alert("Войдите или зарегистрируйтесь")}
-                  >
-                    <AddCommentIcon className="qwerty" />
-                  </IconButton>
+                  {user ? (
+                    <IconButton onClick={() => navigate(`/coment/${item.id}`)}>
+                      <AddCommentIcon className="qwerty" />
+                    </IconButton>
+                  ) : (
+                    <IconButton
+                      onClick={() => alert("Войдите или зарегистрируйтесь")}
+                    >
+                      <AddCommentIcon className="qwerty" />
+                    </IconButton>
+                  )}
 
                   <IconButton>
                     <CalendarMonthIcon className="qwerty" input type="date" />
@@ -152,26 +160,32 @@ export default function ProductCart({ item }) {
                 </div>
 
                 <Button
+                  style={{ width: "100%", height: "100%" }}
                   className="btnOfCard_BOOKING"
                   onClick={() => navigate("/bank/card")}
                 >
                   Арендовать
                 </Button>
               </div>
-              <div className="card__action">
-                <IconButton
-                  className="btn__delete"
-                  onClick={() => deleteProduct(item.id)}
-                >
-                  <DeleteIcon className="qwerty" color="secondary" />
-                </IconButton>
-                <IconButton
-                  className="btn__edit"
-                  onClick={() => navigate(`/edit/${item.id}`)}
-                >
-                  <EditIcon className="qwerty" color="secondary" />
-                </IconButton>
-              </div>
+
+              {item.user === user || ADMIN === user ? (
+                <div className="card__action">
+                  <IconButton
+                    className="btn__delete"
+                    onClick={() => deleteProduct(item.id)}
+                  >
+                    <DeleteIcon className="qwerty" color="secondary" />
+                  </IconButton>
+                  <IconButton
+                    className="btn__edit"
+                    onClick={() => navigate(`/edit/${item.id}`)}
+                  >
+                    <EditIcon className="qwerty" color="secondary" />
+                  </IconButton>
+                </div>
+              ) : (
+                ""
+              )}
             </div>
           </div>
         </motion.div>
