@@ -1,7 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import LoginList from "../Auth/LoginList/LoginList";
-
 import RegisterSucces from "../Auth/Activate/Activate";
 import HomePage from "../Pages/HomePage/HomePage";
 import AboutUs from "../Pages/AboutUs/AboutUs";

@@ -42,7 +42,7 @@ export default function ProductCart({ item }) {
   }
 
   return (
-    <>
+    <div className="qwerty">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -119,9 +119,18 @@ export default function ProductCart({ item }) {
                       color={checkProductInCart(item.id) ? "primary" : ""}
                     />
                   </IconButton>
-                  <IconButton onClick={() => navigate(`/coment/${item.id}`)}>
-                    <AddCommentIcon className="qwerty" />
-                  </IconButton>
+                  {user ? (
+                    <IconButton onClick={() => navigate(`/coment/${item.id}`)}>
+                      <AddCommentIcon className="qwerty" />
+                    </IconButton>
+                  ) : (
+                    <IconButton
+                      onClick={() => alert("Войдите или зарегистрируйтесь")}
+                    >
+                      <AddCommentIcon className="qwerty" />
+                    </IconButton>
+                  )}
+
                   <IconButton>
                     <CalendarMonthIcon className="qwerty" input type="date" />
                   </IconButton>
@@ -152,6 +161,6 @@ export default function ProductCart({ item }) {
           </div>
         </motion.div>
       </motion.div>
-    </>
+    </div>
   );
 }

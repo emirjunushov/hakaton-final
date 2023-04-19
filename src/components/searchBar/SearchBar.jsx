@@ -52,14 +52,15 @@ const SearchBar = () => {
   // ===============================================
 
   return (
+    <>
     <motion.div
       initial="hidden"
       whileInView="visible"
       viewport={{ amount: 0.2 }}
-      style={{ overflow: "hidden" }}
+      style={{ overflow: "hidden", width: "100%", height: "100%" }}
       className="searchsarcontainer"
     >
-      <div className="searchBar">
+      <div className="searchBar" style={{ width: "100%", height: "100%" }}>
         <motion.div variants={blockAnimation} castom={3}>
           {/* <select
             defaultValue="all"
@@ -164,10 +165,20 @@ const SearchBar = () => {
             <AddShoppingCartIcon color="primary" />
           </IconButton>
         </Badge>
+        <IconButton>
+            <input
+              type="text"
+              placeholder="Поиск"
+              style={{ width: "100%", height: "100%" }}
+            />
+          </IconButton>
+        <motion.button variants={blockAnimation}>Фильтр</motion.button>
+       
         <input type="date" />
         <input type="date" />
       </div>
     </motion.div>
+    </>
   );
 };
 
