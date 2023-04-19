@@ -64,7 +64,7 @@ export default function ProductCart({ item }) {
         >
           <img
             className="card_img"
-            style={{ width: "600px", height: "500px" }}
+            // style={{ width: "600px", height: "500px" }}
             src={item.images}
             alt=""
           />
@@ -146,6 +146,7 @@ export default function ProductCart({ item }) {
                 </div>
 
                 <Button
+                  style={{ width: "100%", height: "100%" }}
                   className="btnOfCard_BOOKING"
                   onClick={() => navigate("/bank/card")}
                 >
