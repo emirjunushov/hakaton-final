@@ -53,16 +53,16 @@ const SearchBar = () => {
 
   return (
     <>
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ amount: 0.2 }}
-      style={{ overflow: "hidden", width: "100%", height: "100%" }}
-      className="searchsarcontainer"
-    >
-      <div className="searchBar" style={{ width: "100%", height: "100%" }}>
-        <motion.div variants={blockAnimation} castom={3}>
-          {/* <select
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ amount: 0.2 }}
+        style={{ overflow: "hidden", width: "100%", height: "100%" }}
+        className="searchsarcontainer"
+      >
+        <div className="searchBar" style={{ width: "100%", height: "100%" }}>
+          <motion.div variants={blockAnimation} castom={3}>
+            {/* <select
             defaultValue="all"
             onChange={(e) => fetchByParams("rooms", e.target.value)}
           >
@@ -150,28 +150,31 @@ const SearchBar = () => {
             <option value="">none</option>
             <option value="">test</option>
             <option value="">test</option>
-          </select> */}
-        </motion.div>
-        <motion.div variants={blockAnimation} castom={2}>
-          <IconButton>
-            <SearchIcon />
-            <input type="text" onChange={(e)=>fetchByParams('search',e.target.value)} />
-          </IconButton>
-        </motion.div>
-        <motion.button variants={blockAnimation}>Фильтр</motion.button>
+  </select>*/}
+          </motion.div>
+          <motion.div variants={blockAnimation} castom={2}>
+            <IconButton>
+              <SearchIcon />
+              <input
+                type="text"
+                onChange={(e) => fetchByParams("search", e.target.value)}
+              />
+            </IconButton>
+          </motion.div>
+          <motion.button variants={blockAnimation}>Фильтр</motion.button>
 
-        <Badge badgeContent={count} color="primary">
-          <IconButton onClick={() => navigate("/cart")}>
-            <AddShoppingCartIcon color="primary" />
-          </IconButton>
-        </Badge>
-       
-        <motion.button variants={blockAnimation}>Фильтр</motion.button>
-       
-        <input type="date" />
-        <input type="date" />
-      </div>
-    </motion.div>
+          <Badge badgeContent={count} color="primary">
+            <IconButton onClick={() => navigate("/cart")}>
+              <AddShoppingCartIcon color="primary" />
+            </IconButton>
+          </Badge>
+
+          <motion.button variants={blockAnimation}>Фильтр</motion.button>
+
+          <input type="date" />
+          <input type="date" />
+        </div>
+      </motion.div>
     </>
   );
 };

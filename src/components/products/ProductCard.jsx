@@ -51,10 +51,17 @@ export default function ProductCart({ item }) {
         viewport={{ amount: 0.2 }}
         style={{
           overflow: "hidden",
+          width: "100%",
+          height: "100%",
         }}
         className="card_container"
       >
-        <motion.div variants={blockAnimation} castom={1} className="card">
+        <motion.div
+          variants={blockAnimation}
+          castom={1}
+          className="card"
+          style={{ width: "100%", height: "100%" }}
+        >
           <img
             className="card_img"
             style={{ width: "600px", height: "500px" }}
