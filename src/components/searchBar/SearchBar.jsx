@@ -61,118 +61,21 @@ const SearchBar = () => {
         className="searchsarcontainer"
       >
         <div className="searchBar" style={{ width: "100%", height: "100%" }}>
-          <motion.div variants={blockAnimation} castom={3}>
-            {/* <select
-            defaultValue="all"
-            onChange={(e) => fetchByParams("rooms", e.target.value)}
-          >
-            <option value="1" label="1">
-              1
-            </option>
-            <option value="2" label="2">
-              2
-            </option>
-            <option value="3" label="3">
-              3
-            </option>
-          </select>
-          <select
-            name="test"
-            id=""
-            defaultValue="all"
-            onChange={(e) => fetchByParams("type", e.target.value)}
-          >
-            <option value="">none</option>
-            <option value="">test</option>
-            <option value="">test</option>
-          </select>
-          <select
-            name="test"
-            id=""
-            defaultValue="all"
-            onChange={(e) => fetchByParams("type", e.target.value)}
-          >
-            <option value="">none</option>
-            <option value="">test</option>
-            <option value="">test</option>
-          </select>
-          <select
-            name="test"
-            id=""
-            defaultValue="all"
-            onChange={(e) => fetchByParams("type", e.target.value)}
-          >
-            <option value="">none</option>
-            <option value="">test</option>
-            <option value="">test</option>
-          </select>
-          <select
-            name="test"
-            id=""
-            defaultValue="all"
-            onChange={(e) => fetchByParams("type", e.target.value)}
-          >
-            <option value="">none</option>
-            <option value="">test</option>
-            <option value="">test</option>
-          </select>
-          <select
-            name="test"
-            id=""
-            defaultValue="all"
-            onChange={(e) => fetchByParams("type", e.target.value)}
-          >
-            <option value="">none</option>
-            <option value="">test</option>
-            <option value="">test</option>
-          </select>
-          <select
-            name="test"
-            id=""
-            defaultValue="all"
-            onChange={(e) => fetchByParams("type", e.target.value)}
-          >
-            <option value="">none</option>
-            <option value="">test</option>
-            <option value="">test</option>
-          </select>
-          <select name="test" id="">
-            <option value="">none</option>
-            <option value="">test</option>
-            <option value="">test</option>
-          </select>
-          <select name="test" id="">
-            <option value="">none</option>
-            <option value="">test</option>
-            <option value="">test</option>
-          </select>
-          <select name="test" id="">
-            <option value="">none</option>
-            <option value="">test</option>
-            <option value="">test</option>
-  </select>*/}
-          </motion.div>
-          <motion.div variants={blockAnimation} castom={2}>
-            <IconButton>
-              <SearchIcon />
-              <input
-                type="text"
-                onChange={(e) => fetchByParams("search", e.target.value)}
-              />
-            </IconButton>
-          </motion.div>
-          <motion.button variants={blockAnimation}>Фильтр</motion.button>
-
-          <Badge badgeContent={count} color="primary">
+          <Badge className="iconShop" badgeContent={count} color="primary">
             <IconButton onClick={() => navigate("/cart")}>
-              <AddShoppingCartIcon color="primary" />
+              <AddShoppingCartIcon sx={{ color: "white" }} color="primary" />
             </IconButton>
           </Badge>
 
-          <motion.button variants={blockAnimation}>Фильтр</motion.button>
-
-          <input type="date" />
-          <input type="date" />
+          <IconButton>
+            <SearchIcon sx={{ color: "white" }} />
+            <input
+              placeholder="Поиск"
+              className="searchBarInp"
+              type="text"
+              onChange={(e) => fetchByParams("search", e.target.value)}
+            />
+          </IconButton>
         </div>
       </motion.div>
     </>
