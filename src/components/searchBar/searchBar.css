@@ -5,14 +5,124 @@
 }
 
 .searchBar {
-  width: 100%;
+  width: 50% !important;
   transition-property: line inherit;
   transition-duration: 3s;
   background-color: #031f3d;
   margin: auto;
-  height: 8rem;
+  height: 4rem !important ;
   border-radius: 15px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+}
+
+.iconShop {
+  margin-left: 2rem;
+  transition: 1s;
+}
+.iconShop:hover {
+  border-radius: 100%;
+  background-color: rgba(255, 255, 255, 0.383);
+}
+
+.searchBarInp {
+  border: none;
+  height: 2rem;
+  width: 100%;
+  border-radius: 15px;
+  padding-left: 1rem;
+  font-size: 14px;
+  transition: 1s;
+}
+
+.searchBarInp:hover {
+  font-size: 16px;
+}
+
+@media all and (max-width: 845px) {
+  .searchsarcontainer {
+    width: 100%;
+    height: 100%;
+    margin: 3rem 0 0 0;
+  }
+
+  .searchBar {
+    width: 70% !important;
+    transition-property: line inherit;
+    transition-duration: 3s;
+    background-color: #031f3d;
+    margin: auto;
+    height: 4rem !important ;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .iconShop {
+    margin-left: 2rem;
+    transition: 1s;
+  }
+  .iconShop:hover {
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.383);
+  }
+
+  .searchBarInp {
+    border: none;
+    height: 2rem;
+    width: 100%;
+    border-radius: 15px;
+    padding-left: 1rem;
+    font-size: 14px;
+    transition: 1s;
+  }
+
+  .searchBarInp:hover {
+    font-size: 16px;
+  }
+}
+@media all and (max-width: 617px) {
+  .searchsarcontainer {
+    width: 100%;
+    height: 100%;
+    margin: 3rem 0 0 0;
+  }
+
+  .searchBar {
+    width: 80% !important;
+    transition-property: line inherit;
+    transition-duration: 3s;
+    background-color: #031f3d;
+    margin: auto;
+    height: 4rem !important ;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .iconShop {
+    margin-left: 2rem;
+    transition: 1s;
+  }
+  .iconShop:hover {
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.383);
+  }
+
+  .searchBarInp {
+    border: none;
+    height: 2rem;
+    width: 100%;
+    border-radius: 15px;
+    padding-left: 1rem;
+    font-size: 14px;
+    transition: 1s;
+  }
+
+  .searchBarInp:hover {
+    font-size: 16px;
+  }
 }
