@@ -1,8 +1,8 @@
 import * as React from "react";
 import { useProduct } from "../../context/AddProductProvider";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Button from "@mui/material/Button";
-import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
+import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
 import { IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
@@ -10,7 +10,11 @@ import "../products/ProductCard.css";
 import AddCommentIcon from "@mui/icons-material/AddComment";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import { motion } from "framer-motion";
+import { useCart } from "../../context/CartContextProvider";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import { useAddComments } from "../../context/AddCommentsProvider";
 import { useAuth } from "../../context/AuthContextProvider";
+import { ADMIN } from "../../helpers";
 
 const blockAnimation = {
   hidden: {
@@ -23,12 +27,21 @@ const blockAnimation = {
     transition: { delay: castom * 0.3 },
   }),
 };
-export default function ProductCart({ item }) {
-  // ==============================================
 
-  const { user } = useAuth();
-  const { deleteProduct } = useProduct();
+export default function ProductCart({ item }) {
+  const { deleteProduct, updateProduct } = useProduct();
+  const { createRating } = useAddComments();
   const navigate = useNavigate();
+  const { addProductToCart, checkProductInCart } = useCart();
+  const { user } = useAuth();
+  const [rating, setRating] = React.useState(0);
+
+  function saveRating() {
+    const newLike = new FormData();
+    newLike.append("rating", rating);
+    newLike.append("apartment_id", item.id);
+    createRating(newLike);
+  }
 
   return (
     <div className="qwerty">
@@ -38,10 +51,17 @@ export default function ProductCart({ item }) {
         viewport={{ amount: 0.2 }}
         style={{
           overflow: "hidden",
+          width: "100%",
+          height: "100%",
         }}
         className="card_container"
       >
-        <motion.div variants={blockAnimation} castom={1} className="card">
+        <motion.div
+          variants={blockAnimation}
+          castom={1}
+          className="card"
+          style={{ width: "100%", height: "100%" }}
+        >
           <img
             className="card_img"
             style={{ width: "600px", height: "500px" }}
@@ -101,7 +121,12 @@ export default function ProductCart({ item }) {
               <div>
                 <div>
                   <IconButton>
-                    <LocalGroceryStoreIcon className="qwerty" />
+                    <BookmarkAddIcon className="qwerty" />
+                  </IconButton>
+                  <IconButton onClick={() => addProductToCart(item)}>
+                    <AddShoppingCartIcon
+                      color={checkProductInCart(item.id) ? "primary" : ""}
+                    />
                   </IconButton>
                   {user ? (
                     <IconButton onClick={() => navigate(`/coment/${item.id}`)}>
@@ -127,7 +152,8 @@ export default function ProductCart({ item }) {
                   Арендовать
                 </Button>
               </div>
-              {item.user === user ? (
+
+              {item.user === user || ADMIN === user ? (
                 <div className="card__action">
                   <IconButton
                     className="btn__delete"

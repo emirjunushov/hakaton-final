@@ -22,7 +22,7 @@ const blockAnimation = {
 const HomePage = () => {
   return (
     <div>
-      <SliderList />
+      {/* <SliderList /> */}
       <motion.div
         initial="hidden"
         whileInView="visible"
