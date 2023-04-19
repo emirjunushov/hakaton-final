@@ -41,7 +41,7 @@ const MainRoutes = () => {
     { link: "/cart", element: <Cart />, id: 15 },
     { link: "/team", element: <Team />, id: 16 },
     { link: "/bank/card", element: <BankCard />, id: 17 },
-    { link: "/services", element: <Services />, id: 18 },
+    { link: "/services", element: <Services />, id: 19 },
   ];
 
   return (
