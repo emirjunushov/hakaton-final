@@ -7,21 +7,21 @@ import AddProductProvider from "./context/AddProductProvider";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import AddCommentsProvider from "./context/AddCommentsProvider";
-import FavoriteContextProvider from "./context/FavoritesContextProvider";
+import CartContextProdiver from "./context/CartContextProvider";
 
 const App = () => {
   return (
-    <FavoriteContextProvider>
-      <AddCommentsProvider>
-        <AuthContextProvider>
-          <AddProductProvider>
+    <AddCommentsProvider>
+      <AuthContextProvider>
+        <AddProductProvider>
+          <CartContextProdiver>
             <Navbar />
             <MainRoutes />
             <Footer />
-          </AddProductProvider>
-        </AuthContextProvider>
-      </AddCommentsProvider>
-    </FavoriteContextProvider>
+          </CartContextProdiver>
+        </AddProductProvider>
+      </AuthContextProvider>
+    </AddCommentsProvider>
   );
 };
 

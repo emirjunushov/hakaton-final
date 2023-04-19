@@ -31,7 +31,6 @@ const AddCommentsProvider = ({ children }) => {
       console.log(error);
     }
   };
-  // !=========================================================================
 
   // !=========================================================================
   const PostOneComment = async (formData) => {
@@ -69,11 +68,27 @@ const AddCommentsProvider = ({ children }) => {
   };
   // !=========================================================================
 
+  const createRating = async (formData) => {
+    try {
+      const tokens = JSON.parse(localStorage.getItem("tokens"));
+      const Authorization = `Bearer ${tokens.access}`;
+      const config = {
+        headers: {
+          Authorization,
+        },
+      };
+      const res = await axios.post(`${API}/apartaments-ratings/`, formData, config);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const values = {
-    PostOneComment,
-    deleteComments,
-    getComents,
     allComments: state.comments,
+    getComents,
+    createRating,
+    deleteComments,
+    PostOneComment,
   };
   return <AddComments.Provider value={values}>{children}</AddComments.Provider>;
 };

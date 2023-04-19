@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./searchBar.css";
 import SearchIcon from "@mui/icons-material/Search";
-import { IconButton } from "@mui/material";
+import { Badge, IconButton } from "@mui/material";
 import { useProduct } from "../../context/AddProductProvider";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import BookmarkIcon from "@mui/icons-material/Bookmark";
-
-// =============
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { motion } from "framer-motion";
+import { useCart } from "../../context/CartContextProvider";
+import { getCountProductsInCart } from "../../helpers";
 
 const blockAnimation = {
   hidden: {
@@ -28,14 +28,29 @@ const SearchBar = () => {
   const [search, setSearch] = useState(searchParams.get("q") || "");
 
   const navigate = useNavigate();
+  const [count, setCount] = useState(0);
+  const { addProductToCart } = useCart();
+
+  // ================================================
+
+  React.useEffect(() => {
+    setCount(getCountProductsInCart);
+  }, [addProductToCart]);
+
+  // ===============================================
 
   useEffect(() => {
     setSearchParams({ q: search });
   }, [search]);
 
+  // ===============================================
+
   useEffect(() => {
     getProducts();
   }, [searchParams]);
+
+  // ===============================================
+
   return (
     <motion.div
       initial="hidden"
@@ -46,7 +61,7 @@ const SearchBar = () => {
     >
       <div className="searchBar">
         <motion.div variants={blockAnimation} castom={3}>
-          <select
+          {/* <select
             defaultValue="all"
             onChange={(e) => fetchByParams("rooms", e.target.value)}
           >
@@ -134,18 +149,21 @@ const SearchBar = () => {
             <option value="">none</option>
             <option value="">test</option>
             <option value="">test</option>
-          </select>
+          </select> */}
         </motion.div>
         <motion.div variants={blockAnimation} castom={2}>
           <IconButton>
             <SearchIcon />
-            <input type="text" />
+            <input type="text" onChange={(e)=>fetchByParams('search',e.target.value)} />
           </IconButton>
         </motion.div>
         <motion.button variants={blockAnimation}>Фильтр</motion.button>
-        <IconButton onClick={() => navigate("/favorite")}>
-          <BookmarkIcon sx={{ color: "white" }} />
-        </IconButton>
+
+        <Badge badgeContent={count} color="primary">
+          <IconButton onClick={() => navigate("/cart")}>
+            <AddShoppingCartIcon color="primary" />
+          </IconButton>
+        </Badge>
         <input type="date" />
         <input type="date" />
       </div>
