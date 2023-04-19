@@ -11,6 +11,7 @@ import { TextField } from "@mui/material";
 import { useAuth } from "../../../context/AuthContextProvider";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import CircularProgress from "@mui/material/CircularProgress";
 import "./ForgotPasword.css";
 
 export default function ForgotPassword() {
@@ -35,6 +36,7 @@ export default function ForgotPassword() {
     error,
     setError,
     handleForgotPasswordFinish,
+    loading,
   } = useAuth();
   const [emailForForgotPassword, setEmailForForgotPassword] = useState("");
   const [token, setToken] = useState("");
@@ -155,15 +157,20 @@ export default function ForgotPassword() {
                   <Typography>{step.description}</Typography>
                   <Box sx={{ mb: 2 }}>
                     <div>
-                      <Button
-                        variant="contained"
-                        onClick={() => {
-                          handleNext();
-                        }}
-                        sx={{ mt: 1, mr: 1 }}
-                      >
-                        {index === steps.length - 1 ? "Finish" : "Continue"}
-                      </Button>
+                      {loading ? (
+                        <CircularProgress />
+                      ) : (
+                        <Button
+                          variant="contained"
+                          onClick={() => {
+                            handleNext();
+                          }}
+                          sx={{ mt: 1, mr: 1 }}
+                        >
+                          {index === steps.length - 1 ? "Finish" : "Continue"}
+                        </Button>
+                      )}
+
                       <Button
                         disabled={index === 0}
                         onClick={handleBack}

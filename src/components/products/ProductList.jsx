@@ -7,8 +7,11 @@ import SearchBar from "../searchBar/SearchBar";
 
 const ProductList = () => {
   const { getProducts, products, pages } = useProduct();
+
   const [currentPage, setCurrentPage] = useState(1);
+
   const [searchParams, setSearchParams] = useSearchParams();
+  console.log(products);
 
   useEffect(() => {
     setSearchParams({
@@ -21,7 +24,7 @@ const ProductList = () => {
 
   function getPagesCount() {
     let pageCountArr = [];
-    for (let i = 1; i <= pages; i++) {
+    for (let i = 1; i < pages; i++) {
       pageCountArr.push(i);
     }
     return pageCountArr;

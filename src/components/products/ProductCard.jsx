@@ -10,6 +10,7 @@ import "../products/ProductCard.css";
 import AddCommentIcon from "@mui/icons-material/AddComment";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import { motion } from "framer-motion";
+import { useAuth } from "../../context/AuthContextProvider";
 
 const blockAnimation = {
   hidden: {
@@ -23,6 +24,9 @@ const blockAnimation = {
   }),
 };
 export default function ProductCart({ item }) {
+  // ==============================================
+
+  const { user } = useAuth();
   const { deleteProduct } = useProduct();
   const navigate = useNavigate();
 
@@ -99,9 +103,18 @@ export default function ProductCart({ item }) {
                   <IconButton>
                     <LocalGroceryStoreIcon className="qwerty" />
                   </IconButton>
-                  <IconButton onClick={() => navigate(`/coment/${item.id}`)}>
-                    <AddCommentIcon className="qwerty" />
-                  </IconButton>
+                  {user ? (
+                    <IconButton onClick={() => navigate(`/coment/${item.id}`)}>
+                      <AddCommentIcon className="qwerty" />
+                    </IconButton>
+                  ) : (
+                    <IconButton
+                      onClick={() => alert("Войдите или зарегистрируйтесь")}
+                    >
+                      <AddCommentIcon className="qwerty" />
+                    </IconButton>
+                  )}
+
                   <IconButton>
                     <CalendarMonthIcon className="qwerty" input type="date" />
                   </IconButton>
@@ -114,21 +127,24 @@ export default function ProductCart({ item }) {
                   Арендовать
                 </Button>
               </div>
-
-              <div className="card__action">
-                <IconButton
-                  className="btn__delete"
-                  onClick={() => deleteProduct(item.id)}
-                >
-                  <DeleteIcon className="qwerty" color="secondary" />
-                </IconButton>
-                <IconButton
-                  className="btn__edit"
-                  onClick={() => navigate(`/edit/${item.id}`)}
-                >
-                  <EditIcon className="qwerty" color="secondary" />
-                </IconButton>
-              </div>
+              {item.user === user ? (
+                <div className="card__action">
+                  <IconButton
+                    className="btn__delete"
+                    onClick={() => deleteProduct(item.id)}
+                  >
+                    <DeleteIcon className="qwerty" color="secondary" />
+                  </IconButton>
+                  <IconButton
+                    className="btn__edit"
+                    onClick={() => navigate(`/edit/${item.id}`)}
+                  >
+                    <EditIcon className="qwerty" color="secondary" />
+                  </IconButton>
+                </div>
+              ) : (
+                ""
+              )}
             </div>
           </div>
         </motion.div>

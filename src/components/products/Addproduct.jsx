@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useProduct } from "../../context/AddProductProvider";
+import { useAuth } from "../../context/AuthContextProvider";
 import "../products/AddProduct.css";
 
 const AddProduct = () => {
   const { createProduct } = useProduct();
-  const [user, setUser] = useState("");
+  const { user } = useAuth();
+  const [user2, setUser] = useState("");
+  useEffect(() => {
+    setUser(user);
+  }, []);
   const [street, setStreet] = useState("");
   const [city, setCity] = useState("");
   const [rooms, setRooms] = useState("");
@@ -16,7 +21,7 @@ const AddProduct = () => {
 
   function handleSave() {
     let newProduct = new FormData();
-    newProduct.append("user", user);
+    newProduct.append("user", user2);
     newProduct.append("street", street);
     newProduct.append("city", city);
     newProduct.append("rooms", rooms);
@@ -31,14 +36,14 @@ const AddProduct = () => {
   return (
     <div className="d-flex flex-column w-50 m-auto">
       <h1 className="add_h1">добавление квартиру</h1>
-      <input
+      {/* <input
         className="add_input"
         type="text"
         placeholder="
         пользователь"
-        value={user}
+        value={user2}
         onChange={(e) => setUser(e.target.value)}
-      />
+      /> */}
       <input
         className="add_input"
         type="text"

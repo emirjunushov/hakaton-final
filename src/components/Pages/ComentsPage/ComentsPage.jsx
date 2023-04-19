@@ -2,18 +2,17 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useAddComments } from "../../../context/AddCommentsProvider";
 import { useProduct } from "../../../context/AddProductProvider";
-import Skeleton from "@mui/material/Skeleton";
-import Stack from "@mui/material/Stack";
+
 import DeleteIcon from "@mui/icons-material/Delete";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import ListItemText from "@mui/material/ListItemText";
-import ListSubheader from "@mui/material/ListSubheader";
-import Avatar from "@mui/material/Avatar";
-
+import SendIcon from "@mui/icons-material/Send";
 import "./ComentPage.css";
-import { IconButton } from "@mui/material";
+import { Avatar, IconButton, TextField } from "@mui/material";
+import { Button } from "react-bootstrap";
+
 const ComentsPage = () => {
   const { getOneProduct, oneProduct } = useProduct();
   const { PostOneComment, deleteComments, getComents, allComments } =
@@ -40,6 +39,7 @@ const ComentsPage = () => {
     PostOneComment(newProduct);
   }
   // !=============================================
+
   return (
     <div className="main_container">
       <div className="container_of_left_side">
@@ -67,22 +67,39 @@ const ComentsPage = () => {
           </h4>
         </div>
       </div>
-      <div>
+      <div style={{ marginLeft: "13%" }}>
         <div>
-          <List sx={{ mb: 2 }}>
+          <List className="coments_conteiner" sx={{ mb: 2, color: "white" }}>
             {allComments?.map((item) => (
               <React.Fragment key={allComments.id}>
                 <ListItem button>
                   <ListItemAvatar>
-                    <Avatar alt="Profile Picture" src="emir" />
+                    <Avatar alt={item.user} src="emir" />
                   </ListItemAvatar>
-                  <ListItemText primary={item.user} secondary={item.text} />
+                  <ListItemText
+                    className="text_comments"
+                    primary={item.user}
+                    secondary={item.text}
+                  />
+
                   <IconButton onClick={() => deleteComments(item.id)}>
-                    <DeleteIcon />
+                    <DeleteIcon sx={{ color: "white" }} />
                   </IconButton>
                 </ListItem>
               </React.Fragment>
             ))}
+            <div>
+              <TextField
+                onChange={(e) => setComments(e.target.value)}
+                id="outlined-basic"
+                label="Outlined"
+                variant="outlined"
+              />
+
+              <Button onClick={handleSave}>
+                <SendIcon />
+              </Button>
+            </div>
           </List>
         </div>
         <div>

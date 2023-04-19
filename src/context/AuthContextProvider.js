@@ -51,10 +51,13 @@ const AuthContextProvider = ({ children }) => {
   };
 
   const handleForgotPasswordEmail = async (formData) => {
+    setLoading(true);
     try {
       const res = await axios.post(`${API}/password_reset_request/`, formData);
     } catch (error) {
       setError(Object.values(error.response.data).flat()[0]);
+    } finally {
+      setLoading(false);
     }
   };
 

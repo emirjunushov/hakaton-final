@@ -4,7 +4,6 @@ import SearchIcon from "@mui/icons-material/Search";
 import { IconButton } from "@mui/material";
 import { useProduct } from "../../context/AddProductProvider";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import BookmarkIcon from "@mui/icons-material/Bookmark";
 
 // =============
 import { motion } from "framer-motion";
@@ -143,9 +142,9 @@ const SearchBar = () => {
           </IconButton>
         </motion.div>
         <motion.button variants={blockAnimation}>Фильтр</motion.button>
-        <IconButton onClick={() => navigate("/favorite")}>
+        {/* <IconButton onClick={() => navigate("/favorite")}>
           <BookmarkIcon sx={{ color: "white" }} />
-        </IconButton>
+        </IconButton> */}
         <input type="date" />
         <input type="date" />
       </div>
