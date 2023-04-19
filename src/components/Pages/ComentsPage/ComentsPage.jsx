@@ -12,11 +12,14 @@ import SendIcon from "@mui/icons-material/Send";
 import "./ComentPage.css";
 import { Avatar, IconButton, TextField } from "@mui/material";
 import { Button } from "react-bootstrap";
+import { useAuth } from "../../../context/AuthContextProvider";
+import { ADMIN } from "../../../helpers";
 
 const ComentsPage = () => {
   const { getOneProduct, oneProduct } = useProduct();
   const { PostOneComment, deleteComments, getComents, allComments } =
     useAddComments();
+  const { user } = useAuth();
   console.log(allComments);
   const { id } = useParams();
   useEffect(() => {
@@ -47,7 +50,29 @@ const ComentsPage = () => {
         <div className="conteiner_of_right_side">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11697.164363479633!2d74.58146585!3d42.8666998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389ec81d3f4fffff%3A0x4e1b43a32667c19b!2sDe&#39;mar%20Hotel!5e0!3m2!1sru!2skg!4v1681731121571!5m2!1sru!2skg"
-            width="250"
+            width="90%"
+            height="200"
+            style={{ border: "0" }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <h3> {oneProduct?.user}</h3>
+          <h4>
+            <span>Цена: $</span>
+            {oneProduct?.price}
+          </h4>
+          <h4>
+            <span>Город:</span> {oneProduct?.city}
+          </h4>
+          <h4>
+            <span>Улица:</span> {oneProduct?.street}
+          </h4>
+        </div>
+        <div className="conteiner_of_right_side_for_adaptive">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11697.164363479633!2d74.58146585!3d42.8666998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389ec81d3f4fffff%3A0x4e1b43a32667c19b!2sDe&#39;mar%20Hotel!5e0!3m2!1sru!2skg!4v1681731121571!5m2!1sru!2skg"
+            width="90%"
             height="200"
             style={{ border: "0" }}
             allowFullScreen=""
@@ -67,7 +92,12 @@ const ComentsPage = () => {
           </h4>
         </div>
       </div>
-      <div style={{ marginLeft: "13%" }}>
+      <div
+        className="main_comments_conteiner"
+        style={{
+          marginLeft: "13%",
+        }}
+      >
         <div>
           <List className="coments_conteiner" sx={{ mb: 2, color: "white" }}>
             {allComments?.map((item) => (
@@ -81,10 +111,13 @@ const ComentsPage = () => {
                     primary={item.user}
                     secondary={item.text}
                   />
-
-                  <IconButton onClick={() => deleteComments(item.id)}>
-                    <DeleteIcon sx={{ color: "white" }} />
-                  </IconButton>
+                  {item.user === user || ADMIN === user ? (
+                    <IconButton onClick={() => deleteComments(item.id)}>
+                      <DeleteIcon sx={{ color: "white" }} />
+                    </IconButton>
+                  ) : (
+                    ""
+                  )}
                 </ListItem>
               </React.Fragment>
             ))}
@@ -94,17 +127,14 @@ const ComentsPage = () => {
                 id="outlined-basic"
                 label="Outlined"
                 variant="outlined"
-              />
-
-              <Button onClick={handleSave}>
+              >
+                {" "}
+              </TextField>
+              <IconButton onClick={handleSave}>
                 <SendIcon />
-              </Button>
+              </IconButton>
             </div>
           </List>
-        </div>
-        <div>
-          <input onChange={(e) => setComments(e.target.value)} type="text" />
-          <button onClick={handleSave}>add</button>
         </div>
       </div>
     </div>
