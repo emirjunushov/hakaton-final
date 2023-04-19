@@ -11,6 +11,7 @@ import AddCommentIcon from "@mui/icons-material/AddComment";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import { motion } from "framer-motion";
 import { useAuth } from "../../context/AuthContextProvider";
+import { ADMIN } from "../../helpers";
 
 const blockAnimation = {
   hidden: {
@@ -127,7 +128,7 @@ export default function ProductCart({ item }) {
                   Арендовать
                 </Button>
               </div>
-              {item.user === user ? (
+              {item.user === user || ADMIN === user ? (
                 <div className="card__action">
                   <IconButton
                     className="btn__delete"
