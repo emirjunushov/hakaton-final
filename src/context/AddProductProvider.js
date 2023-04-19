@@ -54,7 +54,6 @@ const AddProductProvider = ({ children }) => {
         `${API}/apartments/${window.location.search}`
       );
       dispatch({ type: "GET_PRODUCTS", payload: res.data });
-      console.log(res);
     } catch (error) {
       console.log(error);
     }

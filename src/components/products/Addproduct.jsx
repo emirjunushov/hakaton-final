@@ -9,7 +9,6 @@ const AddProduct = () => {
   useEffect(() => {
     setError(false);
   }, []);
-  console.log(error.length);
   const { user } = useAuth();
   const [user2, setUser] = useState("");
   useEffect(() => {

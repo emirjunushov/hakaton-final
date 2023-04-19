@@ -76,8 +76,13 @@ const SearchBar = () => {
               onChange={(e) => fetchByParams("search", e.target.value)}
             />
           </IconButton>
-        </div>
-      </motion.div>
+       
+        <motion.button variants={blockAnimation}>Фильтр</motion.button>
+       
+        <input type="date" onChange={(e)=>console.log(e.target.value )}/>
+        <input type="date" />
+      </div>
+    </motion.div>
     </>
   );
 };

@@ -76,7 +76,7 @@ const AddCommentsProvider = ({ children }) => {
           Authorization,
         },
       };
-      const res = await axios.post(`${API}/apartaments-ratings/`, formData, config);
+      const res = await axios.post(`${API}/apartments-ratings/`, formData, config);
     } catch (error) {
       console.log(error);
     }

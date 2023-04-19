@@ -3,7 +3,7 @@ import { useProduct } from "../../context/AddProductProvider";
 import { useNavigate, useParams } from "react-router-dom";
 import Button from "@mui/material/Button";
 import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
-import { IconButton } from "@mui/material";
+import { Box, IconButton, Rating, Typography } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import "../products/ProductCard.css";
@@ -30,18 +30,20 @@ const blockAnimation = {
 
 export default function ProductCart({ item }) {
   const { deleteProduct, updateProduct } = useProduct();
-  const { createRating } = useAddComments();
-  const navigate = useNavigate();
   const { addProductToCart, checkProductInCart } = useCart();
+  const navigate = useNavigate()
   const { user } = useAuth();
   const [rating, setRating] = React.useState(0);
+  const {createRating} = useAddComments()
 
   function saveRating() {
     const newLike = new FormData();
-    newLike.append("rating", rating);
-    newLike.append("apartment_id", item.id);
+    newLike.append("rating", +rating);
+    newLike.append("apartment_id", +item.id);
     createRating(newLike);
   }
+
+
 
   return (
     <div className="qwerty">
@@ -80,18 +82,33 @@ export default function ProductCart({ item }) {
                 <h3>Цена</h3>
                 <p>{item.price}сом</p>
               </div>
-              <div className="Rating">
+              <Box
+                sx={{
+                  "& > legend": { mt: 2 },
+                }}
+              >
+                <Rating
+                  name="simple-controlled"
+                  value={item.average_rating}
+                  onChange={(e) => {
+                    setRating(+
+                      e.target.value);
+                    saveRating()
+                  }}
+                />
+              </Box>
+              {/* <div className="Rating">
                 <div>
                   <link
                     rel="stylesheet"
                     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
                   />
                 </div>
-
                 <div className="rate">
                   <input type="radio" id="star5" name="rate" value="5" />
                   <label htmlFor="star5" title="text">
-                    <i className="fa fa fa-star" aria-hidden="true"></i>
+                    <i className="fa fa fa-star" aria-hidden="true" >{item.average_rating}
+                    </i>
                   </label>
 
                   <input type="radio" id="star4" name="rate" value="4" />
@@ -113,9 +130,9 @@ export default function ProductCart({ item }) {
                   <label htmlFor="star1" title="text">
                     <i className="fa fa fa-star" aria-hidden="true"></i>
                   </label>
-                  <div></div>
+                  
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="product-btns">
               <div>
